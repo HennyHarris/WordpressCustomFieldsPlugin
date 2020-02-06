@@ -11,7 +11,7 @@ function avada_lang_setup() {
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
-
+/*** Custom Modify **/
 function mysite_custom_define() {
   $custom_meta_fields = array();
   $custom_meta_fields['editable_posts'] = 'Post modificabili';
