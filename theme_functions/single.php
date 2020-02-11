@@ -160,12 +160,12 @@ if (!defined('ABSPATH')) {
 
                     $contatti = '[fusion_checklist icon="" iconcolor="#000000" circle="no" circlecolor="#ffffff" size="" divider="no" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
                     $contatti .= '[fusion_li_item icon="fa-globe fas"]' . 'Società/Associazione: CAMPO_SOCIETA_ASSOCIAZIONE' . '[/fusion_li_item]';
-                    $contatti .= '[fusion_li_item icon="fa-globe fas"]' . '<a href="http://CAMPO_SITO_WEB">CAMPO_SITO_WEB</a>' . '[/fusion_li_item]';
+                    $contatti .= '[fusion_li_item icon="fa-globe fas"]' . '<a href="http://' . $CAMPO_SITO_WEB . '">' . $CAMPO_SITO_WEB . '</a>' . '[/fusion_li_item]';
                     $contatti .= '[fusion_li_item icon="fa-phone fas"]' . '<a href="tel:' . $CAMPO_TELEFONO . '">' . $CAMPO_TELEFONO . '</a>' . '<br>' . '<a href="tel:' . $CAMPO_TELEFONO1 . '">' . $CAMPO_TELEFONO1 . '</a>' . '[/fusion_li_item]';
                     $contatti .= '[fusion_li_item icon="fa-envelope far"]' . '<a href="mailto:' . $CAMPO_EMAIL . '">' . $CAMPO_EMAIL . '</a>' . '<br>' . '<a href="mailto:' . $CAMPO_EMAIL1 . '">' . $CAMPO_EMAIL1 . '</a>' . '[/fusion_li_item]';
-                    $contatti .= '[fusion_li_item icon="fa-map-marker-alt fas"]' . 'CAMPO_INDIRIZZO<br>CAMPO_COMUNE (CAMPO_PROVINCIA)' . '[/fusion_li_item]';
-                    $contatti .= '[fusion_li_item icon="fa-store fas"]' . 'Punto vendita: CAMPO_INDIRIZZO_PUNTO_VENDITA<br>CAMPO_COMUNE_PUNTO_VENDITA (CAMPO_PROVINCIA_PUNTO_VENDITA)' . '[/fusion_li_item]';
-                    $contatti .= '[fusion_li_item icon="fa-store fas"]' . 'Produzione: CAMPO_INDIRIZZO_PRODUZIONE<br>CAMPO_COMUNE_PRODUZIONE (CAMPO_PROVINCIA_PRODUZIONE)' . '[/fusion_li_item]';
+                    $contatti .= '[fusion_li_item icon="fa-map-marker-alt fas"]' . $CAMPO_INDIRIZZO . '<br>' . $CAMPO_COMUNE . '(' . $CAMPO_PROVINCIA . ')' . '[/fusion_li_item]';
+                    $contatti .= '[fusion_li_item icon="fa-store fas"]' . 'Punto vendita: ' . $CAMPO_INDIRIZZO_PUNTO_VENDITA . '<br>' . $CAMPO_COMUNE_PUNTO_VENDITA . '(' . $CAMPO_PROVINCIA_PUNTO_VENDITA . ')' . '[/fusion_li_item]';
+                    $contatti .= '[fusion_li_item icon="fa-store fas"]' . 'Produzione: ' . $CAMPO_INDIRIZZO_PRODUZIONE . '<br>' . $CAMPO_COMUNE_PRODUZIONE . '(' . $CAMPO_PROVINCIA_PRODUZIONE . ')' . '[/fusion_li_item]';
                     $contatti .= '[fusion_li_item icon="fa-clock far"]' . 'Orario: ' . $CAMPO_ORARI_APERTURA . '[/fusion_li_item]';
                     $contatti .= '[fusion_li_item icon="fa-clock far"]' . 'Orario punto vendita: ' . $CAMPO_ORARI_APERTURA_PUNTO_VENDITA . '[/fusion_li_item]';
                     $contatti .= '[fusion_li_item icon="fa-calendar-alt far"]' . 'Periodo di apertura: ' . $CAMPO_PERIODO_APERTURA . '[/fusion_li_item]';
