@@ -117,6 +117,9 @@ if (!defined('ABSPATH')) {
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
+                    $CAMPO_SERVIZI_OFFERTI = htmlspecialchars(get_field('CAMPO_SERVIZI_OFFERTI'));
+                    $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
+                    $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
 
                     /*** IMAGES **/
                     $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
