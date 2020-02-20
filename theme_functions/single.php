@@ -1462,9 +1462,13 @@ if (!defined('ABSPATH')) {
                     $body_mobile_mobile_information .= 'Infomobilità';
                     $body_mobile_mobile_information .= '[/fusion_text]';
                     $body_mobile_mobile_information .= '[fusion_checklist icon="fa-hotel fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
-                    $body_mobile_mobile_information .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                    $body_mobile_mobile_information .= $CAMPO_INFOMOBILITA;
-                    $body_mobile_mobile_information .= '[/fusion_li_item]';
+
+                    if ($CAMPO_INFOMOBILITA != null) {
+                        $body_mobile_mobile_information .= '[fusion_li_item icon="fa-shuttle-van fas"]';
+                        $body_mobile_mobile_information .= $CAMPO_INFOMOBILITA;
+                        $body_mobile_mobile_information .= '[/fusion_li_item]';
+                    }
+
                     $body_mobile_mobile_information .= '[fusion_li_item icon="fa-train fas"]';
                     $body_mobile_mobile_information .= 'Rete Ferroviaria Italiana';
                     $body_mobile_mobile_information .= '[/fusion_li_item]';
