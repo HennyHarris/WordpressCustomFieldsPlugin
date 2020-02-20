@@ -997,7 +997,61 @@ if (!defined('ABSPATH')) {
                     $body_mobile_info .= '[/fusion_checklist]';
                     $body_mobile_info .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
 
-                    $body_mobile_service = '[fusion_social_links icons_boxed="yes" icons_boxed_radius="" color_type="brand" icon_colors="" box_colors="" tooltip_placement="" blogger="' . $CAMPO_SITO_WEB . '" deviantart="" digg="" dribbble="" dropbox="" facebook="' . $CAMPO_FACEBOOK . '" flickr="' . $CAMPO_FLICKR . '" forrst="" instagram="' . $CAMPO_INSTAGRAM . '" linkedin="' . $CAMPO_LINKEDIN . '" myspace="" paypal="" pinterest="' . $CAMPO_PINTEREST . '" reddit="" rss="" skype="" soundcloud="" spotify="" tumblr="" twitter="' . $CAMPO_TWITTER . '" vimeo="" vk="" whatsapp="" xing="" yahoo="" yelp="" youtube="' . $CAMPO_YOUTUBE . '" email="' . $CAMPO_EMAIL . '" show_custom="no" alignment="center" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" /]';
+                    $body_mobile_service = '[fusion_social_links icons_boxed="yes" icons_boxed_radius="" color_type="brand" icon_colors="" box_colors="" tooltip_placement="" blogger="';
+
+                    if ($CAMPO_SITO_WEB != null) {
+                        $body_mobile_service .= $CAMPO_SITO_WEB;
+                    }
+
+                    $body_mobile_service .= '" deviantart="" digg="" dribbble="" dropbox="" facebook="';
+
+                    if ($CAMPO_FACEBOOK != null) {
+                        $body_mobile_service .= $CAMPO_FACEBOOK;
+                    }
+
+                    $body_mobile_service .= '" flickr="';
+
+                    if ($CAMPO_FLICKR != null) {
+                        $body_mobile_service .= $CAMPO_FLICKR;
+                    }
+
+                    $body_mobile_service .= '" forrst="" instagram="';
+
+                    if ($CAMPO_INSTAGRAM != null) {
+                        $body_mobile_service .= $CAMPO_INSTAGRAM;
+                    }
+
+                    $body_mobile_service .= '" linkedin="';
+
+                    if ($CAMPO_LINKEDIN != null) {
+                        $body_mobile_service .= $CAMPO_LINKEDIN;
+                    }
+
+                    $body_mobile_service .= '" myspace="" paypal="" pinterest="';
+
+                    if ($CAMPO_PINTEREST != null) {
+                        $body_mobile_service .= $CAMPO_PINTEREST;
+                    }
+
+                    $body_mobile_service .= '" reddit="" rss="" skype="" soundcloud="" spotify="" tumblr="" twitter="';
+
+                    if ($CAMPO_TWITTER != null) {
+                        $body_mobile_service .= $CAMPO_TWITTER;
+                    }
+
+                    $body_mobile_service .= '" vimeo="" vk="" whatsapp="" xing="" yahoo="" yelp="" youtube="';
+
+                    if ($CAMPO_YOUTUBE != null) {
+                        $body_mobile_service .= $CAMPO_YOUTUBE;
+                    }
+
+                    $body_mobile_service .= '" email="';
+
+                    if ($CAMPO_EMAIL != null) {
+                        $body_mobile_service .= $CAMPO_EMAIL;
+                    }
+
+                    $body_mobile_service .= '" show_custom="no" alignment="center" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" /]';
                     $body_mobile_service .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
                     $body_mobile_service .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="infotype"]';
                     $body_mobile_service .= 'Servizi';
