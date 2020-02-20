@@ -1347,60 +1347,114 @@ if (!defined('ABSPATH')) {
                     $body_mobile_useful_links .= 'Link utili';
                     $body_mobile_useful_links .= '[/fusion_text]';
                     $body_mobile_useful_links .= '[fusion_checklist icon="fa-hotel fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
-                    $body_mobile_useful_links .= 'GOOGLE MAPS';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
-                    $body_mobile_useful_links .= 'GOOGLE MAPS (PUNTO VENDITA)';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
+
+                    if ($CAMPO_GOOGLE_MAPS != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
+                        $body_mobile_useful_links .= 'GOOGLE MAPS';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_GOOGLE_MAPS_VENDITA != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
+                        $body_mobile_useful_links .= 'GOOGLE MAPS (PUNTO VENDITA)';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_GOOGLE_MAPS_PRODUZIONE != null)
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
                     $body_mobile_useful_links .= 'GOOGLE MAPS (PUNTO PRODUZIONE)';
                     $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-tripadvisor fab"]';
-                    $body_mobile_useful_links .= 'TRIPADVISOR';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-book fas"]';
-                    $body_mobile_useful_links .= 'BOOKING';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-hotel fas"]';
-                    $body_mobile_useful_links .= 'HOTELS.COM';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-airbnb fab"]';
-                    $body_mobile_useful_links .= 'AIRBNB';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                    $body_mobile_useful_links .= 'FACEBOOK';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                    $body_mobile_useful_links .= 'FLICKR';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                    $body_mobile_useful_links .= 'GOOGLE';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                    $body_mobile_useful_links .= 'GOOGLE PLUS';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                    $body_mobile_useful_links .= 'INSTAGRAM';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                    $body_mobile_useful_links .= 'LINKEDIN';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                    $body_mobile_useful_links .= 'PINTEREST';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                    $body_mobile_useful_links .= 'TWITTER';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                    $body_mobile_useful_links .= 'YOUTUBE';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                    $body_mobile_useful_links .= 'TRIPADVISOR';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
-                    $body_mobile_useful_links .= '[fusion_li_item icon="fa-google fab"]';
-                    $body_mobile_useful_links .= 'VALUTAZIONI GOOGLE';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
+
+                    if ($CAMPO_TRIPADVISOR != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-tripadvisor fab"]';
+                        $body_mobile_useful_links .= 'TRIPADVISOR';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_BOOKING != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-book fas"]';
+                        $body_mobile_useful_links .= 'BOOKING';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_HOTELS_COM != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-hotel fas"]';
+                        $body_mobile_useful_links .= 'HOTELS.COM';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_AIRBNB != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-airbnb fab"]';
+                        $body_mobile_useful_links .= 'AIRBNB';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_FACEBOOK != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
+                        $body_mobile_useful_links .= 'FACEBOOK';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_FLICKR != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
+                        $body_mobile_useful_links .= 'FLICKR';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_GOOGLE != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
+                        $body_mobile_useful_links .= 'GOOGLE';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_GOOGLE_PLUS != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
+                        $body_mobile_useful_links .= 'GOOGLE PLUS';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_INSTAGRAM != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
+                        $body_mobile_useful_links .= 'INSTAGRAM';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LINKEDIN != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon=""]';
+                        $body_mobile_useful_links .= 'LINKEDIN';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PINTEREST != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon=""]';
+                        $body_mobile_useful_links .= 'PINTEREST';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_TWITTER != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon=""]';
+                        $body_mobile_useful_links .= 'TWITTER';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_YOUTUBE != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon=""]';
+                        $body_mobile_useful_links .= 'YOUTUBE';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_TRIPADVISOR != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon=""]';
+                        $body_mobile_useful_links .= 'TRIPADVISOR';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_VALUTAZIONI_GOOGLE != null) {
+                        $body_mobile_useful_links .= '[fusion_li_item icon="fa-google fab"]';
+                        $body_mobile_useful_links .= 'VALUTAZIONI GOOGLE';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
+
                     $body_mobile_useful_links .= '[/fusion_checklist]';
                     $body_mobile_useful_links .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
 
