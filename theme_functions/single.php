@@ -157,8 +157,7 @@ if (!defined('ABSPATH')) {
                     $CAMPO_MENU_VEGETARIANO = htmlspecialchars(get_field('CAMPO_MENU_VEGETARIANO'));
                     $CAMPO_PERIODO = htmlspecialchars(get_field('CAMPO_PERIODO'));
                     $CAMPO_CATEGORIA = htmlspecialchars(get_field('CAMPO_CATEGORIA'));
-
-
+                  
                     /*** IMAGES **/
                     $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
                     $LINK_IMMAGINE_LOGO = esc_url(get_field('LINK_IMMAGINE_LOGO')['url']);
@@ -167,7 +166,6 @@ if (!defined('ABSPATH')) {
                     $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']);
                     $IMMAGINE_GALLERIA_4 = esc_url(get_field('IMMAGINE_GALLERIA_4')['url']);
                     $IMMAGINE_GALLERIA_5 = esc_url(get_field('IMMAGINE_GALLERIA_5')['url']);
-
 
                     /*** CATEGORY ICONS **/
                     $archeologia_arte_e_storia = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/Archeologia_arte_e_storia-e1574194179395.png\" image_id=\"6084|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
@@ -179,7 +177,7 @@ if (!defined('ABSPATH')) {
                     $la_montagna = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/La_montagna-e1574194096676.png\" image_id=\"6080|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
                     $benessere = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/Benessere_30x30.png\" image_id=\"7549|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
 
-
+                  
                     /*** HEADER DESKTOP **/
                     $header_desktop = '[fusion_builder_container admin_label="Vista iniziale(DESKTOP)" hide_on_mobile="large-visibility" status="published" publish_date="" hundred_percent="yes" hundred_percent_height="yes" hundred_percent_height_scroll="no" hundred_percent_height_center_content="yes" equal_height_columns="yes" menu_anchor="" class="initialview" id="initialview" border_size="" border_color="" border_style="solid" margin_top="" margin_bottom="" padding_top="0px" padding_right="0px" padding_bottom="0px" padding_left="0px" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="';
                     $header_desktop .= $LINK_IMMAGINE_COPERTINA;
