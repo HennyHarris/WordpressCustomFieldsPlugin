@@ -118,7 +118,7 @@ if (!defined('ABSPATH')) {
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-                    $CAMPO_SERVIZI_OFFERTI = htmlspecialchars(get_field('CAMPO_SERVIZI_OFFERTI'));
+                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/get_field('CAMPO_SERVIZI_OFFERTI')/*)*/;
                     $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
                     $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
                     $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PACCHETTI_OFFERTI'));
@@ -746,7 +746,15 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_PALESTRA != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
-                        $body_desktop_service .= 'Palestra: ' . $CAMPO_PALESTRA;
+                        $body_desktop_service .= 'Palestra: not null' . $CAMPO_PALESTRA;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    } else {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
+                        $body_desktop_service .= 'Palestra: null';
+
+                        foreach ($CAMPO_SERVIZI_OFFERTI as $field_value)
+                            $body_desktop_service .= $field_value;
+
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
