@@ -1057,147 +1057,289 @@ if (!defined('ABSPATH')) {
                     $body_mobile_service .= 'Servizi';
                     $body_mobile_service .= '[/fusion_text]';
                     $body_mobile_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
-                    $body_mobile_service .= 'Distanza: ' . $CAMPO_DISTANZA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-ticket-alt fas"]';
-                    $body_mobile_service .= 'Biglietti: ' . $CAMPO_COSTO_BIGLIETTO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                    $body_mobile_service .= 'Parcheggio: ' . $CAMPO_PARCHEGGIO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                    $body_mobile_service .= 'Parcheggio gratuito: ' . $CAMPO_PARCHEGGIO_GRATUITO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                    $body_mobile_service .= 'Parcheggio in strada: ' . $CAMPO_PARCHEGGIO_IN_STRADA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                    $body_mobile_service .= 'Parcheggio custodito: ' . $CAMPO_PARCHEGGIO_CUSTODITO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-hiking fas"]';
-                    $body_mobile_service .= 'Servizi di noleggio: ' . $CAMPO_SERVIZI_DI_NOLEGGIO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                    $body_mobile_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PROPOSTE_VACANZE_IN_MOLISE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
-                    $body_mobile_service .= 'Visite guidate: ' . $CAMPO_VISITE_GUIDATE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-wheelchair fas"]';
-                    $body_mobile_service .= 'Accessibile ai disabili: ' . $ACCESSIBILE_AI_DISABILI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                    $body_mobile_service .= 'Menù per vegetariani: ' . $CAMPO_MENU_VEGETARIANO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                    $body_mobile_service .= 'Menù carne: ' . $CAMPO_MENU_CARNE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                    $body_mobile_service .= 'Menù pesce: ' . $CAMPO_MENU_PESCE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                    $body_mobile_service .= 'Menù per celiaci: ' . $CAMPO_MENU_CELIACI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                    $body_mobile_service .= 'Menù vegano: ' . $CAMPO_MENU_VEGANO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-credit-card far"]';
-                    $body_mobile_service .= 'Pagamento con carta: ' . $CAMPO_PAGAMENTO_CON_CARTA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-bicycle fas"]';
-                    $body_mobile_service .= 'Posto bici: ' . $CAMPO_POSTO_BICI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-umbrella-beach fas"]';
-                    $body_mobile_service .= 'Servizi spiaggia: ' . $CAMPO_SERVIZI_SPIAGGIA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-swimmer fas"]';
-                    $body_mobile_service .= 'Piscina: ' . $CAMPO_PISCINA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-paw fas"]';
-                    $body_mobile_service .= 'Animali ammessi: ' . $CAMPO_ANIMALI_AMMESSI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
-                    $body_mobile_service .= 'Palestra: ' . $CAMPO_PALESTRA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-horse fas"]';
-                    $body_mobile_service .= 'Maneggio: ' . $CAMPO_MANEGGIO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-smile-beam fas"]';
-                    $body_mobile_service .= 'Beauty farm: ' . $CAMPO_BEAUTY_FARM;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-wifi fas"]';
-                    $body_mobile_service .= 'Free WiFi: ' . $CAMPO_FREE_WIFI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-toilet-paper fas"]';
-                    $body_mobile_service .= 'Servizio in camera: ' . $CAMPO_SERVIZIO_IN_CAMERA;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Cucina internazionale: ' . $CAMPO_CUCINA_INTERNAZIONALE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Per famiglie con bambini: ' . $CAMPO_PER_FAMIGLIE_CON_BAMBINI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Degustazioni in loco: ' . $CAMPO_DEGUSTAZIONI_IN_LOCO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Noleggio pedalò/Attrezzature marine: ' . $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Sentieri escursionistici: ' . $CAMPO_SENTIERI_ESCURSIONISTICI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Area camper: ' . $CAMPO_AREA_CAMPER;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Area picnic: ' . $CAMPO_AREA_PICNIC;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Organizzatore: ' . $CAMPO_ORGANIZZATORE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Luogo: ' . $CAMPO_LUOGO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Periodo: ' . $CAMPO_PERIODO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Informazioni cronologiche: ' . $CAMPO_INFORMAZIONI_CRONOLOGICHE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Bar: ' . $CAMPO_BAR;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Ristorante: ' . $CAMPO_RISTORANTE;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                    $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-angle-double-right fas"]';
-                    $body_mobile_service .= 'Altro: ' . $CAMPO_ALTRO;
-                    $body_mobile_service .= '[/fusion_li_item]';
-                    $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                    $body_mobile_service .= 'Link alle proposte: ' . $CAMPO_LINK_ALLE_PROPOSTE;
-                    $body_mobile_service .= '[/fusion_li_item]';
+
+                    if ($CAMPO_DISTANZA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
+                        $body_mobile_service .= 'Distanza: ' . $CAMPO_DISTANZA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_COSTO_BIGLIETTO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-ticket-alt fas"]';
+                        $body_mobile_service .= 'Biglietti: ' . $CAMPO_COSTO_BIGLIETTO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PARCHEGGIO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
+                        $body_mobile_service .= 'Parcheggio: ' . $CAMPO_PARCHEGGIO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PARCHEGGIO_GRATUITO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
+                        $body_mobile_service .= 'Parcheggio gratuito: ' . $CAMPO_PARCHEGGIO_GRATUITO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PARCHEGGIO_IN_STRADA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
+                        $body_mobile_service .= 'Parcheggio in strada: ' . $CAMPO_PARCHEGGIO_IN_STRADA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PARCHEGGIO_CUSTODITO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
+                        $body_mobile_service .= 'Parcheggio custodito: ' . $CAMPO_PARCHEGGIO_CUSTODITO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_SERVIZI_DI_NOLEGGIO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-hiking fas"]';
+                        $body_mobile_service .= 'Servizi di noleggio: ' . $CAMPO_SERVIZI_DI_NOLEGGIO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PROPOSTE_VACANZE_IN_MOLISE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
+                        $body_mobile_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PROPOSTE_VACANZE_IN_MOLISE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_VISITE_GUIDATE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
+                        $body_mobile_service .= 'Visite guidate: ' . $CAMPO_VISITE_GUIDATE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($ACCESSIBILE_AI_DISABILI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-wheelchair fas"]';
+                        $body_mobile_service .= 'Accessibile ai disabili: ' . $ACCESSIBILE_AI_DISABILI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MENU_VEGETARIANO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
+                        $body_mobile_service .= 'Menù per vegetariani: ' . $CAMPO_MENU_VEGETARIANO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MENU_CARNE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
+                        $body_mobile_service .= 'Menù carne: ' . $CAMPO_MENU_CARNE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MENU_PESCE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
+                        $body_mobile_service .= 'Menù pesce: ' . $CAMPO_MENU_PESCE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MENU_CELIACI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
+                        $body_mobile_service .= 'Menù per celiaci: ' . $CAMPO_MENU_CELIACI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MENU_VEGANO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
+                        $body_mobile_service .= 'Menù vegano: ' . $CAMPO_MENU_VEGANO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PAGAMENTO_CON_CARTA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-credit-card far"]';
+                        $body_mobile_service .= 'Pagamento con carta: ' . $CAMPO_PAGAMENTO_CON_CARTA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_POSTO_BICI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-bicycle fas"]';
+                        $body_mobile_service .= 'Posto bici: ' . $CAMPO_POSTO_BICI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_SERVIZI_SPIAGGIA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-umbrella-beach fas"]';
+                        $body_mobile_service .= 'Servizi spiaggia: ' . $CAMPO_SERVIZI_SPIAGGIA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PISCINA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-swimmer fas"]';
+                        $body_mobile_service .= 'Piscina: ' . $CAMPO_PISCINA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_ANIMALI_AMMESSI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-paw fas"]';
+                        $body_mobile_service .= 'Animali ammessi: ' . $CAMPO_ANIMALI_AMMESSI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PALESTRA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
+                        $body_mobile_service .= 'Palestra: ' . $CAMPO_PALESTRA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_MANEGGIO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-horse fas"]';
+                        $body_mobile_service .= 'Maneggio: ' . $CAMPO_MANEGGIO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_BEAUTY_FARM != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-smile-beam fas"]';
+                        $body_mobile_service .= 'Beauty farm: ' . $CAMPO_BEAUTY_FARM;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_FREE_WIFI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-wifi fas"]';
+                        $body_mobile_service .= 'Free WiFi: ' . $CAMPO_FREE_WIFI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_SERVIZIO_IN_CAMERA != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-toilet-paper fas"]';
+                        $body_mobile_service .= 'Servizio in camera: ' . $CAMPO_SERVIZIO_IN_CAMERA;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_STELLE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_CUCINA_INTERNAZIONALE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Cucina internazionale: ' . $CAMPO_CUCINA_INTERNAZIONALE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PER_FAMIGLIE_CON_BAMBINI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Per famiglie con bambini: ' . $CAMPO_PER_FAMIGLIE_CON_BAMBINI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_DEGUSTAZIONI_IN_LOCO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Degustazioni in loco: ' . $CAMPO_DEGUSTAZIONI_IN_LOCO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Noleggio pedalò/Attrezzature marine: ' . $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_SENTIERI_ESCURSIONISTICI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Sentieri escursionistici: ' . $CAMPO_SENTIERI_ESCURSIONISTICI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_AREA_CAMPER != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Area camper: ' . $CAMPO_AREA_CAMPER;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_AREA_PICNIC != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Area picnic: ' . $CAMPO_AREA_PICNIC;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_DETTAGLI_VISITE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LUOGO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LUOGO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Organizzatore: ' . $CAMPO_ORGANIZZATORE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LUOGO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Luogo: ' . $CAMPO_LUOGO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_PERIODO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Periodo: ' . $CAMPO_PERIODO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_INFORMAZIONI_CRONOLOGICHE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Informazioni cronologiche: ' . $CAMPO_INFORMAZIONI_CRONOLOGICHE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_BAR != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Bar: ' . $CAMPO_BAR;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_RISTORANTE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Ristorante: ' . $CAMPO_RISTORANTE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+                        $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_ALTRO != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-angle-double-right fas"]';
+                        $body_mobile_service .= 'Altro: ' . $CAMPO_ALTRO;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($CAMPO_LINK_ALLE_PROPOSTE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
+                        $body_mobile_service .= 'Link alle proposte: ' . $CAMPO_LINK_ALLE_PROPOSTE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
                     $body_mobile_service .= '[/fusion_checklist]';
                     $body_mobile_service .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
 
