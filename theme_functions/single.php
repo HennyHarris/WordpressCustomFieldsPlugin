@@ -295,10 +295,10 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_TELEFONO != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-phone fas"]';
-                        $body_desktop_info .= '<a href"tel://' . $CAMPO_TELEFONO . '">' . $CAMPO_TELEFONO . '</a>';
+                        $body_desktop_info .= '<a href="tel://' . $CAMPO_TELEFONO . '">' . $CAMPO_TELEFONO . '</a>';
 
                         if ($CAMPO_TELEFONO1 != null) {
-                            $body_desktop_info .= '<br><a href"tel://' . $CAMPO_TELEFONO1 . '">' . $CAMPO_TELEFONO1 . '</a>';
+                            $body_desktop_info .= '<br><a href="tel://' . $CAMPO_TELEFONO1 . '">' . $CAMPO_TELEFONO1 . '</a>';
                         }
 
                         $body_desktop_info .= '[/fusion_li_item]';
@@ -306,10 +306,10 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_EMAIL != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-envelope far"]';
-                        $body_desktop_info .= '<a href"mailto://' . $CAMPO_EMAIL . '">' . $CAMPO_EMAIL . '</a>';
+                        $body_desktop_info .= '<a href=mailto://' . $CAMPO_EMAIL . '">' . $CAMPO_EMAIL . '</a>';
 
                         if ($CAMPO_EMAIL1 != null) {
-                            $body_desktop_info .= '<br><a href"mailto://' . $CAMPO_EMAIL1 . '">' . $CAMPO_EMAIL1 . '</a>';
+                            $body_desktop_info .= '<br><a href="mailto://' . $CAMPO_EMAIL1 . '">' . $CAMPO_EMAIL1 . '</a>';
                         }
 
                         $body_desktop_info .= '[/fusion_li_item]';
@@ -559,10 +559,10 @@ if (!defined('ABSPATH')) {
                     }
 
                     $body_desktop_mobile_information .= '[fusion_li_item icon="fa-train fas"]';
-                    $body_desktop_mobile_information .= 'Rete Ferroviaria Italiana';
+                    $body_desktop_mobile_information .= '<a href="http://www.rfi.it/rfi/LINEE-STAZIONI-TERRITORIO/Nelle-regioni/Molise">Rete Ferroviaria Italiana</a>';
                     $body_desktop_mobile_information .= '[/fusion_li_item]';
                     $body_desktop_mobile_information .= '[fusion_li_item icon="fa-tachometer-alt fas"]';
-                    $body_desktop_mobile_information .= 'Viabilità';
+                    $body_desktop_mobile_information .= '<a href="https://www.cciss.it/web/cciss/situazione-della-viabilita">Viabilità</a>';
                     $body_desktop_mobile_information .= '[/fusion_li_item]';
                     $body_desktop_mobile_information .= '[/fusion_checklist][/fusion_builder_column]';
 
