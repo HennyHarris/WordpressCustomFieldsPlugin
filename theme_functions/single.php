@@ -61,7 +61,7 @@ if (!defined('ABSPATH')) {
                 } else {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
                     $CAMPO_NOME_COMMERCIALE = htmlspecialchars(get_field('CAMPO_NOME_COMMERCIALE'));
-                    $CAMPO_TIPOLOGIA = htmlspecialchars(get_field('CAMPO_TIPOLOGIA'));
+                    $CAMPO_TIPOLOGIA = /*htmlspecialchars(*/get_field('CAMPO_TIPOLOGIA')/*)*/;
                     $CAMPO_ALTRA_TIPOLOGIA = htmlspecialchars(get_field('CAMPO_ALTRA_TIPOLOGIA'));
                     $CAMPO_SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('CAMPO_SOCIETA_ASSOCIAZIONE'));
                     $CAMPO_SITO_WEB = htmlspecialchars(get_field('CAMPO_SITO_WEB'));
@@ -238,13 +238,19 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[/fusion_builder_column]';
                     $header_typology_category .= '[fusion_builder_column type="1_4" layout="1_4" link="" target="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" background_image_id="" spacing="" center_content="yes" min_height="" class="" id="icone-categorie" hover_type="none" border_size="0" border_color="" border_style="solid" border_position="all" border_radius_top_left="" border_radius_top_right="" border_radius_bottom_right="" border_radius_bottom_left="" box_shadow="no" box_shadow_vertical="" box_shadow_horizontal="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="8px" padding_right="" padding_bottom="" padding_left="" margin_top="0px" margin_bottom="0px" background_type="single" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
 
-                    // TODO: Controllare cosa restituisce
                     if ($CAMPO_TIPOLOGIA != null) {
                         $header_typology_category .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]';
-                        $header_typology_category .= $CAMPO_TIPOLOGIA;
 
-                        if ($CAMPO_ALTRA_TIPOLOGIA != null) {
-                            $header_typology_category .= ' | ' . $CAMPO_ALTRA_TIPOLOGIA;
+                        $i = sizeof($CAMPO_TIPOLOGIA) - 1;
+
+                        foreach ($CAMPO_TIPOLOGIA as $field_tipologia) {
+                            $header_typology_category .= $field_tipologia;
+
+                            if($i != 0) {
+                                $header_typology_category .= " | ";
+                            }
+
+                            $i -= 1;
                         }
 
                         $header_typology_category .= '[/fusion_text]';
