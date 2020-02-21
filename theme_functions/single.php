@@ -83,7 +83,7 @@ if (!defined('ABSPATH')) {
                     $CAMPO_ORARI_APERTURA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA'));
                     $CAMPO_ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PUNTO_VENDITA'));
                     $CAMPO_ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PRODUZIONE'));
-                    $CAMPO_PERIODO_APERTURA = get_field('CAMPO_PERIODO_APERTURA');
+                    $CAMPO_PERIODO_APERTURA = htmlspecialchars(get_field('CAMPO_PERIODO_APERTURA'));
                     $CAMPO_GIORNO_DI_CHIUSURA = get_field('CAMPO_GIORNO_DI_CHIUSURA');
                     $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE');
                     $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA');
