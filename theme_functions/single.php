@@ -162,7 +162,7 @@ if (!defined('ABSPATH')) {
 
                     /*** IMAGES **/
                     $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
-                    $LINK_IMMAGINE_LOGO = esc_url(get_field('LINK_IMMAGINE_LOGO')['url']);
+                    $LINK_IMMAGINE_LOGO = esc_url(get_field('CAMPO_LOGO')['url']);
                     $IMMAGINE_GALLERIA_1 = esc_url(get_field('IMMAGINE_GALLERIA_1')['url']);
                     $IMMAGINE_GALLERIA_2 = esc_url(get_field('IMMAGINE_GALLERIA_2')['url']);
                     $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']);
