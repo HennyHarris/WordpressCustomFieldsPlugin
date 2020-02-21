@@ -118,9 +118,7 @@ if (!defined('ABSPATH')) {
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/
-                        get_field('CAMPO_SERVIZI_OFFERTI')/*)*/
-                    ;
+                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/get_field('CAMPO_SERVIZI_OFFERTI')/*)*/;
                     $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
                     $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
                     $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PACCHETTI_OFFERTI'));
@@ -291,16 +289,16 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_SITO_WEB != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-globe fas"]';
-                        $body_desktop_info .= $CAMPO_SITO_WEB;
+                        $body_desktop_info .= '<a href="' . $CAMPO_SITO_WEB . '">' . $CAMPO_SITO_WEB . '</a>';
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_TELEFONO != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-phone fas"]';
-                        $body_desktop_info .= $CAMPO_TELEFONO;
+                        $body_desktop_info .= '<a href"tel://' . $CAMPO_TELEFONO . '">' . $CAMPO_TELEFONO . '</a>';
 
                         if ($CAMPO_TELEFONO1 != null) {
-                            $body_desktop_info .= $CAMPO_TELEFONO1;
+                            $body_desktop_info .= '<br><a href"tel://' . $CAMPO_TELEFONO1 . '">' . $CAMPO_TELEFONO1 . '</a>';
                         }
 
                         $body_desktop_info .= '[/fusion_li_item]';
@@ -308,10 +306,10 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_EMAIL != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-envelope far"]';
-                        $body_desktop_info .= $CAMPO_EMAIL;
+                        $body_desktop_info .= '<a href"mailto://' . $CAMPO_EMAIL . '">' . $CAMPO_EMAIL . '</a>';
 
                         if ($CAMPO_EMAIL1 != null) {
-                            $body_desktop_info .= $CAMPO_EMAIL1;
+                            $body_desktop_info .= '<br><a href"mailto://' . $CAMPO_EMAIL1 . '">' . $CAMPO_EMAIL1 . '</a>';
                         }
 
                         $body_desktop_info .= '[/fusion_li_item]';
@@ -1046,7 +1044,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-phone fas"]';
                         $body_mobile_info .= $CAMPO_TELEFONO;
 
-                        if ($CAMPO_TELEFONO != null)
+                        if ($CAMPO_TELEFONO1 != null)
                             $body_mobile_info .= $CAMPO_TELEFONO1;
 
                         $body_mobile_info .= '[/fusion_li_item]';
