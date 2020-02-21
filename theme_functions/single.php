@@ -374,8 +374,8 @@ if (!defined('ABSPATH')) {
 
                         $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA) - 1;
 
-                        foreach ($CAMPO_GIORNO_DI_CHIUSURA as $field_giorni_chiusura) {
-                            $body_desktop_info .= $field_giorni_chiusura;
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA as $field_desktop_giorni_chiusura) {
+                            $body_desktop_info .= $field_desktop_giorni_chiusura;
 
                             if ($i > 1) {
                                 $body_desktop_info .= ", ";
@@ -395,8 +395,8 @@ if (!defined('ABSPATH')) {
 
                         $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
 
-                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE as $field_giorni_chiusura_produzione) {
-                            $body_desktop_info .= $field_giorni_chiusura_produzione;
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE as $field_desktop_giorni_chiusura_produzione) {
+                            $body_desktop_info .= $field_desktop_giorni_chiusura_produzione;
 
                             if ($i > 1) {
                                 $body_desktop_info .= ", ";
@@ -416,8 +416,8 @@ if (!defined('ABSPATH')) {
 
                         $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA) - 1;
 
-                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA as $field_giorni_chiusura_vendita) {
-                            $body_desktop_info .= $field_giorni_chiusura_vendita;
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA as $field_desktop_giorni_chiusura_vendita) {
+                            $body_desktop_info .= $field_desktop_giorni_chiusura_vendita;
 
                             if ($i > 1) {
                                 $body_desktop_info .= ", ";
@@ -904,26 +904,26 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_SITO_WEB != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-globe fas"]';
-                        $body_mobile_info .= $CAMPO_SITO_WEB;
+                        $body_mobile_info .= '<a href="' . $CAMPO_SITO_WEB . '">' . $CAMPO_SITO_WEB . '</a>';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_TELEFONO != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-phone fas"]';
-                        $body_mobile_info .= $CAMPO_TELEFONO;
+                        $body_mobile_info .= '<a href="tel://' . $CAMPO_TELEFONO . '">' . $CAMPO_TELEFONO . '</a>';
 
                         if ($CAMPO_TELEFONO1 != null)
-                            $body_mobile_info .= $CAMPO_TELEFONO1;
+                            $body_mobile_info .= '<br><a href="tel://' . $CAMPO_TELEFONO1 . '">' . $CAMPO_TELEFONO1 . '</a>';
 
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_EMAIL != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-envelope far"]';
-                        $body_mobile_info .= $CAMPO_EMAIL;
+                        $body_mobile_info .= '<a href=mailto://' . $CAMPO_EMAIL . '">' . $CAMPO_EMAIL . '</a>';
 
                         if ($CAMPO_EMAIL1 != null) {
-                            $body_mobile_info .= $CAMPO_EMAIL1;
+                            $body_mobile_info .= '<br><a href="mailto://' . $CAMPO_EMAIL1 . '">' . $CAMPO_EMAIL1 . '</a>';
                         }
 
                         $body_mobile_info .= '[/fusion_li_item]';
@@ -932,21 +932,21 @@ if (!defined('ABSPATH')) {
                     if (($CAMPO_INDIRIZZO != null) && ($CAMPO_COMUNE != null) && ($CAMPO_PROVINCIA != null)) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                         $body_mobile_info .= $CAMPO_INDIRIZZO;
-                        $body_mobile_info .= $CAMPO_COMUNE . ' (' . $CAMPO_PROVINCIA . ')';
+                        $body_mobile_info .= '<br>' . $CAMPO_COMUNE . ' (' . $CAMPO_PROVINCIA . ')';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if (($CAMPO_INDIRIZZO_PUNTO_VENDITA != null) && ($CAMPO_COMUNE_PUNTO_VENDITA != null) && ($CAMPO_PROVINCIA_PUNTO_VENDITA != null)) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
                         $body_mobile_info .= $CAMPO_INDIRIZZO_PUNTO_VENDITA;
-                        $body_mobile_info .= $CAMPO_COMUNE_PUNTO_VENDITA . ' (' . $CAMPO_PROVINCIA_PUNTO_VENDITA . ')';
+                        $body_mobile_info .= '<br>' . $CAMPO_COMUNE_PUNTO_VENDITA . ' (' . $CAMPO_PROVINCIA_PUNTO_VENDITA . ')';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if (($CAMPO_INDIRIZZO_PRODUZIONE != null) && ($CAMPO_COMUNE_PRODUZIONE != null) && ($CAMPO_PROVINCIA_PRODUZIONE != null)) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
                         $body_mobile_info .= $CAMPO_INDIRIZZO_PRODUZIONE;
-                        $body_mobile_info .= $CAMPO_COMUNE_PRODUZIONE . ' (' . $CAMPO_PROVINCIA_PRODUZIONE . ')';
+                        $body_mobile_info .= '<br>' . $CAMPO_COMUNE_PRODUZIONE . ' (' . $CAMPO_PROVINCIA_PRODUZIONE . ')';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
@@ -976,19 +976,64 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_GIORNO_DI_CHIUSURA != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_mobile_info .= $CAMPO_GIORNO_DI_CHIUSURA;
+                        $body_mobile_info .= 'Giorno di chiusura: ';
+
+                        $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA) - 1;
+
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA as $field_mobile_giorni_chiusura) {
+                            $body_mobile_info .= $field_mobile_giorni_chiusura;
+
+                            if ($i > 1) {
+                                $body_mobile_info .= ", ";
+                            } elseif ($i == 1) {
+                                $body_mobile_info .= " e ";
+                            }
+
+                            $i--;
+                        }
+
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_mobile_info .= $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE;
+                        $body_mobile_info .= 'Giorno di chiusura produzione: ';
+
+                        $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
+
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE as $field_mobile_giorni_chiusura_produzione) {
+                            $body_mobile_info .= $field_mobile_giorni_chiusura_produzione;
+
+                            if ($i > 1) {
+                                $body_mobile_info .= ", ";
+                            } elseif ($i == 1) {
+                                $body_mobile_info .= " e ";
+                            }
+
+                            $i--;
+                        }
+
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_mobile_info .= $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA;
+                        $body_mobile_info .= 'Giorno di chiusura punto vendita: ';
+
+                        $i = sizeof($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA) - 1;
+
+                        foreach ($CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA as $field_mobile_giorni_chiusura_vendita) {
+                            $body_mobile_info .= $field_mobile_giorni_chiusura_vendita;
+
+                            if ($i > 1) {
+                                $body_mobile_info .= ", ";
+                            } elseif ($i == 1) {
+                                $body_mobile_info .= " e ";
+                            }
+
+                            $i--;
+                        }
+
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
@@ -1064,37 +1109,7 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_COSTO_BIGLIETTO != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-ticket-alt fas"]';
-                        $body_mobile_service .= 'Biglietti: ' . $CAMPO_COSTO_BIGLIETTO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PARCHEGGIO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_mobile_service .= 'Parcheggio: ' . $CAMPO_PARCHEGGIO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PARCHEGGIO_GRATUITO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_mobile_service .= 'Parcheggio gratuito: ' . $CAMPO_PARCHEGGIO_GRATUITO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PARCHEGGIO_IN_STRADA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_mobile_service .= 'Parcheggio in strada: ' . $CAMPO_PARCHEGGIO_IN_STRADA;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PARCHEGGIO_CUSTODITO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_mobile_service .= 'Parcheggio custodito: ' . $CAMPO_PARCHEGGIO_CUSTODITO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_SERVIZI_DI_NOLEGGIO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-hiking fas"]';
-                        $body_mobile_service .= 'Servizi di noleggio: ' . $CAMPO_SERVIZI_DI_NOLEGGIO;
+                        $body_mobile_service .= 'Biglietti: €' . $CAMPO_COSTO_BIGLIETTO;
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
@@ -1104,106 +1119,113 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_VISITE_GUIDATE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
-                        $body_mobile_service .= 'Visite guidate: ' . $CAMPO_VISITE_GUIDATE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                    if ($CAMPO_SERVIZI_OFFERTI != null) {
+                        foreach ($CAMPO_SERVIZI_OFFERTI as $field_value) {
+                            switch ($field_value) {
+                                case "Parcheggio":
+                                case "Parcheggio gratuito":
+                                case "Parcheggio in strada":
+                                case "Parcheggio custodito":
+                                    $service_icon = "fa-parking fas";
+                                    break;
 
-                    if ($ACCESSIBILE_AI_DISABILI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-wheelchair fas"]';
-                        $body_mobile_service .= 'Accessibile ai disabili: ' . $ACCESSIBILE_AI_DISABILI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Servizi di noleggio":
+                                    $service_icon = "fa-hiking fas";
+                                    break;
 
-                    if ($CAMPO_MENU_VEGETARIANO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_mobile_service .= 'Menù per vegetariani: ' . $CAMPO_MENU_VEGETARIANO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Visite guidate":
+                                    $service_icon = "fa-university fas";
+                                    break;
 
-                    if ($CAMPO_MENU_CARNE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_mobile_service .= 'Menù carne: ' . $CAMPO_MENU_CARNE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Accessibile ai disabili":
+                                    $service_icon = "fa-wheelchair fas";
+                                    break;
 
-                    if ($CAMPO_MENU_PESCE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_mobile_service .= 'Menù pesce: ' . $CAMPO_MENU_PESCE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Menù vegetariano":
+                                case "Menù carne":
+                                case "Menù pesce":
+                                case "Menù celiaci":
+                                case "Menù vegano":
+                                case "Cucina internazionale":
+                                case "Degustazioni in loco":
+                                    $service_icon = "fa-fish fas";
+                                    break;
 
-                    if ($CAMPO_MENU_CELIACI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_mobile_service .= 'Menù per celiaci: ' . $CAMPO_MENU_CELIACI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Pagamento con carta":
+                                    $service_icon = "fa-credit-card far";
+                                    break;
 
-                    if ($CAMPO_MENU_VEGANO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_mobile_service .= 'Menù vegano: ' . $CAMPO_MENU_VEGANO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Posto auto":
+                                    $service_icon = "fa-car-side fas";
+                                    break;
 
-                    if ($CAMPO_PAGAMENTO_CON_CARTA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-credit-card far"]';
-                        $body_mobile_service .= 'Pagamento con carta: ' . $CAMPO_PAGAMENTO_CON_CARTA;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Posto bici":
+                                case "Sentieri escursionistici":
+                                    $service_icon = "fa-bicycle fas";
+                                    break;
 
-                    if ($CAMPO_POSTO_BICI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-bicycle fas"]';
-                        $body_mobile_service .= 'Posto bici: ' . $CAMPO_POSTO_BICI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Servizi spiaggia":
+                                    $service_icon = "fa-umbrella-beach fas";
+                                    break;
 
-                    if ($CAMPO_SERVIZI_SPIAGGIA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-umbrella-beach fas"]';
-                        $body_mobile_service .= 'Servizi spiaggia: ' . $CAMPO_SERVIZI_SPIAGGIA;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Piscina":
+                                    $service_icon = "fa-swimmer fas";
+                                    break;
 
-                    if ($CAMPO_PISCINA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-swimmer fas"]';
-                        $body_mobile_service .= 'Piscina: ' . $CAMPO_PISCINA;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Animali ammessi":
+                                    $service_icon = "fa-paw fas";
+                                    break;
 
-                    if ($CAMPO_ANIMALI_AMMESSI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-paw fas"]';
-                        $body_mobile_service .= 'Animali ammessi: ' . $CAMPO_ANIMALI_AMMESSI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Maneggio":
+                                    $service_icon = "fa-horse fas";
+                                    break;
 
-                    if ($CAMPO_PALESTRA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
-                        $body_mobile_service .= 'Palestra: ' . $CAMPO_PALESTRA;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Beauty farm":
+                                    $service_icon = "fa-smile-beam fas";
+                                    break;
 
-                    if ($CAMPO_MANEGGIO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-horse fas"]';
-                        $body_mobile_service .= 'Maneggio: ' . $CAMPO_MANEGGIO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Free WIFI":
+                                    $service_icon = "fa-wifi fas";
+                                    break;
 
-                    if ($CAMPO_BEAUTY_FARM != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-smile-beam fas"]';
-                        $body_mobile_service .= 'Beauty farm: ' . $CAMPO_BEAUTY_FARM;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Servizio in camera":
+                                    $service_icon = "fa-toilet-paper fas";
+                                    break;
 
-                    if ($CAMPO_FREE_WIFI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-wifi fas"]';
-                        $body_mobile_service .= 'Free WiFi: ' . $CAMPO_FREE_WIFI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+                                case "Per famiglie con bambini":
+                                    $service_icon = "fa-baby fas";
+                                    break;
 
-                    if ($CAMPO_SERVIZIO_IN_CAMERA != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-toilet-paper fas"]';
-                        $body_mobile_service .= 'Servizio in camera: ' . $CAMPO_SERVIZIO_IN_CAMERA;
-                        $body_mobile_service .= '[/fusion_li_item]';
+                                case "Noleggio pedalò/attrezzature marine":
+                                    $service_icon = "fa-water fas";
+                                    break;
+
+                                case "Area camper":
+                                    $service_icon = "fa-bus fas";
+                                    break;
+
+                                case "Area picnic":
+                                case "Ristorante":
+                                    $service_icon = "fa-drumstick-bite fas";
+                                    break;
+
+                                case "Bar":
+                                    $service_icon = "fa-cocktail fas";
+                                    break;
+
+                                case "Palestra":
+                                    $service_icon = "fa-dumbbell fas";
+                                    break;
+
+                                default:
+                                    $service_icon = "";
+                                    break;
+                            }
+
+                            $body_mobile_service .= '[fusion_li_item icon="' . $service_icon . '"]';
+                            $body_mobile_service .= $field_value . ': si';
+                            $body_mobile_service .= '[/fusion_li_item]';
+                        }
                     }
 
                     if ($CAMPO_PACCHETTI_OFFERTI != null) {
@@ -1215,48 +1237,6 @@ if (!defined('ABSPATH')) {
                     if ($CAMPO_STELLE != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
                         $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_CUCINA_INTERNAZIONALE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Cucina internazionale: ' . $CAMPO_CUCINA_INTERNAZIONALE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PER_FAMIGLIE_CON_BAMBINI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Per famiglie con bambini: ' . $CAMPO_PER_FAMIGLIE_CON_BAMBINI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_DEGUSTAZIONI_IN_LOCO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Degustazioni in loco: ' . $CAMPO_DEGUSTAZIONI_IN_LOCO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Noleggio pedalò/Attrezzature marine: ' . $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_SENTIERI_ESCURSIONISTICI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Sentieri escursionistici: ' . $CAMPO_SENTIERI_ESCURSIONISTICI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_AREA_CAMPER != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Area camper: ' . $CAMPO_AREA_CAMPER;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_AREA_PICNIC != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Area picnic: ' . $CAMPO_AREA_PICNIC;
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
@@ -1308,18 +1288,6 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_BAR != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Bar: ' . $CAMPO_BAR;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_RISTORANTE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Ristorante: ' . $CAMPO_RISTORANTE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
                     if ($CAMPO_LABORATORI_DIDATTICI != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
                         $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
@@ -1348,108 +1316,109 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_GOOGLE_MAPS != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
-                        $body_mobile_useful_links .= 'GOOGLE MAPS';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_GOOGLE_MAPS . '">GOOGLE MAPS</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_GOOGLE_MAPS_VENDITA != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
-                        $body_mobile_useful_links .= 'GOOGLE MAPS (PUNTO VENDITA)';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_GOOGLE_MAPS_VENDITA . '">GOOGLE MAPS (PUNTO VENDkITA)</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_GOOGLE_MAPS_PRODUZIONE != null)
+                    if ($CAMPO_GOOGLE_MAPS_PRODUZIONE != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-location-arrow fas"]';
-                    $body_mobile_useful_links .= 'GOOGLE MAPS (PUNTO PRODUZIONE)';
-                    $body_mobile_useful_links .= '[/fusion_li_item]';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_GOOGLE_MAPS_PRODUZIONE . '">GOOGLE MAPS (PUNTO PRODUZIONE)</a>';
+                        $body_mobile_useful_links .= '[/fusion_li_item]';
+                    }
 
                     if ($CAMPO_TRIPADVISOR != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-tripadvisor fab"]';
-                        $body_mobile_useful_links .= 'TRIPADVISOR';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_TRIPADVISOR . '">TRIPADVISOR</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_BOOKING != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-book fas"]';
-                        $body_mobile_useful_links .= 'BOOKING';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_BOOKING . '">BOOKING</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_HOTELS_COM != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-hotel fas"]';
-                        $body_mobile_useful_links .= 'HOTELS.COM';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_HOTELS_COM . '">HOTELS.COM</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_AIRBNB != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-airbnb fab"]';
-                        $body_mobile_useful_links .= 'AIRBNB';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_AIRBNB . '">AIRBNB</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_FACEBOOK != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                        $body_mobile_useful_links .= 'FACEBOOK';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_FACEBOOK . '">FACEBOOK</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_FLICKR != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                        $body_mobile_useful_links .= 'FLICKR';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_FLICKR . '">FLICKR</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_GOOGLE != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                        $body_mobile_useful_links .= 'GOOGLE';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_GOOGLE . '">GOOGLE</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_GOOGLE_PLUS != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                        $body_mobile_useful_links .= 'GOOGLE PLUS';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_GOOGLE_PLUS . '">GOOGLE PLUS</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_INSTAGRAM != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-map-signs fas"]';
-                        $body_mobile_useful_links .= 'INSTAGRAM';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_INSTAGRAM . '">INSTAGRAM</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_LINKEDIN != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                        $body_mobile_useful_links .= 'LINKEDIN';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_LINKEDIN . '">LINKEDIN</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_PINTEREST != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                        $body_mobile_useful_links .= 'PINTEREST';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_PINTEREST . '">PINTEREST</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_TWITTER != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                        $body_mobile_useful_links .= 'TWITTER';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_TWITTER . '">TWITTER</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_YOUTUBE != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                        $body_mobile_useful_links .= 'YOUTUBE';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_YOUTUBE . '">YOUTUBE<a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_TRIPADVISOR != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon=""]';
-                        $body_mobile_useful_links .= 'TRIPADVISOR';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_TRIPADVISOR . '">TRIPADVISOR</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_VALUTAZIONI_GOOGLE != null) {
                         $body_mobile_useful_links .= '[fusion_li_item icon="fa-google fab"]';
-                        $body_mobile_useful_links .= 'VALUTAZIONI GOOGLE';
+                        $body_mobile_useful_links .= '<a href="' . $CAMPO_VALUTAZIONI_GOOGLE . '">VALUTAZIONI GOOGLE</a>';
                         $body_mobile_useful_links .= '[/fusion_li_item]';
                     }
 
@@ -1468,37 +1437,17 @@ if (!defined('ABSPATH')) {
                     }
 
                     $body_mobile_mobile_information .= '[fusion_li_item icon="fa-train fas"]';
-                    $body_mobile_mobile_information .= 'Rete Ferroviaria Italiana';
+                    $body_mobile_mobile_information .= '<a href="http://www.rfi.it/rfi/LINEE-STAZIONI-TERRITORIO/Nelle-regioni/Molise">Rete Ferroviaria Italiana</a>';
                     $body_mobile_mobile_information .= '[/fusion_li_item]';
                     $body_mobile_mobile_information .= '[fusion_li_item icon="fa-tachometer-alt fas"]';
-                    $body_mobile_mobile_information .= 'Viabilità';
+                    $body_mobile_mobile_information .= '<a href="https://www.cciss.it/web/cciss/situazione-della-viabilita">Viabilità</a>';
                     $body_mobile_mobile_information .= '[/fusion_li_item]';
 
                     $body_mobile_mobile_information .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
 
                     $all = $header_desktop . $header_mobile . $header_typology_category . $body_desktop . $body_desktop_info . $body_desktop_useful_links . $body_desktop_mobile_information . $body_desktop_central . $body_desktop_service . $body_mobile . $body_mobile_central . $body_mobile_info . $body_mobile_service . $body_mobile_useful_links . $body_mobile_mobile_information;
 
-//                    echo do_shortcode($header_desktop);
-//                    echo do_shortcode($header_mobile);
-//                    echo do_shortcode($header_typology_category);
-//
-//                    echo do_shortcode($body_desktop);
-//                    echo do_shortcode($body_desktop_info);
-//                    echo do_shortcode($body_desktop_useful_links);
-//                    echo do_shortcode($body_desktop_mobile_information);
-//                    echo do_shortcode($body_desktop_central);
-//                    echo do_shortcode($body_desktop_service);
-//
-//                    echo do_shortcode($body_mobile);
-//                    echo do_shortcode($body_mobile_central);
-//                    echo do_shortcode($body_mobile_info);
-//                    echo do_shortcode($body_mobile_service);
-//                    echo do_shortcode($body_mobile_useful_links);
-//                    echo do_shortcode($body_mobile_mobile_information);
-
                     echo do_shortcode($all);
-
-
                 }
                 ?>
                 <?php fusion_link_pages(); ?>
