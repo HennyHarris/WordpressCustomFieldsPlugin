@@ -27,31 +27,31 @@ if (!defined('ABSPATH')) {
         <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
             <?php $full_image = ''; ?>
             <?php if ('above' === Avada()->settings->get('blog_post_title')) : ?>
-            <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-            <div class="fusion-post-title-meta-wrap">
+                <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
+                    <div class="fusion-post-title-meta-wrap">
                 <?php endif; ?>
                 <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '1' : '2'); ?>
                 <?php echo avada_render_post_title($post->ID, false, '', $title_size); // phpcs:ignore WordPress.Security.EscapeOutput ?>
                 <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-            </div>
-            <?php endif; ?>
+                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+                    </div>
+                <?php endif; ?>
             <?php elseif ('disabled' === Avada()->settings->get('blog_post_title') && Avada()->settings->get('disable_date_rich_snippet_pages') && Avada()->settings->get('disable_rich_snippet_title')) : ?>
-            <span class="entry-title" style="display: none;"><?php the_title(); ?></span>
+                <span class="entry-title" style="display: none;"><?php the_title(); ?></span>
             <?php endif; ?>
 
             <?php avada_singular_featured_image(); ?>
 
             <?php if ('below' === Avada()->settings->get('blog_post_title')) : ?>
-            <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-            <div class="fusion-post-title-meta-wrap">
+                <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
+                    <div class="fusion-post-title-meta-wrap">
                 <?php endif; ?>
                 <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '1' : '2'); ?>
                 <?php echo avada_render_post_title($post->ID, false, '', $title_size); // phpcs:ignore WordPress.Security.EscapeOutput ?>
                 <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-            </div>
-            <?php endif; ?>
+                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
             <div class="post-content">
                 <?php
@@ -118,7 +118,9 @@ if (!defined('ABSPATH')) {
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/get_field('CAMPO_SERVIZI_OFFERTI')/*)*/;
+                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/
+                        get_field('CAMPO_SERVIZI_OFFERTI')/*)*/
+                    ;
                     $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
                     $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
                     $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PACCHETTI_OFFERTI'));
@@ -236,6 +238,7 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[/fusion_builder_column]';
                     $header_typology_category .= '[fusion_builder_column type="1_4" layout="1_4" link="" target="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" background_image_id="" spacing="" center_content="yes" min_height="" class="" id="icone-categorie" hover_type="none" border_size="0" border_color="" border_style="solid" border_position="all" border_radius_top_left="" border_radius_top_right="" border_radius_bottom_right="" border_radius_bottom_left="" box_shadow="no" box_shadow_vertical="" box_shadow_horizontal="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="8px" padding_right="" padding_bottom="" padding_left="" margin_top="0px" margin_bottom="0px" background_type="single" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
 
+                    // TODO: Controllare cosa restituisce
                     if ($CAMPO_TIPOLOGIA != null) {
                         $header_typology_category .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]';
                         $header_typology_category .= $CAMPO_TIPOLOGIA;
@@ -253,7 +256,7 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[fusion_builder_column type="1_4" layout="1_4" link="" target="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" background_image_id="" spacing="" center_content="yes" min_height="" class="" id="icone-categorie" hover_type="none" border_size="0" border_color="" border_style="solid" border_position="all" border_radius_top_left="" border_radius_top_right="" border_radius_bottom_right="" border_radius_bottom_left="" box_shadow="no" box_shadow_vertical="" box_shadow_horizontal="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="" padding_right="" padding_bottom="" padding_left="" margin_top="0px" margin_bottom="0px" background_type="single" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $header_typology_category .= '[fusion_images picture_size="auto" hover_type="liftup" autoplay="no" columns="6" column_spacing="0" scroll_items="" show_nav="no" mouse_scroll="no" border="no" lightbox="no" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="icone-categorie" id=""] ';
 
-                    // TODO: Aggiungere icone delle categorie e capire perché non trova il campo...
+                    // TODO: Far stampare le categorie con il foreach e in un altro punto perché qui ci vanno le immagini
                     if ($CAMPO_CATEGORIA != null) {
                         if ($CAMPO_CATEGORIA == "Prova") {
                             $header_typology_category .= $archeologia_arte_e_storia;
@@ -261,8 +264,6 @@ if (!defined('ABSPATH')) {
                             $header_typology_category .= 'CAMPO_ICON_CATEGORY';
                         }
                     }
-
-                    $header_typology_category .= "Categoria: " . $CAMPO_CATEGORIA;
 
                     $header_typology_category .= '[/fusion_images]';
                     $header_typology_category .= '[/fusion_builder_column]';
@@ -348,12 +349,14 @@ if (!defined('ABSPATH')) {
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
+                    // TODO: Controllare cosa restituisce
                     if ($CAMPO_PERIODO_APERTURA != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
                         $body_desktop_info .= 'Periodo di apertura: ' . $CAMPO_PERIODO_APERTURA;
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
+                    // TODO: Giorno di chiusura restituisce un array
                     if ($CAMPO_GIORNO_DI_CHIUSURA != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
                         $body_desktop_info .= 'Giorno di chiusura: ' . $CAMPO_GIORNO_DI_CHIUSURA;
@@ -752,9 +755,8 @@ if (!defined('ABSPATH')) {
                                     $service_icon = "fa-arrows-alt-h fas";
                                     break;
 
-                                // TODO
-                                case "Parcheggio": // Aggiungere tra le scelte
-                                case "Parcheggio gratuito": // Aggiungere tra le scelte
+                                case "Parcheggio":
+                                case "Parcheggio gratuito":
                                 case "Parcheggio in strada":
                                 case "Parcheggio custodito":
                                     $service_icon = "fa-parking fas";
@@ -1637,37 +1639,37 @@ if (!defined('ABSPATH')) {
             </div>
 
             <?php if (!post_password_required($post->ID)) : ?>
-            <?php if ('' === Avada()->settings->get('blog_post_meta_position') || 'below_article' === Avada()->settings->get('blog_post_meta_position') || 'disabled' === Avada()->settings->get('blog_post_title')) : ?>
-            <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-            <?php endif; ?>
-            <?php do_action('avada_before_additional_post_content'); ?>
-            <?php avada_render_social_sharing(); ?>
-            <?php $author_info = get_post_meta($post->ID, 'pyre_author_info', true); ?>
-            <?php if ((Avada()->settings->get('author_info') && 'no' !== $author_info) || (!Avada()->settings->get('author_info') && 'yes' === $author_info)) : ?>
-            <section class="about-author">
-                <?php ob_start(); ?>
-                <?php the_author_posts_link(); ?>
-                <?php /* translators: The link. */ ?>
-                <?php $title = sprintf(__('About the Author: %s', 'Avada'), ob_get_clean()); // phpcs:ignore WordPress.WP.GlobalVariablesOverride ?>
-                <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '2' : '3'); ?>
-                <?php Avada()->template->title_template($title, $title_size); ?>
-                <div class="about-author-container">
-                    <div class="avatar">
-                        <?php echo get_avatar(get_the_author_meta('email'), '72'); ?>
-                    </div>
-                    <div class="description">
-                        <?php the_author_meta('description'); ?>
-                    </div>
-                </div>
-            </section>
-            <?php endif; ?>
-            <?php avada_render_related_posts(get_post_type()); // Render Related Posts. ?>
+                <?php if ('' === Avada()->settings->get('blog_post_meta_position') || 'below_article' === Avada()->settings->get('blog_post_meta_position') || 'disabled' === Avada()->settings->get('blog_post_title')) : ?>
+                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+                <?php endif; ?>
+                <?php do_action('avada_before_additional_post_content'); ?>
+                <?php avada_render_social_sharing(); ?>
+                <?php $author_info = get_post_meta($post->ID, 'pyre_author_info', true); ?>
+                <?php if ((Avada()->settings->get('author_info') && 'no' !== $author_info) || (!Avada()->settings->get('author_info') && 'yes' === $author_info)) : ?>
+                    <section class="about-author">
+                        <?php ob_start(); ?>
+                        <?php the_author_posts_link(); ?>
+                        <?php /* translators: The link. */ ?>
+                        <?php $title = sprintf(__('About the Author: %s', 'Avada'), ob_get_clean()); // phpcs:ignore WordPress.WP.GlobalVariablesOverride ?>
+                        <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '2' : '3'); ?>
+                        <?php Avada()->template->title_template($title, $title_size); ?>
+                        <div class="about-author-container">
+                            <div class="avatar">
+                                <?php echo get_avatar(get_the_author_meta('email'), '72'); ?>
+                            </div>
+                            <div class="description">
+                                <?php the_author_meta('description'); ?>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+                <?php avada_render_related_posts(get_post_type()); // Render Related Posts. ?>
 
-            <?php $post_comments = get_post_meta($post->ID, 'pyre_post_comments', true); ?>
-            <?php if ((Avada()->settings->get('blog_comments') && 'no' !== $post_comments) || (!Avada()->settings->get('blog_comments') && 'yes' === $post_comments)) : ?>
-            <?php comments_template(); ?>
-            <?php endif; ?>
-            <?php do_action('avada_after_additional_post_content'); ?>
+                <?php $post_comments = get_post_meta($post->ID, 'pyre_post_comments', true); ?>
+                <?php if ((Avada()->settings->get('blog_comments') && 'no' !== $post_comments) || (!Avada()->settings->get('blog_comments') && 'yes' === $post_comments)) : ?>
+                    <?php comments_template(); ?>
+                <?php endif; ?>
+                <?php do_action('avada_after_additional_post_content'); ?>
             <?php endif; ?>
         </article>
     <?php endwhile; ?>
