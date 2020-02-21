@@ -217,10 +217,17 @@ if (!defined('ABSPATH')) {
 
                     if ($CAMPO_TIPOLOGIA != null) {
                         $header_mobile .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]';
-                        $header_mobile .= $CAMPO_TIPOLOGIA;
 
-                        if ($CAMPO_ALTRA_TIPOLOGIA != null) {
-                            $header_mobile .= ' | ' . $CAMPO_ALTRA_TIPOLOGIA;
+                        $i = sizeof($CAMPO_TIPOLOGIA) - 1;
+
+                        foreach ($CAMPO_TIPOLOGIA as $field_mobile_typology) {
+                            $header_mobile .= $field_mobile_typology;
+
+                            if ($i != 0) {
+                                $header_mobile .= " | ";
+                            }
+
+                            $i--;
                         }
 
                         $header_mobile .= '[/fusion_text]';
@@ -243,8 +250,8 @@ if (!defined('ABSPATH')) {
 
                         $i = sizeof($CAMPO_TIPOLOGIA) - 1;
 
-                        foreach ($CAMPO_TIPOLOGIA as $field_tipologia) {
-                            $header_typology_category .= $field_tipologia;
+                        foreach ($CAMPO_TIPOLOGIA as $field_desktop_typology) {
+                            $header_typology_category .= $field_desktop_typology;
 
                             if ($i != 0) {
                                 $header_typology_category .= " | ";
@@ -632,27 +639,27 @@ if (!defined('ABSPATH')) {
                     $body_desktop_central .= '[fusion_builder_row_inner]';
                     $body_desktop_central .= '[fusion_builder_column_inner type="1_1" layout="1_2" spacing="" center_content="no" hover_type="none" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" border_size="0" border_color="" border_style="solid" border_position="all" border_radius="" box_shadow="no" dimension_box_shadow="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="" padding_right="" padding_bottom="" padding_left="" dimension_margin="" background_type="single" background_color="" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $body_desktop_central .= '[fusion_imageframe image_id="6278|full" max_width="" style_type="" blur="" stylecolor="" hover_type="liftup" bordersize="" bordercolor="" borderradius="" align="none" lightbox="no" gallery_id="" lightbox_image="" lightbox_image_id="" alt="" link="" linktarget="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" class="" id=""]';
-                    $body_desktop_central .= $IMMAGINE_GALLERIA_1;
+                    $body_desktop_central .= $IMMAGINE_GALLERIA_1; // TODO: Aggiungere CUSTOM FIELD
                     $body_desktop_central .= '[/fusion_imageframe]';
                     $body_desktop_central .= '[/fusion_builder_column_inner]';
                     $body_desktop_central .= '[fusion_builder_column_inner type="1_1" layout="1_2" spacing="" center_content="no" hover_type="none" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" border_size="0" border_color="" border_style="solid" border_position="all" box_shadow="no" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" background_type="single" background_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $body_desktop_central .= '[fusion_imageframe image_id="6226|full" max_width="" style_type="" blur="" stylecolor="" hover_type="liftup" bordersize="" bordercolor="" borderradius="" align="none" lightbox="no" gallery_id="" lightbox_image="" lightbox_image_id="" alt="" link="" linktarget="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" class="" id=""]';
-                    $body_desktop_central .= $IMMAGINE_GALLERIA_2;
+                    $body_desktop_central .= $IMMAGINE_GALLERIA_2; // TODO: Aggiungere CUSTOM FIELD
                     $body_desktop_central .= '[/fusion_imageframe]';
                     $body_desktop_central .= '[/fusion_builder_column_inner]';
                     $body_desktop_central .= '[fusion_builder_column_inner type="1_1" layout="1_2" spacing="" center_content="no" hover_type="none" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" border_size="0" border_color="" border_style="solid" border_position="all" box_shadow="no" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" background_type="single" background_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $body_desktop_central .= '[fusion_imageframe image_id="6201|full" max_width="" style_type="" blur="" stylecolor="" hover_type="liftup" bordersize="" bordercolor="" borderradius="" align="none" lightbox="no" gallery_id="" lightbox_image="" lightbox_image_id="" alt="" link="" linktarget="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" class="" id=""]';
-                    $body_desktop_central .= $IMMAGINE_GALLERIA_3;
+                    $body_desktop_central .= $IMMAGINE_GALLERIA_3; // TODO: Aggiungere CUSTOM FIELD
                     $body_desktop_central .= '[/fusion_imageframe]';
                     $body_desktop_central .= '[/fusion_builder_column_inner]';
                     $body_desktop_central .= '[fusion_builder_column_inner type="1_1" layout="1_2" spacing="" center_content="no" hover_type="none" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" border_size="0" border_color="" border_style="solid" border_position="all" box_shadow="no" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" background_type="single" background_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $body_desktop_central .= '[fusion_imageframe image_id="5281|full" max_width="" style_type="" blur="" stylecolor="" hover_type="liftup" bordersize="" bordercolor="" borderradius="" align="none" lightbox="no" gallery_id="" lightbox_image="" lightbox_image_id="" alt="" link="" linktarget="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" class="" id=""]';
-                    $body_desktop_central .= $IMMAGINE_GALLERIA_4;
+                    $body_desktop_central .= $IMMAGINE_GALLERIA_4; // TODO: Aggiungere CUSTOM FIELD
                     $body_desktop_central .= '[/fusion_imageframe]';
                     $body_desktop_central .= '[/fusion_builder_column_inner]';
                     $body_desktop_central .= '[fusion_builder_column_inner type="1_1" layout="1_1" spacing="" center_content="no" hover_type="none" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" border_size="0" border_color="" border_style="solid" border_position="all" border_radius="" box_shadow="no" dimension_box_shadow="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="" padding_right="" padding_bottom="" padding_left="" dimension_margin="" background_type="single" background_color="" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $body_desktop_central .= '[fusion_imageframe image_id="5207|full" max_width="" style_type="" blur="" stylecolor="" hover_type="liftup" bordersize="" bordercolor="" borderradius="" align="none" lightbox="no" gallery_id="" lightbox_image="" lightbox_image_id="" alt="" link="" linktarget="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" class="" id=""]';
-                    $body_desktop_central .= $IMMAGINE_GALLERIA_5;
+                    $body_desktop_central .= $IMMAGINE_GALLERIA_5; // TODO: Aggiungere CUSTOM FIELD
                     $body_desktop_central .= '[/fusion_imageframe]';
                     $body_desktop_central .= '[/fusion_builder_column_inner]';
                     $body_desktop_central .= '[/fusion_builder_row_inner]';
@@ -664,6 +671,7 @@ if (!defined('ABSPATH')) {
                     $body_desktop_service .= '[/fusion_text]';
                     $body_desktop_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
+                    // TODO: Aggiungere CUSTOM FIELD
                     if ($CAMPO_DISTANZA != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
                         $body_desktop_service .= 'Distanza: ' . $CAMPO_DISTANZA;
