@@ -27,31 +27,31 @@ if (!defined('ABSPATH')) {
         <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
             <?php $full_image = ''; ?>
             <?php if ('above' === Avada()->settings->get('blog_post_title')) : ?>
-                <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                    <div class="fusion-post-title-meta-wrap">
+            <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
+            <div class="fusion-post-title-meta-wrap">
                 <?php endif; ?>
                 <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '1' : '2'); ?>
                 <?php echo avada_render_post_title($post->ID, false, '', $title_size); // phpcs:ignore WordPress.Security.EscapeOutput ?>
                 <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-                    </div>
-                <?php endif; ?>
+                <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+            </div>
+            <?php endif; ?>
             <?php elseif ('disabled' === Avada()->settings->get('blog_post_title') && Avada()->settings->get('disable_date_rich_snippet_pages') && Avada()->settings->get('disable_rich_snippet_title')) : ?>
-                <span class="entry-title" style="display: none;"><?php the_title(); ?></span>
+            <span class="entry-title" style="display: none;"><?php the_title(); ?></span>
             <?php endif; ?>
 
             <?php avada_singular_featured_image(); ?>
 
             <?php if ('below' === Avada()->settings->get('blog_post_title')) : ?>
-                <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                    <div class="fusion-post-title-meta-wrap">
+            <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
+            <div class="fusion-post-title-meta-wrap">
                 <?php endif; ?>
                 <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '1' : '2'); ?>
                 <?php echo avada_render_post_title($post->ID, false, '', $title_size); // phpcs:ignore WordPress.Security.EscapeOutput ?>
                 <?php if ('below_title' === Avada()->settings->get('blog_post_meta_position')) : ?>
-                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-                    </div>
-                <?php endif; ?>
+                <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+            </div>
+            <?php endif; ?>
             <?php endif; ?>
             <div class="post-content">
                 <?php
@@ -118,7 +118,9 @@ if (!defined('ABSPATH')) {
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/get_field('CAMPO_SERVIZI_OFFERTI')/*)*/;
+                    $CAMPO_SERVIZI_OFFERTI = /*htmlspecialchars(*/
+                        get_field('CAMPO_SERVIZI_OFFERTI')/*)*/
+                    ;
                     $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
                     $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
                     $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PACCHETTI_OFFERTI'));
@@ -157,7 +159,7 @@ if (!defined('ABSPATH')) {
                     $CAMPO_MENU_VEGETARIANO = htmlspecialchars(get_field('CAMPO_MENU_VEGETARIANO'));
                     $CAMPO_PERIODO = htmlspecialchars(get_field('CAMPO_PERIODO'));
                     $CAMPO_CATEGORIA = htmlspecialchars(get_field('CAMPO_CATEGORIA'));
-                  
+
                     /*** IMAGES **/
                     $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
                     $LINK_IMMAGINE_LOGO = esc_url(get_field('LINK_IMMAGINE_LOGO')['url']);
@@ -177,7 +179,7 @@ if (!defined('ABSPATH')) {
                     $la_montagna = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/La_montagna-e1574194096676.png\" image_id=\"6080|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
                     $benessere = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/Benessere_30x30.png\" image_id=\"7549|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
 
-                  
+
                     /*** HEADER DESKTOP **/
                     $header_desktop = '[fusion_builder_container admin_label="Vista iniziale(DESKTOP)" hide_on_mobile="large-visibility" status="published" publish_date="" hundred_percent="yes" hundred_percent_height="yes" hundred_percent_height_scroll="no" hundred_percent_height_center_content="yes" equal_height_columns="yes" menu_anchor="" class="initialview" id="initialview" border_size="" border_color="" border_style="solid" margin_top="" margin_bottom="" padding_top="0px" padding_right="0px" padding_bottom="0px" padding_left="0px" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="';
                     $header_desktop .= $LINK_IMMAGINE_COPERTINA;
@@ -612,47 +614,47 @@ if (!defined('ABSPATH')) {
                     $body_desktop_service .= '[/fusion_text]';
                     $body_desktop_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
-                    if ($CAMPO_DISTANZA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
-                        $body_desktop_service .= 'Distanza: ' . $CAMPO_DISTANZA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_DISTANZA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
+//                        $body_desktop_service .= 'Distanza: ' . $CAMPO_DISTANZA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_COSTO_BIGLIETTO != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-ticket-alt fas"]';
-                        $body_desktop_service .= 'Biglietti: ' . $CAMPO_COSTO_BIGLIETTO;
+                        $body_desktop_service .= 'Biglietti: €' . $CAMPO_COSTO_BIGLIETTO;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_PARCHEGGIO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_desktop_service .= 'Parcheggio: ' . $CAMPO_PARCHEGGIO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PARCHEGGIO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
+//                        $body_desktop_service .= 'Parcheggio: ' . $CAMPO_PARCHEGGIO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_PARCHEGGIO_GRATUITO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_desktop_service .= 'Parcheggio gratuito: ' . $CAMPO_PARCHEGGIO_GRATUITO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PARCHEGGIO_GRATUITO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
+//                        $body_desktop_service .= 'Parcheggio gratuito: ' . $CAMPO_PARCHEGGIO_GRATUITO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_PARCHEGGIO_IN_STRADA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_desktop_service .= 'Parcheggio in strada: ' . $CAMPO_PARCHEGGIO_IN_STRADA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PARCHEGGIO_IN_STRADA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
+//                        $body_desktop_service .= 'Parcheggio in strada: ' . $CAMPO_PARCHEGGIO_IN_STRADA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_PARCHEGGIO_CUSTODITO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
-                        $body_desktop_service .= 'Parcheggio custodito: ' . $CAMPO_PARCHEGGIO_CUSTODITO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PARCHEGGIO_CUSTODITO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-parking fas"]';
+//                        $body_desktop_service .= 'Parcheggio custodito: ' . $CAMPO_PARCHEGGIO_CUSTODITO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_SERVIZI_DI_NOLEGGIO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-hiking fas"]';
-                        $body_desktop_service .= 'Servizi di noleggio: ' . $CAMPO_SERVIZI_DI_NOLEGGIO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_SERVIZI_DI_NOLEGGIO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-hiking fas"]';
+//                        $body_desktop_service .= 'Servizi di noleggio: ' . $CAMPO_SERVIZI_DI_NOLEGGIO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_PROPOSTE_VACANZE_IN_MOLISE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
@@ -660,131 +662,232 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_VISITE_GUIDATE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
-                        $body_desktop_service .= 'Visite guidate: ' . $CAMPO_VISITE_GUIDATE;
-                        $body_desktop_service .= '[/fusion_li_item]';
+//                    if ($CAMPO_VISITE_GUIDATE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
+//                        $body_desktop_service .= 'Visite guidate: ' . $CAMPO_VISITE_GUIDATE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($ACCESSIBILE_AI_DISABILI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-wheelchair fas"]';
+//                        $body_desktop_service .= 'Accessibile ai disabili: ' . $ACCESSIBILE_AI_DISABILI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_MENU_VEGETARIANO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Menù per vegetariani: ' . $CAMPO_MENU_VEGETARIANO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_MENU_CARNE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Menù carne: ' . $CAMPO_MENU_CARNE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_MENU_PESCE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Menù pesce: ' . $CAMPO_MENU_PESCE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_MENU_CELIACI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Menù per celiaci: ' . $CAMPO_MENU_CELIACI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_MENU_VEGANO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Menù vegano: ' . $CAMPO_MENU_VEGANO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_CUCINA_INTERNAZIONALE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Cucina internazionale: ' . $CAMPO_CUCINA_INTERNAZIONALE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_PAGAMENTO_CON_CARTA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-credit-card far"]';
+//                        $body_desktop_service .= 'Pagamento con carta: ' . $CAMPO_PAGAMENTO_CON_CARTA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_POSTO_AUTO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-car-side fas"]';
+//                        $body_desktop_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_POSTO_BICI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-bicycle fas"]';
+//                        $body_desktop_service .= 'Posto bici: ' . $CAMPO_POSTO_BICI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_SERVIZI_SPIAGGIA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-umbrella-beach fas"]';
+//                        $body_desktop_service .= 'Servizi spiaggia: ' . $CAMPO_SERVIZI_SPIAGGIA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_PISCINA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-swimmer fas"]';
+//                        $body_desktop_service .= 'Piscina: ' . $CAMPO_PISCINA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+//                    if ($CAMPO_ANIMALI_AMMESSI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-paw fas"]';
+//                        $body_desktop_service .= 'Animali ammessi: ' . $CAMPO_ANIMALI_AMMESSI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
+
+                    // TODO: Sistemare icone
+                    if ($CAMPO_SERVIZI_OFFERTI != null) {
+                        foreach ($CAMPO_SERVIZI_OFFERTI as $field_value) {
+                            switch ($field_value) {
+                                case "Distanza":
+                                    $service_icon = "fa-arrows-alt-h fas";
+                                    break;
+
+                                // TODO
+                                case "Parcheggio": // Aggiungere tra le scelte
+                                case "Parcheggio gratuito": // Aggiungere tra le scelte
+                                case "Parcheggio in strada":
+                                case "Parcheggio custodito":
+                                    $service_icon = "fa-parking fas";
+                                    break;
+
+                                case "Servizi di noleggio":
+                                    $service_icon = "fa-hiking fas";
+                                    break;
+
+                                case "Visite guidate":
+                                    $service_icon = "fa-university fas";
+                                    break;
+
+                                case "Accessibile ai disabili":
+                                    $service_icon = "fa-wheelchair fas";
+                                    break;
+
+                                case "Menù vegetariano":
+                                case "Menù carne":
+                                case "Menù pesce":
+                                case "Menù celiaci":
+                                case "Menù vegano":
+                                case "Cucina internazionale":
+                                case "Degustazioni in loco":
+                                    $service_icon = "fa-fish fas";
+                                    break;
+
+                                case "Pagamento con carta":
+                                    $service_icon = "fa-credit-card far";
+                                    break;
+
+                                case "Posto auto":
+                                    $service_icon = "fa-car-side fas";
+                                    break;
+
+                                case "Posto bici":
+                                case "Sentieri escursionistici":
+                                    $service_icon = "fa-bicycle fas";
+                                    break;
+
+                                case "Servizi spiaggia":
+                                    $service_icon = "fa-umbrella-beach fas";
+                                    break;
+
+                                case "Piscina":
+                                    $service_icon = "fa-swimmer fas";
+                                    break;
+
+                                case "Animali ammessi":
+                                    $service_icon = "fa-paw fas";
+                                    break;
+
+                                case "Maneggio":
+                                    $service_icon = "fa-horse fas";
+                                    break;
+
+                                case "Beauty farm":
+                                    $service_icon = "fa-smile-beam fas";
+                                    break;
+
+                                case "Free WIFI":
+                                    $service_icon = "fa-wifi fas";
+                                    break;
+
+                                case "Servizio in camera":
+                                    $service_icon = "fa-toilet-paper fas";
+                                    break;
+
+                                case "Per famiglie con bambini":
+                                    $service_icon = "fa-baby fas";
+                                    break;
+
+                                case "Noleggio pedalò/attrezzature marine":
+                                    $service_icon = "fa-water fas";
+                                    break;
+
+                                case "Area camper":
+                                    $service_icon = "fa-bus fas";
+                                    break;
+
+                                case "Area picnic":
+                                case "Ristorante":
+                                    $service_icon = "fa-drumstick-bite fas";
+                                    break;
+
+                                case "Bar":
+                                    $service_icon = "fa-cocktail fas";
+                                    break;
+
+                                case "Palestra":
+                                    $service_icon = "fa-dumbbell fas";
+                                    break;
+
+                                default:
+                                    $service_icon = "";
+                                    break;
+                            }
+
+                            $body_desktop_service .= '[fusion_li_item icon="' . $service_icon . '"]';
+                            $body_desktop_service .= $field_value . ': si';
+                            $body_desktop_service .= '[/fusion_li_item]';
+                        }
                     }
 
-                    if ($ACCESSIBILE_AI_DISABILI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-wheelchair fas"]';
-                        $body_desktop_service .= 'Accessibile ai disabili: ' . $ACCESSIBILE_AI_DISABILI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_MANEGGIO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-horse fas"]';
+//                        $body_desktop_service .= 'Maneggio: ' . $CAMPO_MANEGGIO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_MENU_VEGETARIANO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Menù per vegetariani: ' . $CAMPO_MENU_VEGETARIANO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_BEAUTY_FARM != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-smile-beam fas"]';
+//                        $body_desktop_service .= 'Beauty farm: ' . $CAMPO_BEAUTY_FARM;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_MENU_CARNE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Menù carne: ' . $CAMPO_MENU_CARNE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_FREE_WIFI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-wifi fas"]';
+//                        $body_desktop_service .= 'Free WiFi: ' . $CAMPO_FREE_WIFI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_MENU_PESCE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Menù pesce: ' . $CAMPO_MENU_PESCE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_SERVIZIO_IN_CAMERA != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-toilet-paper fas"]';
+//                        $body_desktop_service .= 'Servizio in camera: ' . $CAMPO_SERVIZIO_IN_CAMERA;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_MENU_CELIACI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Menù per celiaci: ' . $CAMPO_MENU_CELIACI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_MENU_VEGANO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Menù vegano: ' . $CAMPO_MENU_VEGANO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_CUCINA_INTERNAZIONALE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Cucina internazionale: ' . $CAMPO_CUCINA_INTERNAZIONALE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PAGAMENTO_CON_CARTA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-credit-card far"]';
-                        $body_desktop_service .= 'Pagamento con carta: ' . $CAMPO_PAGAMENTO_CON_CARTA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_POSTO_AUTO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-car-side fas"]';
-                        $body_desktop_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_POSTO_BICI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-bicycle fas"]';
-                        $body_desktop_service .= 'Posto bici: ' . $CAMPO_POSTO_BICI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_SERVIZI_SPIAGGIA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-umbrella-beach fas"]';
-                        $body_desktop_service .= 'Servizi spiaggia: ' . $CAMPO_SERVIZI_SPIAGGIA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PISCINA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-swimmer fas"]';
-                        $body_desktop_service .= 'Piscina: ' . $CAMPO_PISCINA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_ANIMALI_AMMESSI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-paw fas"]';
-                        $body_desktop_service .= 'Animali ammessi: ' . $CAMPO_ANIMALI_AMMESSI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_PALESTRA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
-                        $body_desktop_service .= 'Palestra: not null' . $CAMPO_PALESTRA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    } else {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-dumbbell fas"]';
-                        $body_desktop_service .= 'Palestra: null';
-
-                        foreach ($CAMPO_SERVIZI_OFFERTI as $field_value)
-                            $body_desktop_service .= $field_value;
-
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_MANEGGIO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-horse fas"]';
-                        $body_desktop_service .= 'Maneggio: ' . $CAMPO_MANEGGIO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_BEAUTY_FARM != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-smile-beam fas"]';
-                        $body_desktop_service .= 'Beauty farm: ' . $CAMPO_BEAUTY_FARM;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_FREE_WIFI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-wifi fas"]';
-                        $body_desktop_service .= 'Free WiFi: ' . $CAMPO_FREE_WIFI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_SERVIZIO_IN_CAMERA != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-toilet-paper fas"]';
-                        $body_desktop_service .= 'Servizio in camera: ' . $CAMPO_SERVIZIO_IN_CAMERA;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_SERVIZIO_IN_CAMERA != null) {
+                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_desktop_service .= 'Pacchetti offerti: ' . $CAMPO_SERVIZIO_IN_CAMERA;
+                        $body_desktop_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -794,41 +897,41 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_PER_FAMIGLIE_CON_BAMBINI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-baby fas"]';
-                        $body_desktop_service .= 'Per famiglie con bambini: ' . $CAMPO_PER_FAMIGLIE_CON_BAMBINI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PER_FAMIGLIE_CON_BAMBINI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-baby fas"]';
+//                        $body_desktop_service .= 'Per famiglie con bambini: ' . $CAMPO_PER_FAMIGLIE_CON_BAMBINI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_DEGUSTAZIONI_IN_LOCO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
-                        $body_desktop_service .= 'Degustazioni in loco: ' . $CAMPO_DEGUSTAZIONI_IN_LOCO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_DEGUSTAZIONI_IN_LOCO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-fish fas"]';
+//                        $body_desktop_service .= 'Degustazioni in loco: ' . $CAMPO_DEGUSTAZIONI_IN_LOCO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-water fas"]';
-                        $body_desktop_service .= 'Noleggio pedalò/Attrezzature marine: ' . $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-water fas"]';
+//                        $body_desktop_service .= 'Noleggio pedalò/Attrezzature marine: ' . $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_SENTIERI_ESCURSIONISTICI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-bicycle fas"]';
-                        $body_desktop_service .= 'Sentieri escursionistici: ' . $CAMPO_SENTIERI_ESCURSIONISTICI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_SENTIERI_ESCURSIONISTICI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-bicycle fas"]';
+//                        $body_desktop_service .= 'Sentieri escursionistici: ' . $CAMPO_SENTIERI_ESCURSIONISTICI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_AREA_CAMPER != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-bus fas"]';
-                        $body_desktop_service .= 'Area camper: ' . $CAMPO_AREA_CAMPER;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_AREA_CAMPER != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-bus fas"]';
+//                        $body_desktop_service .= 'Area camper: ' . $CAMPO_AREA_CAMPER;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_AREA_PICNIC != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-drumstick-bite fas"]';
-                        $body_desktop_service .= 'Area picnic: ' . $CAMPO_AREA_PICNIC;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_AREA_PICNIC != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-drumstick-bite fas"]';
+//                        $body_desktop_service .= 'Area picnic: ' . $CAMPO_AREA_PICNIC;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_DETTAGLI_VISITE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-align-left fas"]';
@@ -836,9 +939,9 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_DETTAGLI_VISITE != null) {
+                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-mosque fas"]';
-                        $body_desktop_service .= 'Stato conservazione: ' . $CAMPO_DETTAGLI_VISITE;
+                        $body_desktop_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -872,17 +975,17 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_BAR != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-cocktail fas"]';
-                        $body_desktop_service .= 'Bar: ' . $CAMPO_BAR;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_BAR != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-cocktail fas"]';
+//                        $body_desktop_service .= 'Bar: ' . $CAMPO_BAR;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_RISTORANTE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-drumstick-bite fas"]';
-                        $body_desktop_service .= 'Ristorante: ' . $CAMPO_RISTORANTE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_RISTORANTE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-drumstick-bite fas"]';
+//                        $body_desktop_service .= 'Ristorante: ' . $CAMPO_RISTORANTE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_LABORATORI_DIDATTICI != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-allergies fas"]';
@@ -1536,37 +1639,37 @@ if (!defined('ABSPATH')) {
             </div>
 
             <?php if (!post_password_required($post->ID)) : ?>
-                <?php if ('' === Avada()->settings->get('blog_post_meta_position') || 'below_article' === Avada()->settings->get('blog_post_meta_position') || 'disabled' === Avada()->settings->get('blog_post_title')) : ?>
-                    <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-                <?php endif; ?>
-                <?php do_action('avada_before_additional_post_content'); ?>
-                <?php avada_render_social_sharing(); ?>
-                <?php $author_info = get_post_meta($post->ID, 'pyre_author_info', true); ?>
-                <?php if ((Avada()->settings->get('author_info') && 'no' !== $author_info) || (!Avada()->settings->get('author_info') && 'yes' === $author_info)) : ?>
-                    <section class="about-author">
-                        <?php ob_start(); ?>
-                        <?php the_author_posts_link(); ?>
-                        <?php /* translators: The link. */ ?>
-                        <?php $title = sprintf(__('About the Author: %s', 'Avada'), ob_get_clean()); // phpcs:ignore WordPress.WP.GlobalVariablesOverride ?>
-                        <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '2' : '3'); ?>
-                        <?php Avada()->template->title_template($title, $title_size); ?>
-                        <div class="about-author-container">
-                            <div class="avatar">
-                                <?php echo get_avatar(get_the_author_meta('email'), '72'); ?>
-                            </div>
-                            <div class="description">
-                                <?php the_author_meta('description'); ?>
-                            </div>
-                        </div>
-                    </section>
-                <?php endif; ?>
-                <?php avada_render_related_posts(get_post_type()); // Render Related Posts. ?>
+            <?php if ('' === Avada()->settings->get('blog_post_meta_position') || 'below_article' === Avada()->settings->get('blog_post_meta_position') || 'disabled' === Avada()->settings->get('blog_post_title')) : ?>
+            <?php echo avada_render_post_metadata('single'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+            <?php endif; ?>
+            <?php do_action('avada_before_additional_post_content'); ?>
+            <?php avada_render_social_sharing(); ?>
+            <?php $author_info = get_post_meta($post->ID, 'pyre_author_info', true); ?>
+            <?php if ((Avada()->settings->get('author_info') && 'no' !== $author_info) || (!Avada()->settings->get('author_info') && 'yes' === $author_info)) : ?>
+            <section class="about-author">
+                <?php ob_start(); ?>
+                <?php the_author_posts_link(); ?>
+                <?php /* translators: The link. */ ?>
+                <?php $title = sprintf(__('About the Author: %s', 'Avada'), ob_get_clean()); // phpcs:ignore WordPress.WP.GlobalVariablesOverride ?>
+                <?php $title_size = (false === avada_is_page_title_bar_enabled($post->ID) ? '2' : '3'); ?>
+                <?php Avada()->template->title_template($title, $title_size); ?>
+                <div class="about-author-container">
+                    <div class="avatar">
+                        <?php echo get_avatar(get_the_author_meta('email'), '72'); ?>
+                    </div>
+                    <div class="description">
+                        <?php the_author_meta('description'); ?>
+                    </div>
+                </div>
+            </section>
+            <?php endif; ?>
+            <?php avada_render_related_posts(get_post_type()); // Render Related Posts. ?>
 
-                <?php $post_comments = get_post_meta($post->ID, 'pyre_post_comments', true); ?>
-                <?php if ((Avada()->settings->get('blog_comments') && 'no' !== $post_comments) || (!Avada()->settings->get('blog_comments') && 'yes' === $post_comments)) : ?>
-                    <?php comments_template(); ?>
-                <?php endif; ?>
-                <?php do_action('avada_after_additional_post_content'); ?>
+            <?php $post_comments = get_post_meta($post->ID, 'pyre_post_comments', true); ?>
+            <?php if ((Avada()->settings->get('blog_comments') && 'no' !== $post_comments) || (!Avada()->settings->get('blog_comments') && 'yes' === $post_comments)) : ?>
+            <?php comments_template(); ?>
+            <?php endif; ?>
+            <?php do_action('avada_after_additional_post_content'); ?>
             <?php endif; ?>
         </article>
     <?php endwhile; ?>
