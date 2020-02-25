@@ -305,6 +305,12 @@ if (!defined('ABSPATH')) {
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
+                    if ($CAMPO_ORARI_APERTURA_PRODUZIONE != null) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
+                        $body_desktop_info .= 'Orario produzione: ' . $CAMPO_ORARI_APERTURA_PRODUZIONE;
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
+
                     if ($CAMPO_PERIODO_APERTURA != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
                         $body_desktop_info .= 'Periodo di apertura: ' . $CAMPO_PERIODO_APERTURA;
@@ -881,33 +887,33 @@ if (!defined('ABSPATH')) {
 
                     if (($CAMPO_INDIRIZZO_PUNTO_VENDITA != null) && ($CAMPO_COMUNE_PUNTO_VENDITA != null) && ($CAMPO_PROVINCIA_PUNTO_VENDITA != null)) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_mobile_info .= $CAMPO_INDIRIZZO_PUNTO_VENDITA;
+                        $body_mobile_info .= 'Punto vendita: ' . $CAMPO_INDIRIZZO_PUNTO_VENDITA;
                         $body_mobile_info .= '<br>' . $CAMPO_COMUNE_PUNTO_VENDITA . ' (' . $CAMPO_PROVINCIA_PUNTO_VENDITA . ')';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if (($CAMPO_INDIRIZZO_PRODUZIONE != null) && ($CAMPO_COMUNE_PRODUZIONE != null) && ($CAMPO_PROVINCIA_PRODUZIONE != null)) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_mobile_info .= $CAMPO_INDIRIZZO_PRODUZIONE;
+                        $body_mobile_info .= 'Produzione: ' . $CAMPO_INDIRIZZO_PRODUZIONE;
                         $body_mobile_info .= '<br>' . $CAMPO_COMUNE_PRODUZIONE . ' (' . $CAMPO_PROVINCIA_PRODUZIONE . ')';
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_ORARI_APERTURA != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_mobile_info .= $CAMPO_ORARI_APERTURA;
+                        $body_mobile_info .= 'Orario: ' . $CAMPO_ORARI_APERTURA;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_ORARI_APERTURA_PUNTO_VENDITA != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_mobile_info .= $CAMPO_ORARI_APERTURA_PUNTO_VENDITA;
+                        $body_mobile_info .= 'Orario punto vendita: ' . $CAMPO_ORARI_APERTURA_PUNTO_VENDITA;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
                     if ($CAMPO_ORARI_APERTURA_PRODUZIONE != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_mobile_info .= $CAMPO_ORARI_APERTURA_PRODUZIONE;
+                        $body_mobile_info .= 'Orario produzione: ' . $CAMPO_ORARI_APERTURA_PRODUZIONE;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
