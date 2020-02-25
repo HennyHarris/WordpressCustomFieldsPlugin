@@ -84,7 +84,6 @@ if (!defined('ABSPATH')) {
                     $CAMPO_GIORNO_DI_CHIUSURA = get_field('CAMPO_GIORNO_DI_CHIUSURA');
                     $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE');
                     $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA');
-                    $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE'); // TODO: Addiungere voce nel fusion builder
                     $CAMPO_DESCRIZIONE = htmlspecialchars(get_field('CAMPO_DESCRIZIONE'));
                     $CAMPO_INFO_AGGIUNTIVE = htmlspecialchars(get_field('CAMPO_INFO_AGGIUNTIVE'));
                     $CAMPO_DISTANZA = htmlspecialchars(get_field('CAMPO_DISTANZA')); // TODO: Aggiungere CustomField
