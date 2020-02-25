@@ -61,10 +61,7 @@ if (!defined('ABSPATH')) {
                 } else {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
                     $CAMPO_NOME_COMMERCIALE = htmlspecialchars(get_field('CAMPO_NOME_COMMERCIALE'));
-                    $CAMPO_TIPOLOGIA = /*htmlspecialchars(*/
-                        get_field('CAMPO_TIPOLOGIA')/*)*/
-                    ;
-                    $CAMPO_ALTRA_TIPOLOGIA = htmlspecialchars(get_field('CAMPO_ALTRA_TIPOLOGIA'));
+                    $CAMPO_TIPOLOGIA = get_field('CAMPO_TIPOLOGIA');
                     $CAMPO_SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('CAMPO_SOCIETA_ASSOCIAZIONE'));
                     $CAMPO_SITO_WEB = htmlspecialchars(get_field('CAMPO_SITO_WEB'));
                     $CAMPO_TELEFONO = htmlspecialchars(get_field('CAMPO_TELEFONO'));
@@ -87,87 +84,51 @@ if (!defined('ABSPATH')) {
                     $CAMPO_GIORNO_DI_CHIUSURA = get_field('CAMPO_GIORNO_DI_CHIUSURA');
                     $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE');
                     $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA');
+                    $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE'); // TODO: Addiungere voce nel fusion builder
                     $CAMPO_DESCRIZIONE = htmlspecialchars(get_field('CAMPO_DESCRIZIONE'));
                     $CAMPO_INFO_AGGIUNTIVE = htmlspecialchars(get_field('CAMPO_INFO_AGGIUNTIVE'));
-                    $CAMPO_DISTANZA = htmlspecialchars(get_field('CAMPO_DISTANZA'));
+                    $CAMPO_DISTANZA = htmlspecialchars(get_field('CAMPO_DISTANZA')); // TODO: Aggiungere CustomField
                     $CAMPO_COSTO_BIGLIETTO = htmlspecialchars(get_field('CAMPO_COSTO_BIGLIETTO'));
-                    $CAMPO_PARCHEGGIO = htmlspecialchars(get_field('CAMPO_PARCHEGGIO'));
-                    $CAMPO_PARCHEGGIO_GRATUITO = htmlspecialchars(get_field('CAMPO_PARCHEGGIO_GRATUITO'));
-                    $CAMPO_PARCHEGGIO_IN_STRADA = htmlspecialchars(get_field('CAMPO_PARCHEGGIO_IN_STRADA'));
-                    $CAMPO_PARCHEGGIO_CUSTODITO = htmlspecialchars(get_field('CAMPO_PARCHEGGIO_CUSTODITO'));
-                    $CAMPO_SERVIZI_DI_NOLEGGIO = htmlspecialchars(get_field('CAMPO_SERVIZI_DI_NOLEGGIO'));
-                    $CAMPO_PROPOSTE_VACANZE_IN_MOLISE = htmlspecialchars(get_field('CAMPO_PROPOSTE_VACANZE_IN_MOLISE'));
-                    $CAMPO_VISITE_GUIDATE = htmlspecialchars(get_field('CAMPO_VISITE_GUIDATE'));
-                    $CAMPO_MENU_CARNE = htmlspecialchars(get_field('CAMPO_MENU_CARNE'));
-                    $CAMPO_MENU_VEGANO = htmlspecialchars(get_field('CAMPO_MENU_VEGANO'));
-                    $CAMPO_CUCINA_INTERNAZIONALE = htmlspecialchars(get_field('CAMPO_CUCINA_INTERNAZIONALE'));
-                    $CAMPO_GOOGLE_MAPS = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS'));
-                    $CAMPO_GOOGLE_MAPS_VENDITA = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_VENDITA'));
-                    $CAMPO_GOOGLE_MAPS_PRODUZIONE = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_PRODUZIONE'));
-                    $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
-                    $CAMPO_HOTELS_COM = htmlspecialchars(get_field('CAMPO_HOTELS_COM'));
-                    $CAMPO_AIRBNB = htmlspecialchars(get_field('CAMPO_AIRBNB'));
+                    $CAMPO_PROPOSTE_VACANZE_IN_MOLISE = htmlspecialchars(get_field('CAMPO_PROPOSTE_VACANZE_IN_MOLISE')); // Equivalente di Pacchetti offerti
+                    $CAMPO_SERVIZI_OFFERTI = get_field('CAMPO_SERVIZI_OFFERTI');
                     $CAMPO_FACEBOOK = htmlspecialchars(get_field('CAMPO_FACEBOOK'));
                     $CAMPO_FLICKR = htmlspecialchars(get_field('CAMPO_FLICKR'));
                     $CAMPO_GOOGLE = htmlspecialchars(get_field('CAMPO_GOOGLE'));
-                    $CAMPO_GOOGLE_PLUS = htmlspecialchars(get_field('CAMPO_GOOGLE_PLUS'));
                     $CAMPO_INSTAGRAM = htmlspecialchars(get_field('CAMPO_INSTAGRAM'));
                     $CAMPO_LINKEDIN = htmlspecialchars(get_field('CAMPO_LINKEDIN'));
                     $CAMPO_PINTEREST = htmlspecialchars(get_field('CAMPO_PINTEREST'));
                     $CAMPO_TWITTER = htmlspecialchars(get_field('CAMPO_TWITTER'));
-                    $CAMPO_YOUTUBE = htmlspecialchars(get_field('CAMPO_YOUTUBE'));
-                    $CAMPO_YOUTUBE = htmlspecialchars(get_field('CAMPO_YOUTUBE'));
+                    $CAMPO_GOOGLE_MAPS = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS'));
+                    $CAMPO_GOOGLE_MAPS_PRODUZIONE = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_PRODUZIONE'));
+                    $CAMPO_GOOGLE_MAPS_VENDITA = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_VENDITA'));
                     $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
+                    $CAMPO_YOUTUBE = htmlspecialchars(get_field('CAMPO_YOUTUBE'));
+                    $CAMPO_GOOGLE_PLUS = htmlspecialchars(get_field('CAMPO_GOOGLE_PLUS'));
+                    $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
+                    $CAMPO_HOTELS_COM = htmlspecialchars(get_field('CAMPO_HOTELS_COM'));
+                    $CAMPO_AIRBNB = htmlspecialchars(get_field('CAMPO_AIRBNB'));
+                    $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
+
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-                    $CAMPO_SERVIZI_OFFERTI = get_field('CAMPO_SERVIZI_OFFERTI');
-                    $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
-                    $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
-                    $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PACCHETTI_OFFERTI'));
-                    $CAMPO_STATO_CONSERVAZIONE = htmlspecialchars(get_field('CAMPO_STATO_CONSERVAZIONE'));
-                    $ACCESSIBILE_AI_DISABILI = htmlspecialchars(get_field('CAMPO_ACCESSIBILE_AI_DISABILI'));
-                    $CAMPO_ALTRO = htmlspecialchars(get_field('CAMPO_ALTRO'));
-                    $CAMPO_LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('CAMPO_LINK_ALLE_PROPOSTE'));
-                    $CAMPO_LABORATORI_DIDATTICI = htmlspecialchars(get_field('CAMPO_LABORATORI_DIDATTICI'));
-                    $CAMPO_RISTORANTE = htmlspecialchars(get_field('CAMPO_RISTORANTE'));
-                    $CAMPO_BAR = htmlspecialchars(get_field('CAMPO_BAR'));
-                    $CAMPO_INFORMAZIONI_CRONOLOGICHE = htmlspecialchars(get_field('CAMPO_INFORMAZIONI_CRONOLOGICHE'));
+//                    $CAMPO_STATO_CONSERVAZIONE = htmlspecialchars(get_field('CAMPO_STATO_CONSERVAZIONE')); // TODO: Aggiungere CustomField
+                    $CAMPO_LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('CAMPO_LINK_ALLE_PROPOSTE')); // TODO: Aggiungere CustomField
+                    $CAMPO_INFORMAZIONI_CRONOLOGICHE = htmlspecialchars(get_field('CAMPO_INFORMAZIONI_CRONOLOGICHE')); // TODO: Aggiungere CustomField
                     $CAMPO_LUOGO = htmlspecialchars(get_field('CAMPO_LUOGO'));
-                    $CAMPO_ORGANIZZATORE = htmlspecialchars(get_field('CAMPO_ORGANIZZATORE'));
-                    $CAMPO_VENDITA_AL_DETTAGLIO = htmlspecialchars(get_field('CAMPO_VENDITA_AL_DETTAGLIO'));
-                    $CAMPO_DETTAGLI_VISITE = htmlspecialchars(get_field('CAMPO_DETTAGLI_VISITE'));
-                    $CAMPO_AREA_PICNIC = htmlspecialchars(get_field('CAMPO_AREA_PICNIC'));
-                    $CAMPO_AREA_CAMPER = htmlspecialchars(get_field('CAMPO_AREA_CAMPER'));
-                    $CAMPO_SENTIERI_ESCURSIONISTICI = htmlspecialchars(get_field('CAMPO_SENTIERI_ESCURSIONISTICI'));
-                    $CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE = htmlspecialchars(get_field('CAMPO_NOLEGGIO_PEDALO_ATTREZZATURE_MARINE'));
-                    $CAMPO_DEGUSTAZIONI_IN_LOCO = htmlspecialchars(get_field('CAMPO_DEGUSTAZIONI_IN_LOCO'));
-                    $CAMPO_PER_FAMIGLIE_CON_BAMBINI = htmlspecialchars(get_field('CAMPO_PER_FAMIGLIE_CON_BAMBINI'));
-                    $CAMPO_STELLE = htmlspecialchars(get_field('CAMPO_STELLE'));
-                    $CAMPO_SERVIZIO_IN_CAMERA = htmlspecialchars(get_field('CAMPO_SERVIZIO_IN_CAMERA'));
-                    $CAMPO_FREE_WIFI = htmlspecialchars(get_field('CAMPO_FREE_WIFI'));
-                    $CAMPO_BEAUTY_FARM = htmlspecialchars(get_field('CAMPO_BEAUTY_FARM'));
-                    $CAMPO_MANEGGIO = htmlspecialchars(get_field('CAMPO_MANEGGIO'));
-                    $CAMPO_PALESTRA = htmlspecialchars(get_field('CAMPO_PALESTRA'));
-                    $CAMPO_ANIMALI_AMMESSI = htmlspecialchars(get_field('CAMPO_ANIMALI_AMMESSI'));
-                    $CAMPO_PISCINA = htmlspecialchars(get_field('CAMPO_PISCINA'));
-                    $CAMPO_SERVIZI_SPIAGGIA = htmlspecialchars(get_field('CAMPO_SERVIZI_SPIAGGIA'));
-                    $CAMPO_POSTO_BICI = htmlspecialchars(get_field('CAMPO_POSTO_BICI'));
-                    $CAMPO_POSTO_AUTO = htmlspecialchars(get_field('CAMPO_POSTO_AUTO'));
-                    $CAMPO_PAGAMENTO_CON_CARTA = htmlspecialchars(get_field('CAMPO_PAGAMENTO_CON_CARTA'));
-                    $CAMPO_MENU_CELIACI = htmlspecialchars(get_field('CAMPO_MENU_CELIACI'));
-                    $CAMPO_MENU_PESCE = htmlspecialchars(get_field('CAMPO_MENU_PESCE'));
-                    $CAMPO_MENU_VEGETARIANO = htmlspecialchars(get_field('CAMPO_MENU_VEGETARIANO'));
-                    $CAMPO_PERIODO = htmlspecialchars(get_field('CAMPO_PERIODO'));
-                    $CAMPO_CATEGORIA = htmlspecialchars(get_field('CAMPO_CATEGORIA'));
+                    $CAMPO_ORGANIZZATORE = htmlspecialchars(get_field('CAMPO_ORGANIZZATORE')); // TODO: Aggiungere CustomField
+//                    $CAMPO_VENDITA_AL_DETTAGLIO = htmlspecialchars(get_field('CAMPO_VENDITA_AL_DETTAGLIO'));
+//                    $CAMPO_DETTAGLI_VISITE = htmlspecialchars(get_field('CAMPO_DETTAGLI_VISITE')); // TODO: Aggiungere CustomField
+                    $CAMPO_PERIODO = htmlspecialchars(get_field('CAMPO_PERIODO')); // TODO: Aggiungere CustomField
+                    $CAMPO_CATEGORIA = htmlspecialchars(get_field('CAMPO_CATEGORIA')); // TODO: Aggiungere CustomField
 
                     /*** IMAGES **/
                     $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
                     $LINK_IMMAGINE_LOGO = esc_url(get_field('CAMPO_LOGO')['url']);
-                    $IMMAGINE_GALLERIA_1 = esc_url(get_field('IMMAGINE_GALLERIA_1')['url']);
-                    $IMMAGINE_GALLERIA_2 = esc_url(get_field('IMMAGINE_GALLERIA_2')['url']);
-                    $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']);
-                    $IMMAGINE_GALLERIA_4 = esc_url(get_field('IMMAGINE_GALLERIA_4')['url']);
-                    $IMMAGINE_GALLERIA_5 = esc_url(get_field('IMMAGINE_GALLERIA_5')['url']);
+                    $IMMAGINE_GALLERIA_1 = esc_url(get_field('IMMAGINE_GALLERIA_1')['url']);  // TODO: Aggiungere CustomField
+                    $IMMAGINE_GALLERIA_2 = esc_url(get_field('IMMAGINE_GALLERIA_2')['url']); // TODO: Aggiungere CustomField
+                    $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']); // TODO: Aggiungere CustomField
+                    $IMMAGINE_GALLERIA_4 = esc_url(get_field('IMMAGINE_GALLERIA_4')['url']); // TODO: Aggiungere CustomField
+                    $IMMAGINE_GALLERIA_5 = esc_url(get_field('IMMAGINE_GALLERIA_5')['url']); // TODO: Aggiungere CustomField
 
                     /*** CATEGORY ICONS **/
                     $archeologia_arte_e_storia = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/Archeologia_arte_e_storia-e1574194179395.png\" image_id=\"6084|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
@@ -214,24 +175,6 @@ if (!defined('ABSPATH')) {
                     $header_mobile .= $CAMPO_NOME_COMMERCIALE;
                     $header_mobile .= '[/fusion_title]';
                     $header_mobile .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="rgba(0,0,0,0.65)" top_margin="" bottom_margin="30" border_size="4" icon="" icon_circle="" icon_circle_color="" width="45%" alignment="center" /]';
-
-                    if ($CAMPO_TIPOLOGIA != null) {
-                        $header_mobile .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]';
-
-                        $i = sizeof($CAMPO_TIPOLOGIA) - 1;
-
-                        foreach ($CAMPO_TIPOLOGIA as $field_mobile_typology) {
-                            $header_mobile .= $field_mobile_typology;
-
-                            if ($i != 0) {
-                                $header_mobile .= " | ";
-                            }
-
-                            $i--;
-                        }
-
-                        $header_mobile .= '[/fusion_text]';
-                    }
 
                     $header_mobile .= '[fusion_button link="#storia" text_transform="uppercase" title="" target="_self" link_attributes="" alignment="center" modal="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" color="custom" button_gradient_top_color="" button_gradient_bottom_color="" button_gradient_top_color_hover="" button_gradient_bottom_color_hover="" accent_color="#ffffff" accent_hover_color="#ffffff" type="" bevel_color="" border_width="4" size="" stretch="default" icon="" icon_position="left" icon_divider="no" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" border_radius="" border_color="#ffffff" border_hover_color="#ffffff"]SCOPRI DI PIÙ[/fusion_button]';
                     $header_mobile .= '[/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
@@ -799,35 +742,35 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_desktop_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_desktop_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_STELLE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-star far"]';
-                        $body_desktop_service .= 'Stelle: ' . $CAMPO_STELLE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_STELLE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-star far"]';
+//                        $body_desktop_service .= 'Stelle: ' . $CAMPO_STELLE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_DETTAGLI_VISITE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-align-left fas"]';
-                        $body_desktop_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_DETTAGLI_VISITE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-align-left fas"]';
+//                        $body_desktop_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-mosque fas"]';
-                        $body_desktop_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-mosque fas"]';
+//                        $body_desktop_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-money-bill-alt fas"]';
-                        $body_desktop_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-money-bill-alt fas"]';
+//                        $body_desktop_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_ORGANIZZATORE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-address-book fas"]';
@@ -853,11 +796,11 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-allergies fas"]';
-                        $body_desktop_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-allergies fas"]';
+//                        $body_desktop_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_LINK_ALLE_PROPOSTE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
@@ -865,11 +808,11 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_ALTRO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-align-justify fas"]';
-                        $body_desktop_service .= 'Altro: ' . $CAMPO_ALTRO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_ALTRO != null) {
+//                        $body_desktop_service .= '[fusion_li_item icon="fa-align-justify fas"]';
+//                        $body_desktop_service .= 'Altro: ' . $CAMPO_ALTRO;
+//                        $body_desktop_service .= '[/fusion_li_item]';
+//                    }
 
                     $body_desktop_service .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
 
@@ -1172,43 +1115,43 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_STELLE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_STELLE != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_DETTAGLI_VISITE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_DETTAGLI_VISITE != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
+//
+//                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
+//
+//                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
+//
+//                    if ($CAMPO_POSTO_AUTO != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_LUOGO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($CAMPO_LUOGO != null) {
+                    if ($CAMPO_ORGANIZZATORE != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
                         $body_mobile_service .= 'Organizzatore: ' . $CAMPO_ORGANIZZATORE;
                         $body_mobile_service .= '[/fusion_li_item]';
@@ -1232,17 +1175,17 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
+//                        $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
 
-                    if ($CAMPO_ALTRO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-angle-double-right fas"]';
-                        $body_mobile_service .= 'Altro: ' . $CAMPO_ALTRO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
+//                    if ($CAMPO_ALTRO != null) {
+//                        $body_mobile_service .= '[fusion_li_item icon="fa-angle-double-right fas"]';
+//                        $body_mobile_service .= 'Altro: ' . $CAMPO_ALTRO;
+//                        $body_mobile_service .= '[/fusion_li_item]';
+//                    }
 
                     if ($CAMPO_LINK_ALLE_PROPOSTE != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
