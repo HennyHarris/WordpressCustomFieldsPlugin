@@ -69,21 +69,25 @@ if (!defined('ABSPATH')) {
                     $EMAIL = htmlspecialchars(get_field('EMAIL')); // Text
                     $EMAIL1 = htmlspecialchars(get_field('EMAIL1')); // Text
                     $PUNTO_VENDITA_SEPARATO = htmlspecialchars(get_field('PUNTO_VENDITA_SEPARATO')); // Button radio // TODO: Controllare se risolve il problema che diceva Zappa
+
                     $INDIRIZZO = htmlspecialchars(get_field('INDIRIZZO')); // Text
                     $COMUNE = htmlspecialchars(get_field('COMUNE')); // Text
                     $PROVINCIA = htmlspecialchars(get_field('PROVINCIA')); // Text
                     $ORARI_APERTURA = htmlspecialchars(get_field('ORARI_APERTURA')); // Text
                     $GIORNO_DI_CHIUSURA = get_field('GIORNO_DI_CHIUSURA'); // Checkbox
+
                     $INDIRIZZO_PUNTO_VENDITA = htmlspecialchars(get_field('INDIRIZZO_PUNTO_VENDITA')); // Text
                     $COMUNE_PUNTO_VENDITA = htmlspecialchars(get_field('COMUNE_PUNTO_VENDITA')); // Text
                     $PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('PROVINCIA_PUNTO_VENDITA')); // Text
                     $ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('ORARI_APERTURA_PUNTO_VENDITA')); // Text
                     $GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('GIORNO_DI_CHIUSURA_PUNTO_VENDITA'); // Checkbox
+
                     $INDIRIZZO_PRODUZIONE = htmlspecialchars(get_field('INDIRIZZO_PRODUZIONE')); // Text
                     $COMUNE_PRODUZIONE = htmlspecialchars(get_field('COMUNE_PRODUZIONE')); // Text
                     $PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('PROVINCIA_PRODUZIONE')); // Text
                     $ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('ORARI_APERTURA_PRODUZIONE')); // Text
                     $GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
+
                     $PERIODO_APERTURA = htmlspecialchars(get_field('PERIODO_APERTURA')); // Button radio
                     $DESCRIZIONE = htmlspecialchars(get_field('DESCRIZIONE')); // Text
                     $VISITE_GUIDATE = htmlspecialchars(get_field('VISITE_GUIDATE')); // Button radio // TODO: Eliminare dai servizive
@@ -280,41 +284,9 @@ if (!defined('ABSPATH')) {
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
-                    if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_desktop_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                        $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
-                        $body_desktop_info .= '[/fusion_li_item]';
-                    }
-
-                    if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_desktop_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                        $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
-                        $body_desktop_info .= '[/fusion_li_item]';
-                    }
-
                     if ($ORARI_APERTURA != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
                         $body_desktop_info .= 'Orario: ' . $ORARI_APERTURA;
-                        $body_desktop_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($ORARI_APERTURA_PUNTO_VENDITA != null) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_desktop_info .= 'Orario punto vendita: ' . $ORARI_APERTURA_PUNTO_VENDITA;
-                        $body_desktop_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($ORARI_APERTURA_PRODUZIONE != null) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_desktop_info .= 'Orario produzione: ' . $ORARI_APERTURA_PRODUZIONE;
-                        $body_desktop_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($PERIODO_APERTURA != null) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_desktop_info .= 'Periodo di apertura: ' . $PERIODO_APERTURA;
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
@@ -339,24 +311,16 @@ if (!defined('ABSPATH')) {
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
-                    if ($GIORNO_DI_CHIUSURA_PRODUZIONE != null) {
-                        $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_desktop_info .= 'Giorno di chiusura produzione: ';
+                    if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_desktop_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
+                        $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
 
-                        $i = sizeof($GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
-
-                        foreach ($GIORNO_DI_CHIUSURA_PRODUZIONE as $field_desktop_giorni_chiusura_produzione) {
-                            $body_desktop_info .= $field_desktop_giorni_chiusura_produzione;
-
-                            if ($i > 1) {
-                                $body_desktop_info .= ", ";
-                            } elseif ($i == 1) {
-                                $body_desktop_info .= " e ";
-                            }
-
-                            $i--;
-                        }
-
+                    if ($ORARI_APERTURA_PUNTO_VENDITA != null) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
+                        $body_desktop_info .= 'Orario punto vendita: ' . $ORARI_APERTURA_PUNTO_VENDITA;
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
@@ -378,6 +342,46 @@ if (!defined('ABSPATH')) {
                             $i--;
                         }
 
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
+
+                    if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_desktop_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
+                        $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($ORARI_APERTURA_PRODUZIONE != null) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-clock far"]';
+                        $body_desktop_info .= 'Orario produzione: ' . $ORARI_APERTURA_PRODUZIONE;
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($GIORNO_DI_CHIUSURA_PRODUZIONE != null) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
+                        $body_desktop_info .= 'Giorno di chiusura produzione: ';
+
+                        $i = sizeof($GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
+
+                        foreach ($GIORNO_DI_CHIUSURA_PRODUZIONE as $field_desktop_giorni_chiusura_produzione) {
+                            $body_desktop_info .= $field_desktop_giorni_chiusura_produzione;
+
+                            if ($i > 1) {
+                                $body_desktop_info .= ", ";
+                            } elseif ($i == 1) {
+                                $body_desktop_info .= " e ";
+                            }
+
+                            $i--;
+                        }
+
+                        $body_desktop_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($PERIODO_APERTURA != null) {
+                        $body_desktop_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
+                        $body_desktop_info .= 'Periodo di apertura: ' . $PERIODO_APERTURA;
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
@@ -844,41 +848,9 @@ if (!defined('ABSPATH')) {
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
-                    if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_mobile_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                        $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
-                        $body_mobile_info .= '[/fusion_li_item]';
-                    }
-
-                    if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
-                        $body_mobile_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                        $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
-                        $body_mobile_info .= '[/fusion_li_item]';
-                    }
-
                     if ($ORARI_APERTURA != null) {
                         $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
                         $body_mobile_info .= 'Orario: ' . $ORARI_APERTURA;
-                        $body_mobile_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($ORARI_APERTURA_PUNTO_VENDITA != null) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_mobile_info .= 'Orario punto vendita: ' . $ORARI_APERTURA_PUNTO_VENDITA;
-                        $body_mobile_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($ORARI_APERTURA_PRODUZIONE != null) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
-                        $body_mobile_info .= 'Orario produzione: ' . $ORARI_APERTURA_PRODUZIONE;
-                        $body_mobile_info .= '[/fusion_li_item]';
-                    }
-
-                    if ($PERIODO_APERTURA != null) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_mobile_info .= $PERIODO_APERTURA;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
@@ -903,24 +875,16 @@ if (!defined('ABSPATH')) {
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
-                    if ($GIORNO_DI_CHIUSURA_PRODUZIONE != null) {
-                        $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
-                        $body_mobile_info .= 'Giorno di chiusura produzione: ';
+                    if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_mobile_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
+                        $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                        $body_mobile_info .= '[/fusion_li_item]';
+                    }
 
-                        $i = sizeof($GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
-
-                        foreach ($GIORNO_DI_CHIUSURA_PRODUZIONE as $field_mobile_giorni_chiusura_produzione) {
-                            $body_mobile_info .= $field_mobile_giorni_chiusura_produzione;
-
-                            if ($i > 1) {
-                                $body_mobile_info .= ", ";
-                            } elseif ($i == 1) {
-                                $body_mobile_info .= " e ";
-                            }
-
-                            $i--;
-                        }
-
+                    if ($ORARI_APERTURA_PUNTO_VENDITA != null) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
+                        $body_mobile_info .= 'Orario punto vendita: ' . $ORARI_APERTURA_PUNTO_VENDITA;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
@@ -942,6 +906,46 @@ if (!defined('ABSPATH')) {
                             $i--;
                         }
 
+                        $body_mobile_info .= '[/fusion_li_item]';
+                    }
+
+                    if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_mobile_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
+                        $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                        $body_mobile_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($ORARI_APERTURA_PRODUZIONE != null) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-clock far"]';
+                        $body_mobile_info .= 'Orario produzione: ' . $ORARI_APERTURA_PRODUZIONE;
+                        $body_mobile_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($GIORNO_DI_CHIUSURA_PRODUZIONE != null) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
+                        $body_mobile_info .= 'Giorno di chiusura produzione: ';
+
+                        $i = sizeof($GIORNO_DI_CHIUSURA_PRODUZIONE) - 1;
+
+                        foreach ($GIORNO_DI_CHIUSURA_PRODUZIONE as $field_mobile_giorni_chiusura_produzione) {
+                            $body_mobile_info .= $field_mobile_giorni_chiusura_produzione;
+
+                            if ($i > 1) {
+                                $body_mobile_info .= ", ";
+                            } elseif ($i == 1) {
+                                $body_mobile_info .= " e ";
+                            }
+
+                            $i--;
+                        }
+
+                        $body_mobile_info .= '[/fusion_li_item]';
+                    }
+
+                    if ($PERIODO_APERTURA != null) {
+                        $body_mobile_info .= '[fusion_li_item icon="fa-calendar-alt far"]';
+                        $body_mobile_info .= $PERIODO_APERTURA;
                         $body_mobile_info .= '[/fusion_li_item]';
                     }
 
