@@ -60,74 +60,75 @@ if (!defined('ABSPATH')) {
                     the_content();
                 } else {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
-                    $CAMPO_NOME_COMMERCIALE = htmlspecialchars(get_field('CAMPO_NOME_COMMERCIALE'));
-                    $CAMPO_TIPOLOGIA = get_field('CAMPO_TIPOLOGIA');
-                    $CAMPO_SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('CAMPO_SOCIETA_ASSOCIAZIONE'));
-                    $CAMPO_SITO_WEB = htmlspecialchars(get_field('CAMPO_SITO_WEB'));
-                    $CAMPO_TELEFONO = htmlspecialchars(get_field('CAMPO_TELEFONO'));
-                    $CAMPO_TELEFONO1 = htmlspecialchars(get_field('CAMPO_TELEFONO1'));
-                    $CAMPO_EMAIL = htmlspecialchars(get_field('CAMPO_EMAIL'));
-                    $CAMPO_EMAIL1 = htmlspecialchars(get_field('CAMPO_EMAIL1'));
-                    $CAMPO_INDIRIZZO = htmlspecialchars(get_field('CAMPO_INDIRIZZO'));
-                    $CAMPO_COMUNE = htmlspecialchars(get_field('CAMPO_COMUNE'));
-                    $CAMPO_PROVINCIA = htmlspecialchars(get_field('CAMPO_PROVINCIA'));
-                    $CAMPO_INDIRIZZO_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_INDIRIZZO_PUNTO_VENDITA'));
-                    $CAMPO_COMUNE_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_COMUNE_PUNTO_VENDITA'));
-                    $CAMPO_PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_PROVINCIA_PUNTO_VENDITA'));
-                    $CAMPO_INDIRIZZO_PRODUZIONE = htmlspecialchars(get_field('CAMPO_INDIRIZZO_PRODUZIONE'));
-                    $CAMPO_COMUNE_PRODUZIONE = htmlspecialchars(get_field('CAMPO_COMUNE_PRODUZIONE'));
-                    $CAMPO_PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('CAMPO_PROVINCIA_PRODUZIONE'));
-                    $CAMPO_ORARI_APERTURA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA'));
-                    $CAMPO_ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PUNTO_VENDITA'));
-                    $CAMPO_ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PRODUZIONE'));
-                    $CAMPO_PERIODO_APERTURA = htmlspecialchars(get_field('CAMPO_PERIODO_APERTURA'));
-                    $CAMPO_GIORNO_DI_CHIUSURA = get_field('CAMPO_GIORNO_DI_CHIUSURA');
-                    $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE');
-                    $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA');
-                    $CAMPO_DESCRIZIONE = htmlspecialchars(get_field('CAMPO_DESCRIZIONE'));
-                    $CAMPO_INFO_AGGIUNTIVE = htmlspecialchars(get_field('CAMPO_INFO_AGGIUNTIVE'));
-                    $CAMPO_DISTANZA = htmlspecialchars(get_field('CAMPO_DISTANZA')); // TODO: Aggiungere CustomField
-                    $CAMPO_COSTO_BIGLIETTO = htmlspecialchars(get_field('CAMPO_COSTO_BIGLIETTO'));
-                    $CAMPO_PROPOSTE_VACANZE_IN_MOLISE = htmlspecialchars(get_field('CAMPO_PROPOSTE_VACANZE_IN_MOLISE')); // Equivalente di Pacchetti offerti
-                    $CAMPO_SERVIZI_OFFERTI = get_field('CAMPO_SERVIZI_OFFERTI');
-                    $CAMPO_FACEBOOK = htmlspecialchars(get_field('CAMPO_FACEBOOK'));
-                    $CAMPO_FLICKR = htmlspecialchars(get_field('CAMPO_FLICKR'));
-                    $CAMPO_GOOGLE = htmlspecialchars(get_field('CAMPO_GOOGLE'));
-                    $CAMPO_INSTAGRAM = htmlspecialchars(get_field('CAMPO_INSTAGRAM'));
-                    $CAMPO_LINKEDIN = htmlspecialchars(get_field('CAMPO_LINKEDIN'));
-                    $CAMPO_PINTEREST = htmlspecialchars(get_field('CAMPO_PINTEREST'));
-                    $CAMPO_TWITTER = htmlspecialchars(get_field('CAMPO_TWITTER'));
-                    $CAMPO_GOOGLE_MAPS = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS'));
-                    $CAMPO_GOOGLE_MAPS_PRODUZIONE = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_PRODUZIONE'));
-                    $CAMPO_GOOGLE_MAPS_VENDITA = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_VENDITA'));
-                    $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR'));
-                    $CAMPO_YOUTUBE = htmlspecialchars(get_field('CAMPO_YOUTUBE'));
-                    $CAMPO_GOOGLE_PLUS = htmlspecialchars(get_field('CAMPO_GOOGLE_PLUS'));
-                    $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING'));
-                    $CAMPO_HOTELS_COM = htmlspecialchars(get_field('CAMPO_HOTELS_COM'));
-                    $CAMPO_AIRBNB = htmlspecialchars(get_field('CAMPO_AIRBNB'));
-                    $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO'));
+                    $CAMPO_NOME_COMMERCIALE = htmlspecialchars(get_field('CAMPO_NOME_COMMERCIALE')); // Text
+                    $CAMPO_TIPOLOGIA = get_field('CAMPO_TIPOLOGIA'); // Checkbox
+                    $CAMPO_SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('CAMPO_SOCIETA_ASSOCIAZIONE')); // Text
+                    $CAMPO_SITO_WEB = htmlspecialchars(get_field('CAMPO_SITO_WEB')); // Text
+                    $CAMPO_TELEFONO = htmlspecialchars(get_field('CAMPO_TELEFONO')); // Text
+                    $CAMPO_TELEFONO1 = htmlspecialchars(get_field('CAMPO_TELEFONO1')); // Text
+                    $CAMPO_EMAIL = htmlspecialchars(get_field('CAMPO_EMAIL')); // Text
+                    $CAMPO_EMAIL1 = htmlspecialchars(get_field('CAMPO_EMAIL1')); // Text
+                    $CAMPO_INDIRIZZO = htmlspecialchars(get_field('CAMPO_INDIRIZZO')); // Text
+                    $CAMPO_COMUNE = htmlspecialchars(get_field('CAMPO_COMUNE')); // Text
+                    $CAMPO_PROVINCIA = htmlspecialchars(get_field('CAMPO_PROVINCIA')); // Text
+                    $CAMPO_INDIRIZZO_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_INDIRIZZO_PUNTO_VENDITA')); // Text
+                    $CAMPO_COMUNE_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_COMUNE_PUNTO_VENDITA')); // Text
+                    $CAMPO_PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_PROVINCIA_PUNTO_VENDITA')); // Text
+                    $CAMPO_INDIRIZZO_PRODUZIONE = htmlspecialchars(get_field('CAMPO_INDIRIZZO_PRODUZIONE')); // Text
+                    $CAMPO_COMUNE_PRODUZIONE = htmlspecialchars(get_field('CAMPO_COMUNE_PRODUZIONE')); // Text
+                    $CAMPO_PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('CAMPO_PROVINCIA_PRODUZIONE')); // Text
+                    $CAMPO_ORARI_APERTURA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA')); // Text
+                    $CAMPO_ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PUNTO_VENDITA')); // Text
+                    $CAMPO_ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('CAMPO_ORARI_APERTURA_PRODUZIONE')); // Text
+                    $CAMPO_PERIODO_APERTURA = htmlspecialchars(get_field('CAMPO_PERIODO_APERTURA')); // Button radio
+                    $CAMPO_GIORNO_DI_CHIUSURA = get_field('CAMPO_GIORNO_DI_CHIUSURA'); // Checkbox
+                    $CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('CAMPO_GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
+                    $CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('CAMPO_GIORNO_DI_CHIUSURA_PUNTO_VENDITA'); // Checkbox
+                    $CAMPO_DESCRIZIONE = htmlspecialchars(get_field('CAMPO_DESCRIZIONE')); // Text
+                    $CAMPO_VISITE_GUIDATE = htmlspecialchars(get_field('visite_guidate')); // Button radio // TODO: Eliminare dai servizive
+                    $CAMPO_DETTAGLI_VISITE = htmlspecialchars(get_field('CAMPO_DETTAGLI_VISITE')); // Text
+                    $CAMPO_COSTO_BIGLIETTO = htmlspecialchars(get_field('CAMPO_COSTO_BIGLIETTO')); // Number
+                    $CAMPO_DISTANZA = htmlspecialchars(get_field('CAMPO_DISTANZA')); // Number
+                    $CAMPO_STATO_CONSERVAZIONE = htmlspecialchars(get_field('CAMPO_STATO_CONSERVAZIONE')); // Button radio
+                    $CAMPO_PACCHETTI_OFFERTI = htmlspecialchars(get_field('CAMPO_PROPOSTE_VACANZE_IN_MOLISE')); // Text
+                    $CAMPO_LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('CAMPO_LINK_ALLE_PROPOSTE')); // URL
+                    $CAMPO_INFO_AGGIUNTIVE = htmlspecialchars(get_field('CAMPO_INFO_AGGIUNTIVE')); // Text
+                    $CAMPO_SERVIZI_OFFERTI = get_field('CAMPO_SERVIZI_OFFERTI'); // Checkbox
+                    $CAMPO_FACEBOOK = htmlspecialchars(get_field('CAMPO_FACEBOOK')); // URL
+                    $CAMPO_FLICKR = htmlspecialchars(get_field('CAMPO_FLICKR')); // URL
+                    $CAMPO_GOOGLE = htmlspecialchars(get_field('CAMPO_GOOGLE')); // URL
+                    $CAMPO_INSTAGRAM = htmlspecialchars(get_field('CAMPO_INSTAGRAM')); // URL
+                    $CAMPO_LINKEDIN = htmlspecialchars(get_field('CAMPO_LINKEDIN')); // URL
+                    $CAMPO_PINTEREST = htmlspecialchars(get_field('CAMPO_PINTEREST')); // URL
+                    $CAMPO_TWITTER = htmlspecialchars(get_field('CAMPO_TWITTER')); // URL
+                    $CAMPO_GOOGLE_MAPS = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS')); // URL
+                    $CAMPO_GOOGLE_MAPS_PRODUZIONE = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_PRODUZIONE')); // URL
+                    $CAMPO_GOOGLE_MAPS_VENDITA = htmlspecialchars(get_field('CAMPO_GOOGLE_MAPS_VENDITA')); // URL
+                    $CAMPO_TRIPADVISOR = htmlspecialchars(get_field('CAMPO_TRIPADVISOR')); // URL
+                    $CAMPO_YOUTUBE = htmlspecialchars(get_field('CAMPO_YOUTUBE')); // URL
+                    $CAMPO_GOOGLE_PLUS = htmlspecialchars(get_field('CAMPO_GOOGLE_PLUS')); // URL
+                    $CAMPO_BOOKING = htmlspecialchars(get_field('CAMPO_BOOKING')); // URL
+                    $CAMPO_HOTELS_COM = htmlspecialchars(get_field('CAMPO_HOTELS_COM')); // URL
+                    $CAMPO_AIRBNB = htmlspecialchars(get_field('CAMPO_AIRBNB')); // URL
+                    $CAMPO_TRIVAGO = htmlspecialchars(get_field('CAMPO_TRIVAGO')); // URL
 
                     $CAMPO_VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('CAMPO_VALUTAZIONI_GOOGLE'));
                     $CAMPO_INFOMOBILITA = htmlspecialchars(get_field('CAMPO_INFOMOBILITA'));
-//                    $CAMPO_STATO_CONSERVAZIONE = htmlspecialchars(get_field('CAMPO_STATO_CONSERVAZIONE')); // TODO: Aggiungere CustomField
-                    $CAMPO_LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('CAMPO_LINK_ALLE_PROPOSTE')); // TODO: Aggiungere CustomField
                     $CAMPO_INFORMAZIONI_CRONOLOGICHE = htmlspecialchars(get_field('CAMPO_INFORMAZIONI_CRONOLOGICHE')); // TODO: Aggiungere CustomField
                     $CAMPO_LUOGO = htmlspecialchars(get_field('CAMPO_LUOGO'));
                     $CAMPO_ORGANIZZATORE = htmlspecialchars(get_field('CAMPO_ORGANIZZATORE')); // TODO: Aggiungere CustomField
-//                    $CAMPO_VENDITA_AL_DETTAGLIO = htmlspecialchars(get_field('CAMPO_VENDITA_AL_DETTAGLIO'));
-//                    $CAMPO_DETTAGLI_VISITE = htmlspecialchars(get_field('CAMPO_DETTAGLI_VISITE')); // TODO: Aggiungere CustomField
+                    $CAMPO_VENDITA_AL_DETTAGLIO = htmlspecialchars(get_field('CAMPO_VENDITA_AL_DETTAGLIO')); // Button radio
                     $CAMPO_PERIODO = htmlspecialchars(get_field('CAMPO_PERIODO')); // TODO: Aggiungere CustomField
                     $CAMPO_CATEGORIA = htmlspecialchars(get_field('CAMPO_CATEGORIA')); // TODO: Aggiungere CustomField
 
                     /*** IMAGES **/
-                    $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']);
-                    $LINK_IMMAGINE_LOGO = esc_url(get_field('CAMPO_LOGO')['url']);
-                    $IMMAGINE_GALLERIA_1 = esc_url(get_field('IMMAGINE_GALLERIA_1')['url']);  // TODO: Aggiungere CustomField
-                    $IMMAGINE_GALLERIA_2 = esc_url(get_field('IMMAGINE_GALLERIA_2')['url']); // TODO: Aggiungere CustomField
-                    $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']); // TODO: Aggiungere CustomField
-                    $IMMAGINE_GALLERIA_4 = esc_url(get_field('IMMAGINE_GALLERIA_4')['url']); // TODO: Aggiungere CustomField
-                    $IMMAGINE_GALLERIA_5 = esc_url(get_field('IMMAGINE_GALLERIA_5')['url']); // TODO: Aggiungere CustomField
+                    $LINK_IMMAGINE_COPERTINA = esc_url(get_field('LINK_IMMAGINE_COPERTINA')['url']); // Img
+                    $LINK_IMMAGINE_LOGO = esc_url(get_field('CAMPO_LOGO')['url']); // Img
+                    $IMMAGINE_GALLERIA_1 = esc_url(get_field('IMMAGINE_GALLERIA_1')['url']); // Img
+                    $IMMAGINE_GALLERIA_2 = esc_url(get_field('IMMAGINE_GALLERIA_2')['url']); // Img
+                    $IMMAGINE_GALLERIA_3 = esc_url(get_field('IMMAGINE_GALLERIA_3')['url']); // Img
+                    $IMMAGINE_GALLERIA_4 = esc_url(get_field('IMMAGINE_GALLERIA_4')['url']); // Img
+                    $IMMAGINE_GALLERIA_5 = esc_url(get_field('IMMAGINE_GALLERIA_5')['url']); // Img
 
                     /*** CATEGORY ICONS **/
                     $archeologia_arte_e_storia = "[fusion_image image=\"https://www.molise-italia.it/wp-content/uploads/2019/10/Archeologia_arte_e_storia-e1574194179395.png\" image_id=\"6084|thumbnail\" link=\"\" linktarget=\"_self\" alt=\"\" /]";
@@ -632,9 +633,9 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_PROPOSTE_VACANZE_IN_MOLISE != null) {
+                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                        $body_desktop_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PROPOSTE_VACANZE_IN_MOLISE;
+                        $body_desktop_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PACCHETTI_OFFERTI;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -652,9 +653,9 @@ if (!defined('ABSPATH')) {
                                     $service_icon = "fa-hiking fas";
                                     break;
 
-                                case "Visite guidate":
-                                    $service_icon = "fa-university fas";
-                                    break;
+//                                case "Visite guidate":
+//                                    $service_icon = "fa-university fas";
+//                                    break;
 
                                 case "Accessibile ai disabili":
                                     $service_icon = "fa-wheelchair fas";
@@ -747,36 +748,6 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-//                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_desktop_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_STELLE != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-star far"]';
-//                        $body_desktop_service .= 'Stelle: ' . $CAMPO_STELLE;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_DETTAGLI_VISITE != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-align-left fas"]';
-//                        $body_desktop_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-mosque fas"]';
-//                        $body_desktop_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-money-bill-alt fas"]';
-//                        $body_desktop_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
                     if ($CAMPO_ORGANIZZATORE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-address-book fas"]';
                         $body_desktop_service .= 'Organizzatore: ' . $CAMPO_ORGANIZZATORE;
@@ -801,23 +772,11 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-//                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-allergies fas"]';
-//                        $body_desktop_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
-
                     if ($CAMPO_LINK_ALLE_PROPOSTE != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
                         $body_desktop_service .= 'Link alle proposte: ' . $CAMPO_LINK_ALLE_PROPOSTE;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
-
-//                    if ($CAMPO_ALTRO != null) {
-//                        $body_desktop_service .= '[fusion_li_item icon="fa-align-justify fas"]';
-//                        $body_desktop_service .= 'Altro: ' . $CAMPO_ALTRO;
-//                        $body_desktop_service .= '[/fusion_li_item]';
-//                    }
 
                     $body_desktop_service .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
 
@@ -1005,9 +964,9 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($CAMPO_PROPOSTE_VACANZE_IN_MOLISE != null) {
+                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                        $body_mobile_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PROPOSTE_VACANZE_IN_MOLISE;
+                        $body_mobile_service .= 'Proposte vacanze in Molise: ' . $CAMPO_PACCHETTI_OFFERTI;
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
@@ -1025,9 +984,9 @@ if (!defined('ABSPATH')) {
                                     $service_icon = "fa-hiking fas";
                                     break;
 
-                                case "Visite guidate":
-                                    $service_icon = "fa-university fas";
-                                    break;
+//                                case "Visite guidate":
+//                                    $service_icon = "fa-university fas";
+//                                    break;
 
                                 case "Accessibile ai disabili":
                                     $service_icon = "fa-wheelchair fas";
@@ -1120,42 +1079,6 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-//                    if ($CAMPO_PACCHETTI_OFFERTI != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Pacchetti offerti: ' . $CAMPO_PACCHETTI_OFFERTI;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_STELLE != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Stelle: ' . $CAMPO_STELLE;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_DETTAGLI_VISITE != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Dettagli visite: ' . $CAMPO_DETTAGLI_VISITE;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-//
-//                    if ($CAMPO_STATO_CONSERVAZIONE != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Stato conservazione: ' . $CAMPO_STATO_CONSERVAZIONE;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-//
-//                    if ($CAMPO_VENDITA_AL_DETTAGLIO != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Vendita al dettaglio: ' . $CAMPO_VENDITA_AL_DETTAGLIO;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-//
-//                    if ($CAMPO_POSTO_AUTO != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Posto auto: ' . $CAMPO_POSTO_AUTO;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-
                     if ($CAMPO_ORGANIZZATORE != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
                         $body_mobile_service .= 'Organizzatore: ' . $CAMPO_ORGANIZZATORE;
@@ -1179,18 +1102,6 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= 'Informazioni cronologiche: ' . $CAMPO_INFORMAZIONI_CRONOLOGICHE;
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
-
-//                    if ($CAMPO_LABORATORI_DIDATTICI != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-//                        $body_mobile_service .= 'Laboratori didattici: ' . $CAMPO_LABORATORI_DIDATTICI;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
-
-//                    if ($CAMPO_ALTRO != null) {
-//                        $body_mobile_service .= '[fusion_li_item icon="fa-angle-double-right fas"]';
-//                        $body_mobile_service .= 'Altro: ' . $CAMPO_ALTRO;
-//                        $body_mobile_service .= '[/fusion_li_item]';
-//                    }
 
                     if ($CAMPO_LINK_ALLE_PROPOSTE != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
