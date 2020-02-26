@@ -661,6 +661,12 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
+                    if(!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_desktop_service .= 'Stato conservazione: ' . $STATO_CONSERVAZIONE;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
                     if ($SERVIZI_OFFERTI != null) {
                         foreach ($SERVIZI_OFFERTI as $field_value) {
                             switch ($field_value) {
@@ -986,6 +992,12 @@ if (!defined('ABSPATH')) {
                     if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-store fas"]';
                         $body_mobile_service .= 'Vendita al dettaglio';
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if(!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_mobile_service .= 'Stato conservazione: ' . $STATO_CONSERVAZIONE;
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
