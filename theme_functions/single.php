@@ -310,7 +310,7 @@ if (!defined('ABSPATH')) {
 
                     } else {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
-                            $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
+                            $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
                             $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
@@ -344,7 +344,7 @@ if (!defined('ABSPATH')) {
                         }
 
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
-                            $body_desktop_info .= '[fusion_li_item icon="fa-store fas"]';
+                            $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
                             $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
@@ -877,7 +877,7 @@ if (!defined('ABSPATH')) {
 
                     } else {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
-                            $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
+                            $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
                             $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
@@ -911,7 +911,7 @@ if (!defined('ABSPATH')) {
                         }
 
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
-                            $body_mobile_info .= '[fusion_li_item icon="fa-store fas"]';
+                            $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
                             $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
