@@ -644,20 +644,20 @@ if (!defined('ABSPATH')) {
                     }
 
                     if (strstr($VISITE_GUIDATE, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_desktop_service .= 'Visite Guidate';
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
                     if (strstr($VISITE_GUIDATE, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_desktop_service .= 'Descrizione visite guidate: ' . $DETTAGLI_VISITE;
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
                     if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
-                        $body_desktop_service .= 'Vendita al dettaglio: Si';
+                        $body_desktop_service .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_desktop_service .= 'Vendita al dettaglio';
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -972,21 +972,21 @@ if (!defined('ABSPATH')) {
                     }
 
                     if (strstr($VISITE_GUIDATE, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
-                        $body_desktop_service .= 'Visite Guidate';
-                        $body_desktop_service .= '[/fusion_li_item]';
+                        $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
+                        $body_mobile_service .= 'Visite Guidate';
+                        $body_mobile_service .= '[/fusion_li_item]';
                     }
 
                     if (strstr($VISITE_GUIDATE, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
-                        $body_desktop_service .= 'Descrizione visite guidate: ' . $DETTAGLI_VISITE;
-                        $body_desktop_service .= '[/fusion_li_item]';
+                        $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
+                        $body_mobile_service .= 'Descrizione visite guidate: ' . $DETTAGLI_VISITE;
+                        $body_mobile_service .= '[/fusion_li_item]';
                     }
 
                     if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
-                        $body_desktop_service .= 'Vendita al dettaglio: Si';
-                        $body_desktop_service .= '[/fusion_li_item]';
+                        $body_mobile_service .= '[fusion_li_item icon="fa-store fas"]';
+                        $body_mobile_service .= 'Vendita al dettaglio';
+                        $body_mobile_service .= '[/fusion_li_item]';
                     }
 
                     if ($SERVIZI_OFFERTI != null) {
@@ -1002,10 +1002,6 @@ if (!defined('ABSPATH')) {
                                 case "Servizi di noleggio":
                                     $service_icon = "fa-hiking fas";
                                     break;
-
-//                                case "Visite guidate":
-//                                    $service_icon = "fa-university fas";
-//                                    break;
 
                                 case "Accessibile ai disabili":
                                     $service_icon = "fa-wheelchair fas";
