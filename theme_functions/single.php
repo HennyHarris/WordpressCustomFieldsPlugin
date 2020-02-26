@@ -209,13 +209,7 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[fusion_images picture_size="auto" hover_type="liftup" autoplay="no" columns="6" column_spacing="0" scroll_items="" show_nav="no" mouse_scroll="no" border="no" lightbox="no" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="icone-categorie" id=""] ';
 
                     // TODO: Aggiungere il campo tra i CUSTOM FIELD
-//                    if ($CATEGORIA != null) {
-//                        if ($CATEGORIA == "Prova") {
-//                            $header_typology_category .= $archeologia_arte_e_storia;
-//                        } else {
-//                            $header_typology_category .= 'ICON_CATEGORY';
-//                        }
-//                    }
+                    $header_typology_category .= $archeologia_arte_e_storia . $vacanze_nella_natura.$paese_e_culture.$le_tradizioni.$i_sapori.$il_mare.$la_montagna.$benessere;
 
                     $header_typology_category .= '[/fusion_images]';
                     $header_typology_category .= '[/fusion_builder_column]';
@@ -655,13 +649,13 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
+                    if (strstr($VENDITA_AL_DETTAGLIO, "Si")) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-store fas"]';
                         $body_desktop_service .= 'Vendita al dettaglio';
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if(!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
+                    if (!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-store fas"]';
                         $body_desktop_service .= 'Stato conservazione: ' . $STATO_CONSERVAZIONE;
                         $body_desktop_service .= '[/fusion_li_item]';
@@ -989,13 +983,13 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
+                    if (strstr($VENDITA_AL_DETTAGLIO, "Si")) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-store fas"]';
                         $body_mobile_service .= 'Vendita al dettaglio';
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if(!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
+                    if (!strstr($STATO_CONSERVAZIONE, "Non ci sono")) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-store fas"]';
                         $body_mobile_service .= 'Stato conservazione: ' . $STATO_CONSERVAZIONE;
                         $body_mobile_service .= '[/fusion_li_item]';
