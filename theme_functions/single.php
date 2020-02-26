@@ -86,7 +86,7 @@ if (!defined('ABSPATH')) {
                     $GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
                     $PERIODO_APERTURA = htmlspecialchars(get_field('PERIODO_APERTURA')); // Button radio
                     $DESCRIZIONE = htmlspecialchars(get_field('DESCRIZIONE')); // Text
-                    $VISITE_GUIDATE = htmlspecialchars(get_field('VISITE_GUIDATE')); // Button radio // TODO: Eliminare dai servizive
+                    $VISITE_GUIDATE = htmlspecialchars(get_field('VISITE_GUIDATE')); // Button radio
                     $DETTAGLI_VISITE = htmlspecialchars(get_field('DETTAGLI_VISITE')); // Text
                     $COSTO_BIGLIETTO = htmlspecialchars(get_field('COSTO_BIGLIETTO')); // Number
                     $VENDITA_AL_DETTAGLIO = htmlspecialchars(get_field('VENDITA_AL_DETTAGLIO')); // Button radio
@@ -116,11 +116,6 @@ if (!defined('ABSPATH')) {
 
                     $VALUTAZIONI_GOOGLE = htmlspecialchars(get_field('VALUTAZIONI_GOOGLE'));
                     $INFOMOBILITA = htmlspecialchars(get_field('INFOMOBILITA'));
-                    $INFORMAZIONI_CRONOLOGICHE = htmlspecialchars(get_field('INFORMAZIONI_CRONOLOGICHE')); // TODO: Aggiungere CustomField
-                    $LUOGO = htmlspecialchars(get_field('LUOGO'));
-                    $ORGANIZZATORE = htmlspecialchars(get_field('ORGANIZZATORE')); // TODO: Aggiungere CustomField
-                    $PERIODO = htmlspecialchars(get_field('PERIODO')); // TODO: Aggiungere CustomField
-                    $CATEGORIA = htmlspecialchars(get_field('CATEGORIA')); // TODO: Aggiungere CustomField
 
                     /*** IMAGES **/
                     $IMG_LOGO = esc_url(get_field('IMG_LOGO')['url']); // Img
@@ -214,13 +209,13 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[fusion_images picture_size="auto" hover_type="liftup" autoplay="no" columns="6" column_spacing="0" scroll_items="" show_nav="no" mouse_scroll="no" border="no" lightbox="no" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="icone-categorie" id=""] ';
 
                     // TODO: Aggiungere il campo tra i CUSTOM FIELD
-                    if ($CATEGORIA != null) {
-                        if ($CATEGORIA == "Prova") {
-                            $header_typology_category .= $archeologia_arte_e_storia;
-                        } else {
-                            $header_typology_category .= 'ICON_CATEGORY';
-                        }
-                    }
+//                    if ($CATEGORIA != null) {
+//                        if ($CATEGORIA == "Prova") {
+//                            $header_typology_category .= $archeologia_arte_e_storia;
+//                        } else {
+//                            $header_typology_category .= 'ICON_CATEGORY';
+//                        }
+//                    }
 
                     $header_typology_category .= '[/fusion_images]';
                     $header_typology_category .= '[/fusion_builder_column]';
@@ -624,10 +619,9 @@ if (!defined('ABSPATH')) {
                     $body_desktop_service .= '[/fusion_text]';
                     $body_desktop_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
-                    // TODO: Aggiungere CUSTOM FIELD
                     if ($DISTANZA != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
-                        $body_desktop_service .= 'Distanza: ' . $DISTANZA;
+                        $body_desktop_service .= 'Distanza: ' . $DISTANZA . ' km';
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -640,6 +634,30 @@ if (!defined('ABSPATH')) {
                     if ($PACCHETTI_OFFERTI != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_desktop_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($LINK_ALLE_PROPOSTE != null) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Link alle proposte: ' . $LINK_ALLE_PROPOSTE;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if (strstr($VISITE_GUIDATE, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Visite Guidate';
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if (strstr($VISITE_GUIDATE, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Descrizione visite guidate: ' . $DETTAGLI_VISITE;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Vendita al dettaglio: Si';
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
@@ -747,39 +765,9 @@ if (!defined('ABSPATH')) {
                             }
 
                             $body_desktop_service .= '[fusion_li_item icon="' . $service_icon . '"]';
-                            $body_desktop_service .= $field_value . ': si';
+                            $body_desktop_service .= $field_value;
                             $body_desktop_service .= '[/fusion_li_item]';
                         }
-                    }
-
-                    if ($ORGANIZZATORE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-address-book fas"]';
-                        $body_desktop_service .= 'Organizzatore: ' . $ORGANIZZATORE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($LUOGO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-archway fas"]';
-                        $body_desktop_service .= 'Luogo: ' . $LUOGO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($PERIODO != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-sun fas"]';
-                        $body_desktop_service .= 'Periodo: ' . $PERIODO;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($INFORMAZIONI_CRONOLOGICHE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-clock fas"]';
-                        $body_desktop_service .= 'Informazioni cronologiche: ' . $INFORMAZIONI_CRONOLOGICHE;
-                        $body_desktop_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($LINK_ALLE_PROPOSTE != null) {
-                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
-                        $body_desktop_service .= 'Link alle proposte: ' . $LINK_ALLE_PROPOSTE;
-                        $body_desktop_service .= '[/fusion_li_item]';
                     }
 
                     $body_desktop_service .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
@@ -961,7 +949,7 @@ if (!defined('ABSPATH')) {
 
                     if ($DISTANZA != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-arrows-alt-h fas"]';
-                        $body_mobile_service .= 'Distanza: ' . $DISTANZA;
+                        $body_mobile_service .= 'Distanza: ' . $DISTANZA . ' km';
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
@@ -975,6 +963,30 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_mobile_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
                         $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if ($LINK_ALLE_PROPOSTE != null) {
+                        $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
+                        $body_mobile_service .= 'Link alle proposte: ' . $LINK_ALLE_PROPOSTE;
+                        $body_mobile_service .= '[/fusion_li_item]';
+                    }
+
+                    if (strstr($VISITE_GUIDATE, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Visite Guidate';
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if (strstr($VISITE_GUIDATE, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Descrizione visite guidate: ' . $DETTAGLI_VISITE;
+                        $body_desktop_service .= '[/fusion_li_item]';
+                    }
+
+                    if(strstr($VENDITA_AL_DETTAGLIO, "Si")) {
+                        $body_desktop_service .= '[fusion_li_item icon="fa-forward fas"]';
+                        $body_desktop_service .= 'Vendita al dettaglio: Si';
+                        $body_desktop_service .= '[/fusion_li_item]';
                     }
 
                     if ($SERVIZI_OFFERTI != null) {
@@ -1081,39 +1093,9 @@ if (!defined('ABSPATH')) {
                             }
 
                             $body_mobile_service .= '[fusion_li_item icon="' . $service_icon . '"]';
-                            $body_mobile_service .= $field_value . ': si';
+                            $body_mobile_service .= $field_value;
                             $body_mobile_service .= '[/fusion_li_item]';
                         }
-                    }
-
-                    if ($ORGANIZZATORE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Organizzatore: ' . $ORGANIZZATORE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($LUOGO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Luogo: ' . $LUOGO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($PERIODO != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Periodo: ' . $PERIODO;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($INFORMAZIONI_CRONOLOGICHE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-box-open fas"]';
-                        $body_mobile_service .= 'Informazioni cronologiche: ' . $INFORMAZIONI_CRONOLOGICHE;
-                        $body_mobile_service .= '[/fusion_li_item]';
-                    }
-
-                    if ($LINK_ALLE_PROPOSTE != null) {
-                        $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
-                        $body_mobile_service .= 'Link alle proposte: ' . $LINK_ALLE_PROPOSTE;
-                        $body_mobile_service .= '[/fusion_li_item]';
                     }
 
                     $body_mobile_service .= '[/fusion_checklist]';
