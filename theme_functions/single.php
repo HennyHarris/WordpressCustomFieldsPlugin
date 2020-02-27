@@ -56,7 +56,7 @@ if (!defined('ABSPATH')) {
             <div class="post-content">
                 <?php
                 $categories = get_the_category();
-                if ($categories[0]->slug != 'prova') { //TODO: da modificare in attività
+                if ($categories[0]->slug != 'prova') {
                     the_content();
                 } else {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
