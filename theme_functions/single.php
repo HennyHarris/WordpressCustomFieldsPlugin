@@ -62,26 +62,27 @@ if (!defined('ABSPATH')) {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
                     $NOME_COMMERCIALE = htmlspecialchars(get_field('NOME_COMMERCIALE')); // Text
                     $TIPOLOGIA = get_field('TIPOLOGIA'); // Checkbox
+                    $CATEGORIA = get_field('CATEGORIA'); // Checkbox
                     $SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('SOCIETA_ASSOCIAZIONE')); // Text
                     $SITO_WEB = htmlspecialchars(get_field('SITO_WEB')); // Text
                     $TELEFONO = htmlspecialchars(get_field('TELEFONO')); // Text
                     $TELEFONO1 = htmlspecialchars(get_field('TELEFONO1')); // Text
-                    $EMAIL = htmlspecialchars(get_field('EMAIL')); // Text
-                    $EMAIL1 = htmlspecialchars(get_field('EMAIL1')); // Text
+                    $EMAIL = htmlspecialchars(get_field('EMAIL')); // Email
+                    $EMAIL1 = htmlspecialchars(get_field('EMAIL1')); // Email
                     $PUNTO_VENDITA_SEPARATO = htmlspecialchars(get_field('PUNTO_VENDITA_SEPARATO')); // Button radio
                     $INDIRIZZO = htmlspecialchars(get_field('INDIRIZZO')); // Text
                     $COMUNE = htmlspecialchars(get_field('COMUNE')); // Text
-                    $PROVINCIA = htmlspecialchars(get_field('PROVINCIA')); // Text
+                    $PROVINCIA = htmlspecialchars(get_field('PROVINCIA')); // Button radio
                     $ORARI_APERTURA = htmlspecialchars(get_field('ORARI_APERTURA')); // Text
                     $GIORNO_DI_CHIUSURA = get_field('GIORNO_DI_CHIUSURA'); // Checkbox
                     $INDIRIZZO_PUNTO_VENDITA = htmlspecialchars(get_field('INDIRIZZO_PUNTO_VENDITA')); // Text
                     $COMUNE_PUNTO_VENDITA = htmlspecialchars(get_field('COMUNE_PUNTO_VENDITA')); // Text
-                    $PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('PROVINCIA_PUNTO_VENDITA')); // Text
+                    $PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('PROVINCIA_PUNTO_VENDITA')); // Button radio
                     $ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('ORARI_APERTURA_PUNTO_VENDITA')); // Text
                     $GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('GIORNO_DI_CHIUSURA_PUNTO_VENDITA'); // Checkbox
                     $INDIRIZZO_PRODUZIONE = htmlspecialchars(get_field('INDIRIZZO_PRODUZIONE')); // Text
                     $COMUNE_PRODUZIONE = htmlspecialchars(get_field('COMUNE_PRODUZIONE')); // Text
-                    $PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('PROVINCIA_PRODUZIONE')); // Text
+                    $PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('PROVINCIA_PRODUZIONE')); // Button radio
                     $ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('ORARI_APERTURA_PRODUZIONE')); // Text
                     $GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
                     $PERIODO_APERTURA = htmlspecialchars(get_field('PERIODO_APERTURA')); // Button radio
@@ -208,8 +209,50 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[fusion_builder_column type="1_4" layout="1_4" link="" target="_self" hide_on_mobile="small-visibility,medium-visibility,large-visibility" background_image_id="" spacing="" center_content="yes" min_height="" class="" id="icone-categorie" hover_type="none" border_size="0" border_color="" border_style="solid" border_position="all" border_radius_top_left="" border_radius_top_right="" border_radius_bottom_right="" border_radius_bottom_left="" box_shadow="no" box_shadow_vertical="" box_shadow_horizontal="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="" padding_right="" padding_bottom="" padding_left="" margin_top="0px" margin_bottom="0px" background_type="single" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="" background_position="left top" background_repeat="no-repeat" background_blend_mode="none" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" filter_type="regular" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" last="no"]';
                     $header_typology_category .= '[fusion_images picture_size="auto" hover_type="liftup" autoplay="no" columns="6" column_spacing="0" scroll_items="" show_nav="no" mouse_scroll="no" border="no" lightbox="no" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="icone-categorie" id=""] ';
 
-                    // TODO: Aggiungere il campo tra i CUSTOM FIELD
-                    $header_typology_category .= $archeologia_arte_e_storia . $vacanze_nella_natura.$paese_e_culture.$le_tradizioni.$i_sapori.$il_mare.$la_montagna.$benessere;
+                    if ($CATEGORIA != null) {
+                        foreach ($CATEGORIA as $field_desktop_categoty) {
+                            switch ($field_desktop_categoty) {
+                                case "archeologia-arte-e-storia":
+                                    $icon_category = $archeologia_arte_e_storia;
+                                    break;
+
+                                case "benessere":
+                                    $icon_category = $benessere;
+                                    break;
+
+                                case "i-sapori":
+                                    $icon_category = $i_sapori;
+                                    break;
+
+                                case "il-mare":
+                                    $icon_category = $il_mare;
+                                    break;
+
+                                case "la-montagna":
+                                    $icon_category = $la_montagna;
+                                    break;
+
+                                case "le-tradizioni":
+                                    $icon_category = $le_tradizioni;
+                                    break;
+
+                                case "paesi-e-culture":
+                                    $icon_category = $paese_e_culture;
+                                    break;
+
+                                case "vacanze-nella-natura":
+                                    $icon_category = $vacanze_nella_natura;
+                                    break;
+
+                                default:
+                                    $icon_category = null;
+                            }
+
+                            if ($icon_category != null) {
+                                $header_typology_category .= $icon_category;
+                            }
+                        }
+                    }
 
                     $header_typology_category .= '[/fusion_images]';
                     $header_typology_category .= '[/fusion_builder_column]';
@@ -231,6 +274,7 @@ if (!defined('ABSPATH')) {
                     if ($SOCIETA_ASSOCIAZIONE != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-globe fas"]';
                         $body_desktop_info .= 'Società/Associazione: ' . $SOCIETA_ASSOCIAZIONE;
+
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
@@ -266,7 +310,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO != null) && ($COMUNE != null) && ($PROVINCIA != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= $INDIRIZZO;
-                            $body_desktop_info .= '<br>' . $COMUNE . ' (' . $PROVINCIA . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE . ' (' . name_split($PROVINCIA) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -301,7 +345,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                            $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . name_split($PROVINCIA_PUNTO_VENDITA) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -335,7 +379,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                            $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . name_split($PROVINCIA_PRODUZIONE) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -675,10 +719,6 @@ if (!defined('ABSPATH')) {
                                     $service_icon = "fa-hiking fas";
                                     break;
 
-//                                case "Visite guidate":
-//                                    $service_icon = "fa-university fas";
-//                                    break;
-
                                 case "Accessibile ai disabili":
                                     $service_icon = "fa-wheelchair fas";
                                     break;
@@ -832,7 +872,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO != null) && ($COMUNE != null) && ($PROVINCIA != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= $INDIRIZZO;
-                            $body_mobile_info .= '<br>' . $COMUNE . ' (' . $PROVINCIA . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE . ' (' . name_split($PROVINCIA) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -867,7 +907,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                            $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . name_split($PROVINCIA_PUNTO_VENDITA) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -901,7 +941,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                            $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . name_split($PROVINCIA_PRODUZIONE) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -1341,3 +1381,11 @@ if (!defined('ABSPATH')) {
 </section>
 <?php do_action('avada_after_content'); ?>
 <?php get_footer(); ?>
+
+<?php
+function name_split($name)
+{
+    return substr($name, strlen($name) - 3, 2);
+}
+
+?>
