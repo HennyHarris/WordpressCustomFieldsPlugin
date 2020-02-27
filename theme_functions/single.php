@@ -72,17 +72,17 @@ if (!defined('ABSPATH')) {
                     $PUNTO_VENDITA_SEPARATO = htmlspecialchars(get_field('PUNTO_VENDITA_SEPARATO')); // Button radio
                     $INDIRIZZO = htmlspecialchars(get_field('INDIRIZZO')); // Text
                     $COMUNE = htmlspecialchars(get_field('COMUNE')); // Text
-                    $PROVINCIA = htmlspecialchars(get_field('PROVINCIA')); // Button radio // TODO: Da sistemare
+                    $PROVINCIA = htmlspecialchars(get_field('PROVINCIA')); // Button radio
                     $ORARI_APERTURA = htmlspecialchars(get_field('ORARI_APERTURA')); // Text
                     $GIORNO_DI_CHIUSURA = get_field('GIORNO_DI_CHIUSURA'); // Checkbox
                     $INDIRIZZO_PUNTO_VENDITA = htmlspecialchars(get_field('INDIRIZZO_PUNTO_VENDITA')); // Text
                     $COMUNE_PUNTO_VENDITA = htmlspecialchars(get_field('COMUNE_PUNTO_VENDITA')); // Text
-                    $PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('PROVINCIA_PUNTO_VENDITA')); // Button radio // TODO: Da sistemare
+                    $PROVINCIA_PUNTO_VENDITA = htmlspecialchars(get_field('PROVINCIA_PUNTO_VENDITA')); // Button radio
                     $ORARI_APERTURA_PUNTO_VENDITA = htmlspecialchars(get_field('ORARI_APERTURA_PUNTO_VENDITA')); // Text
                     $GIORNO_DI_CHIUSURA_PUNTO_VENDITA = get_field('GIORNO_DI_CHIUSURA_PUNTO_VENDITA'); // Checkbox
                     $INDIRIZZO_PRODUZIONE = htmlspecialchars(get_field('INDIRIZZO_PRODUZIONE')); // Text
                     $COMUNE_PRODUZIONE = htmlspecialchars(get_field('COMUNE_PRODUZIONE')); // Text
-                    $PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('PROVINCIA_PRODUZIONE')); // Button radio // TODO: Da sistemare
+                    $PROVINCIA_PRODUZIONE = htmlspecialchars(get_field('PROVINCIA_PRODUZIONE')); // Button radio
                     $ORARI_APERTURA_PRODUZIONE = htmlspecialchars(get_field('ORARI_APERTURA_PRODUZIONE')); // Text
                     $GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
                     $PERIODO_APERTURA = htmlspecialchars(get_field('PERIODO_APERTURA')); // Button radio
@@ -310,7 +310,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO != null) && ($COMUNE != null) && ($PROVINCIA != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= $INDIRIZZO;
-                            $body_desktop_info .= '<br>' . $COMUNE . ' (' . $PROVINCIA . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE . ' (' . name_split($PROVINCIA) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -345,7 +345,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                            $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . name_split($PROVINCIA_PUNTO_VENDITA) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -379,7 +379,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
                             $body_desktop_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_desktop_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                            $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                            $body_desktop_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . name_split($PROVINCIA_PRODUZIONE) . ')';
                             $body_desktop_info .= '[/fusion_li_item]';
                         }
 
@@ -872,7 +872,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO != null) && ($COMUNE != null) && ($PROVINCIA != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= $INDIRIZZO;
-                            $body_mobile_info .= '<br>' . $COMUNE . ' (' . $PROVINCIA . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE . ' (' . name_split($PROVINCIA) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -907,7 +907,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PUNTO_VENDITA != null) && ($COMUNE_PUNTO_VENDITA != null) && ($PROVINCIA_PUNTO_VENDITA != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Punto vendita: ' . $INDIRIZZO_PUNTO_VENDITA;
-                            $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . $PROVINCIA_PUNTO_VENDITA . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE_PUNTO_VENDITA . ' (' . name_split($PROVINCIA_PUNTO_VENDITA) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -941,7 +941,7 @@ if (!defined('ABSPATH')) {
                         if (($INDIRIZZO_PRODUZIONE != null) && ($COMUNE_PRODUZIONE != null) && ($PROVINCIA_PRODUZIONE != null)) {
                             $body_mobile_info .= '[fusion_li_item icon="fa-map-marker-alt fas"]';
                             $body_mobile_info .= 'Produzione: ' . $INDIRIZZO_PRODUZIONE;
-                            $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . $PROVINCIA_PRODUZIONE . ')';
+                            $body_mobile_info .= '<br>' . $COMUNE_PRODUZIONE . ' (' . name_split($PROVINCIA_PRODUZIONE) . ')';
                             $body_mobile_info .= '[/fusion_li_item]';
                         }
 
@@ -1381,3 +1381,11 @@ if (!defined('ABSPATH')) {
 </section>
 <?php do_action('avada_after_content'); ?>
 <?php get_footer(); ?>
+
+<?php
+function name_split($name)
+{
+    return substr($name, strlen($name) - 3, 2);
+}
+
+?>
