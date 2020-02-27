@@ -707,102 +707,7 @@ if (!defined('ABSPATH')) {
 
                     if ($SERVIZI_OFFERTI != null) {
                         foreach ($SERVIZI_OFFERTI as $field_value) {
-                            switch ($field_value) {
-                                case "Parcheggio":
-                                case "Parcheggio gratuito":
-                                case "Parcheggio in strada":
-                                case "Parcheggio custodito":
-                                    $service_icon = "fa-parking fas";
-                                    break;
-
-                                case "Servizi di noleggio":
-                                    $service_icon = "fa-hiking fas";
-                                    break;
-
-                                case "Accessibile ai disabili":
-                                    $service_icon = "fa-wheelchair fas";
-                                    break;
-
-                                case "Menù vegetariano":
-                                case "Menù carne":
-                                case "Menù pesce":
-                                case "Menù celiaci":
-                                case "Menù vegano":
-                                case "Cucina internazionale":
-                                case "Degustazioni in loco":
-                                    $service_icon = "fa-fish fas";
-                                    break;
-
-                                case "Pagamento con carta":
-                                    $service_icon = "fa-credit-card far";
-                                    break;
-
-                                case "Posto auto":
-                                    $service_icon = "fa-car-side fas";
-                                    break;
-
-                                case "Posto bici":
-                                case "Sentieri escursionistici":
-                                    $service_icon = "fa-bicycle fas";
-                                    break;
-
-                                case "Servizi spiaggia":
-                                    $service_icon = "fa-umbrella-beach fas";
-                                    break;
-
-                                case "Piscina":
-                                    $service_icon = "fa-swimmer fas";
-                                    break;
-
-                                case "Animali ammessi":
-                                    $service_icon = "fa-paw fas";
-                                    break;
-
-                                case "Maneggio":
-                                    $service_icon = "fa-horse fas";
-                                    break;
-
-                                case "Beauty farm":
-                                    $service_icon = "fa-smile-beam fas";
-                                    break;
-
-                                case "Free WIFI":
-                                    $service_icon = "fa-wifi fas";
-                                    break;
-
-                                case "Servizio in camera":
-                                    $service_icon = "fa-toilet-paper fas";
-                                    break;
-
-                                case "Per famiglie con bambini":
-                                    $service_icon = "fa-baby fas";
-                                    break;
-
-                                case "Noleggio pedalò/attrezzature marine":
-                                    $service_icon = "fa-water fas";
-                                    break;
-
-                                case "Area camper":
-                                    $service_icon = "fa-bus fas";
-                                    break;
-
-                                case "Area picnic":
-                                case "Ristorante":
-                                    $service_icon = "fa-drumstick-bite fas";
-                                    break;
-
-                                case "Bar":
-                                    $service_icon = "fa-cocktail fas";
-                                    break;
-
-                                case "Palestra":
-                                    $service_icon = "fa-dumbbell fas";
-                                    break;
-
-                                default:
-                                    $service_icon = "";
-                                    break;
-                            }
+                            $service_icon = get_service_icons($field_value);
 
                             $body_desktop_service .= '[fusion_li_item icon="' . $service_icon . '"]';
                             $body_desktop_service .= $field_value;
@@ -1037,102 +942,7 @@ if (!defined('ABSPATH')) {
 
                     if ($SERVIZI_OFFERTI != null) {
                         foreach ($SERVIZI_OFFERTI as $field_value) {
-                            switch ($field_value) {
-                                case "Parcheggio":
-                                case "Parcheggio gratuito":
-                                case "Parcheggio in strada":
-                                case "Parcheggio custodito":
-                                    $service_icon = "fa-parking fas";
-                                    break;
-
-                                case "Servizi di noleggio":
-                                    $service_icon = "fa-hiking fas";
-                                    break;
-
-                                case "Accessibile ai disabili":
-                                    $service_icon = "fa-wheelchair fas";
-                                    break;
-
-                                case "Menù vegetariano":
-                                case "Menù carne":
-                                case "Menù pesce":
-                                case "Menù celiaci":
-                                case "Menù vegano":
-                                case "Cucina internazionale":
-                                case "Degustazioni in loco":
-                                    $service_icon = "fa-fish fas";
-                                    break;
-
-                                case "Pagamento con carta":
-                                    $service_icon = "fa-credit-card far";
-                                    break;
-
-                                case "Posto auto":
-                                    $service_icon = "fa-car-side fas";
-                                    break;
-
-                                case "Posto bici":
-                                case "Sentieri escursionistici":
-                                    $service_icon = "fa-bicycle fas";
-                                    break;
-
-                                case "Servizi spiaggia":
-                                    $service_icon = "fa-umbrella-beach fas";
-                                    break;
-
-                                case "Piscina":
-                                    $service_icon = "fa-swimmer fas";
-                                    break;
-
-                                case "Animali ammessi":
-                                    $service_icon = "fa-paw fas";
-                                    break;
-
-                                case "Maneggio":
-                                    $service_icon = "fa-horse fas";
-                                    break;
-
-                                case "Beauty farm":
-                                    $service_icon = "fa-smile-beam fas";
-                                    break;
-
-                                case "Free WIFI":
-                                    $service_icon = "fa-wifi fas";
-                                    break;
-
-                                case "Servizio in camera":
-                                    $service_icon = "fa-toilet-paper fas";
-                                    break;
-
-                                case "Per famiglie con bambini":
-                                    $service_icon = "fa-baby fas";
-                                    break;
-
-                                case "Noleggio pedalò/attrezzature marine":
-                                    $service_icon = "fa-water fas";
-                                    break;
-
-                                case "Area camper":
-                                    $service_icon = "fa-bus fas";
-                                    break;
-
-                                case "Area picnic":
-                                case "Ristorante":
-                                    $service_icon = "fa-drumstick-bite fas";
-                                    break;
-
-                                case "Bar":
-                                    $service_icon = "fa-cocktail fas";
-                                    break;
-
-                                case "Palestra":
-                                    $service_icon = "fa-dumbbell fas";
-                                    break;
-
-                                default:
-                                    $service_icon = "";
-                                    break;
-                            }
+                            $service_icon = get_service_icons($field_value);
 
                             $body_mobile_service .= '[fusion_li_item icon="' . $service_icon . '"]';
                             $body_mobile_service .= $field_value;
@@ -1386,6 +1196,106 @@ if (!defined('ABSPATH')) {
 function name_split($name)
 {
     return substr($name, strlen($name) - 3, 2);
+}
+
+function get_service_icons($field)
+{
+    switch ($field) {
+        case "Parcheggio":
+        case "Parcheggio gratuito":
+        case "Parcheggio in strada":
+        case "Parcheggio custodito":
+            return "fa-parking fas";
+            break;
+
+        case "Servizi di noleggio":
+            return "fa-hiking fas";
+            break;
+
+        case "Accessibile ai disabili":
+            return "fa-wheelchair fas";
+            break;
+
+        case "Menù vegetariano":
+        case "Menù carne":
+        case "Menù pesce":
+        case "Menù celiaci":
+        case "Menù vegano":
+        case "Cucina internazionale":
+        case "Degustazioni in loco":
+            return "fa-fish fas";
+            break;
+
+        case "Pagamento con carta":
+            return "fa-credit-card far";
+            break;
+
+        case "Posto auto":
+            return "fa-car-side fas";
+            break;
+
+        case "Posto bici":
+        case "Sentieri escursionistici":
+            return "fa-bicycle fas";
+            break;
+
+        case "Servizi spiaggia":
+            return "fa-umbrella-beach fas";
+            break;
+
+        case "Piscina":
+            return "fa-swimmer fas";
+            break;
+
+        case "Animali ammessi":
+            return "fa-paw fas";
+            break;
+
+        case "Maneggio":
+            return "fa-horse fas";
+            break;
+
+        case "Beauty farm":
+            return "fa-smile-beam fas";
+            break;
+
+        case "Free WIFI":
+            return "fa-wifi fas";
+            break;
+
+        case "Servizio in camera":
+            return "fa-toilet-paper fas";
+            break;
+
+        case "Per famiglie con bambini":
+            return "fa-baby fas";
+            break;
+
+        case "Noleggio pedalò/attrezzature marine":
+            return "fa-water fas";
+            break;
+
+        case "Area camper":
+            return "fa-bus fas";
+            break;
+
+        case "Area picnic":
+        case "Ristorante":
+            return "fa-drumstick-bite fas";
+            break;
+
+        case "Bar":
+            return "fa-cocktail fas";
+            break;
+
+        case "Palestra":
+            return "fa-dumbbell fas";
+            break;
+
+        default:
+            return "";
+            break;
+    }
 }
 
 ?>
