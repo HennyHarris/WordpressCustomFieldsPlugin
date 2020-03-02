@@ -62,7 +62,7 @@ if (!defined('ABSPATH')) {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
                     $NOME_COMMERCIALE = htmlspecialchars(get_field('NOME_COMMERCIALE')); // Text
                     $TIPOLOGIA = get_field('TIPOLOGIA'); // Checkbox
-                    $CATEGORIA = get_field('CATEGORIA'); // Checkbox
+                    $CATEGORIA = get_field('CATEGORIA'); // Tassonomie // TODO: Da controllare come modificare
                     $SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('SOCIETA_ASSOCIAZIONE')); // Text
                     $SITO_WEB = htmlspecialchars(get_field('SITO_WEB')); // Text
                     $TELEFONO = htmlspecialchars(get_field('TELEFONO')); // Text
@@ -87,6 +87,7 @@ if (!defined('ABSPATH')) {
                     $GIORNO_DI_CHIUSURA_PRODUZIONE = get_field('GIORNO_DI_CHIUSURA_PRODUZIONE'); // Checkbox
                     $PERIODO_APERTURA = htmlspecialchars(get_field('PERIODO_APERTURA')); // Button radio
                     $DESCRIZIONE = htmlspecialchars(get_field('DESCRIZIONE')); // Text
+                    $INFO_AGGIUNTIVE = htmlspecialchars(get_field('INFO_AGGIUNTIVE')); // Text
                     $VISITE_GUIDATE = htmlspecialchars(get_field('VISITE_GUIDATE')); // Button radio
                     $DETTAGLI_VISITE = htmlspecialchars(get_field('DETTAGLI_VISITE')); // Text
                     $COSTO_BIGLIETTO = htmlspecialchars(get_field('COSTO_BIGLIETTO')); // Number
@@ -95,8 +96,8 @@ if (!defined('ABSPATH')) {
                     $STATO_CONSERVAZIONE = htmlspecialchars(get_field('STATO_CONSERVAZIONE')); // Button radio
                     $PACCHETTI_OFFERTI = htmlspecialchars(get_field('PACCHETTI_OFFERTI')); // Text
                     $LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('LINK_ALLE_PROPOSTE')); // URL
-                    $INFO_AGGIUNTIVE = htmlspecialchars(get_field('INFO_AGGIUNTIVE')); // Text
                     $SERVIZI_OFFERTI = get_field('SERVIZI_OFFERTI'); // Checkbox
+                    $ALTRI_SERVIZI = htmlspecialchars(get_field('ALTRO')); // Text // TODO: Da aggiungere
                     $FACEBOOK = htmlspecialchars(get_field('FACEBOOK')); // URL
                     $FLICKR = htmlspecialchars(get_field('FLICKR')); // URL
                     $GOOGLE = htmlspecialchars(get_field('GOOGLE')); // URL
@@ -613,7 +614,7 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($PACCHETTI_OFFERTI != null) {
+                    if ($PACCHETTI_OFFERTI != null) { // TODO: Spostare nelle checkbox
                         $body_desktop_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_desktop_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
                         $body_desktop_service .= '[/fusion_li_item]';
@@ -625,7 +626,7 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if (strstr($VISITE_GUIDATE, "Si")) {
+                    if (strstr($VISITE_GUIDATE, "Si")) { // TODO: spostare nelle checkbox
                         $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_desktop_service .= 'Visite Guidate';
                         $body_desktop_service .= '[/fusion_li_item]';
@@ -662,7 +663,7 @@ if (!defined('ABSPATH')) {
                     $body_desktop_service .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
 
 
-                    /*** BODY MOBILE **/
+                    /*** BODY MOBILE **/ // TODO: Aggiungere immagini
                     $body_mobile = '[fusion_builder_container admin_label="Info(TABLET E SMARTPHONE)" hide_on_mobile="small-visibility,medium-visibility" status="published" publish_date="" hundred_percent="yes" hundred_percent_height="no" hundred_percent_height_scroll="no" hundred_percent_height_center_content="yes" equal_height_columns="no" menu_anchor="storia" class="" id="" border_size="" border_color="" border_style="solid" margin_top="4%" margin_bottom="4%" padding_top="0px" padding_right="4%" padding_bottom="0px" padding_left="4%" gradient_start_color="" gradient_end_color="" gradient_start_position="0" gradient_end_position="100" gradient_type="linear" radial_direction="center" linear_angle="180" background_color="" background_image="" background_position="center center" background_repeat="no-repeat" fade="no" background_parallax="none" enable_mobile="no" parallax_speed="0.3" background_blend_mode="none" video_mp4="" video_webm="" video_ogv="" video_url="" video_aspect_ratio="16:9" video_loop="yes" video_mute="yes" video_preview_image="" filter_hue="0" filter_saturation="100" filter_brightness="100" filter_contrast="100" filter_invert="0" filter_sepia="0" filter_opacity="100" filter_blur="0" filter_hue_hover="0" filter_saturation_hover="100" filter_brightness_hover="100" filter_contrast_hover="100" filter_invert_hover="0" filter_sepia_hover="0" filter_opacity_hover="100" filter_blur_hover="0" admin_toggled="no"]';
 
                     $body_mobile_central = '[fusion_builder_row]';
@@ -848,7 +849,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($PACCHETTI_OFFERTI != null) {
+                    if ($PACCHETTI_OFFERTI != null) { // TODO: Spostare nelle checkbox
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_mobile_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
                         $body_mobile_service .= '[/fusion_li_item]';
@@ -860,7 +861,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if (strstr($VISITE_GUIDATE, "Si")) {
+                    if (strstr($VISITE_GUIDATE, "Si")) { // TODO: Spostare nelle checkbox
                         $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_mobile_service .= 'Visite Guidate';
                         $body_mobile_service .= '[/fusion_li_item]';
@@ -1092,6 +1093,7 @@ function get_service_icons($field)
         case "Parcheggio gratuito":
         case "Parcheggio in strada":
         case "Parcheggio custodito":
+        case "Parcheggio coperto":
             return "fa-parking fas";
             break;
 
@@ -1109,7 +1111,9 @@ function get_service_icons($field)
         case "Menù celiaci":
         case "Menù vegano":
         case "Cucina internazionale":
+        case "Cucina locale":
         case "Degustazioni in loco":
+        case "Forno a legna":
             return "fa-fish fas";
             break;
 
