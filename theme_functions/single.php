@@ -97,7 +97,7 @@ if (!defined('ABSPATH')) {
                     $PACCHETTI_OFFERTI = htmlspecialchars(get_field('PACCHETTI_OFFERTI')); // Text
                     $LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('LINK_ALLE_PROPOSTE')); // URL
                     $SERVIZI_OFFERTI = get_field('SERVIZI_OFFERTI'); // Checkbox
-                    $ALTRI_SERVIZI = htmlspecialchars(get_field('ALTRO')); // Text // TODO: Da aggiungere
+                    $ALTRI_SERVIZI = htmlspecialchars(get_field('ALTRO')); // Text // TODO: Da aggiungere in righe diverse con un foreach
                     $FACEBOOK = htmlspecialchars(get_field('FACEBOOK')); // URL
                     $FLICKR = htmlspecialchars(get_field('FLICKR')); // URL
                     $GOOGLE = htmlspecialchars(get_field('GOOGLE')); // URL
@@ -660,6 +660,10 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
+                    if ($ALTRI_SERVIZI != null) { // TODO: Da controllare
+                        $body_desktop_service .= get_other_service($ALTRI_SERVIZI);
+                    }
+
                     $body_desktop_service .= '[/fusion_checklist][/fusion_builder_column][/fusion_builder_row][/fusion_builder_container]';
 
 
@@ -893,6 +897,10 @@ if (!defined('ABSPATH')) {
                             $body_mobile_service .= $field_value;
                             $body_mobile_service .= '[/fusion_li_item]';
                         }
+                    }
+
+                    if ($ALTRI_SERVIZI != null) { // TODO: Da controllare
+                        $body_mobile_service .= get_other_service($ALTRI_SERVIZI);
                     }
 
                     $body_mobile_service .= '[/fusion_checklist]';
@@ -1187,6 +1195,21 @@ function get_service_icons($field)
             return "";
             break;
     }
+}
+
+function get_other_service($list)
+{
+    $body = "";
+
+    $array = explode(" | ", $list);
+
+    foreach ($array as $element) {
+        $body .= '[fusion_li_item icon=""]';
+        $body .= $element;
+        $body .= '[/fusion_li_item]';
+    }
+
+    return $body;
 }
 
 ?>
