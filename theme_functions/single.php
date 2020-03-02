@@ -418,63 +418,7 @@ if (!defined('ABSPATH')) {
                     }
 
                     $body_desktop_info .= '[/fusion_checklist]';
-                    $body_desktop_info .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
 
-                    $body_desktop_useful_links .= '[fusion_social_links icons_boxed="yes" icons_boxed_radius="" color_type="brand" icon_colors="" box_colors="" tooltip_placement="" blogger="';
-
-                    if ($SITO_WEB != null) {
-                        $body_desktop_useful_links .= $SITO_WEB;
-                    }
-
-                    $body_desktop_useful_links .= '" deviantart="" digg="" dribbble="" dropbox="" facebook="';
-
-                    if ($FACEBOOK != null) {
-                        $body_desktop_useful_links .= $FACEBOOK;
-                    }
-
-                    $body_desktop_useful_links .= '" flickr="';
-
-                    if ($FLICKR != null) {
-                        $body_desktop_useful_links .= $FLICKR;
-                    }
-
-                    $body_desktop_useful_links .= '" forrst="" instagram="';
-
-                    if ($INSTAGRAM != null) {
-                        $body_desktop_useful_links .= $INSTAGRAM;
-                    }
-
-                    $body_desktop_useful_links .= '" linkedin="';
-
-                    if ($LINKEDIN != null) {
-                        $body_desktop_useful_links .= $LINKEDIN;
-                    }
-
-                    $body_desktop_useful_links .= '" myspace="" paypal="" pinterest="';
-
-                    if ($PINTEREST != null) {
-                        $body_desktop_useful_links .= $PINTEREST;
-                    }
-
-                    $body_desktop_useful_links .= '" reddit="" rss="" skype="" soundcloud="" spotify="" tumblr="" twitter="';
-
-                    if ($TWITTER != null) {
-                        $body_desktop_useful_links .= $TWITTER;
-                    }
-
-                    $body_desktop_useful_links .= '" vimeo="" vk="" whatsapp="" xing="" yahoo="" yelp="" youtube="';
-
-                    if ($YOUTUBE != null) {
-                        $body_desktop_useful_links .= $YOUTUBE;
-                    }
-
-                    $body_desktop_useful_links .= '" email="';
-
-                    if ($EMAIL != null) {
-                        $body_desktop_useful_links .= $EMAIL;
-                    }
-
-                    $body_desktop_useful_links .= '" show_custom="no" alignment="center" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" /]';
                     $body_desktop_useful_links .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
                     $body_desktop_useful_links .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="infotype"]';
                     $body_desktop_useful_links .= 'Link utili';
@@ -951,64 +895,7 @@ if (!defined('ABSPATH')) {
                     }
 
                     $body_mobile_service .= '[/fusion_checklist]';
-                    $body_mobile_service .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
 
-                    $body_mobile_service .= '[fusion_social_links icons_boxed="yes" icons_boxed_radius="" color_type="brand" icon_colors="" box_colors="" tooltip_placement="" blogger="';
-
-                    if ($SITO_WEB != null) {
-                        $body_mobile_service .= $SITO_WEB;
-                    }
-
-                    $body_mobile_service .= '" deviantart="" digg="" dribbble="" dropbox="" facebook="';
-
-                    if ($FACEBOOK != null) {
-                        $body_mobile_service .= $FACEBOOK;
-                    }
-
-                    $body_mobile_service .= '" flickr="';
-
-                    if ($FLICKR != null) {
-                        $body_mobile_service .= $FLICKR;
-                    }
-
-                    $body_mobile_service .= '" forrst="" instagram="';
-
-                    if ($INSTAGRAM != null) {
-                        $body_mobile_service .= $INSTAGRAM;
-                    }
-
-                    $body_mobile_service .= '" linkedin="';
-
-                    if ($LINKEDIN != null) {
-                        $body_mobile_service .= $LINKEDIN;
-                    }
-
-                    $body_mobile_service .= '" myspace="" paypal="" pinterest="';
-
-                    if ($PINTEREST != null) {
-                        $body_mobile_service .= $PINTEREST;
-                    }
-
-                    $body_mobile_service .= '" reddit="" rss="" skype="" soundcloud="" spotify="" tumblr="" twitter="';
-
-                    if ($TWITTER != null) {
-                        $body_mobile_service .= $TWITTER;
-                    }
-
-                    $body_mobile_service .= '" vimeo="" vk="" whatsapp="" xing="" yahoo="" yelp="" youtube="';
-
-                    if ($YOUTUBE != null) {
-                        $body_mobile_service .= $YOUTUBE;
-                    }
-
-                    $body_mobile_service .= '" email="';
-
-                    if ($EMAIL != null) {
-                        $body_mobile_service .= $EMAIL;
-                    }
-
-                    $body_mobile_service .= '" show_custom="no" alignment="center" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" /]';
-                    $body_mobile_service .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
                     $body_mobile_useful_links = '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="infotype"]';
                     $body_mobile_useful_links .= 'Link utili';
                     $body_mobile_useful_links .= '[/fusion_text]';
