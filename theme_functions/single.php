@@ -97,7 +97,7 @@ if (!defined('ABSPATH')) {
                     $PACCHETTI_OFFERTI = htmlspecialchars(get_field('PACCHETTI_OFFERTI')); // Text
                     $LINK_ALLE_PROPOSTE = htmlspecialchars(get_field('LINK_ALLE_PROPOSTE')); // URL
                     $SERVIZI_OFFERTI = get_field('SERVIZI_OFFERTI'); // Checkbox
-                    $ALTRI_SERVIZI = htmlspecialchars(get_field('ALTRO')); // Text // TODO: Da aggiungere in righe diverse con un foreach
+                    $ALTRI_SERVIZI = htmlspecialchars(get_field('ALTRO')); // Text
                     $FACEBOOK = htmlspecialchars(get_field('FACEBOOK')); // URL
                     $FLICKR = htmlspecialchars(get_field('FLICKR')); // URL
                     $GOOGLE = htmlspecialchars(get_field('GOOGLE')); // URL
@@ -614,7 +614,7 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if ($PACCHETTI_OFFERTI != null) { // TODO: Spostare nelle checkbox
+                    if ($PACCHETTI_OFFERTI != null) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_desktop_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
                         $body_desktop_service .= '[/fusion_li_item]';
@@ -626,7 +626,7 @@ if (!defined('ABSPATH')) {
                         $body_desktop_service .= '[/fusion_li_item]';
                     }
 
-                    if (strstr($VISITE_GUIDATE, "Si")) { // TODO: spostare nelle checkbox
+                    if (strstr($VISITE_GUIDATE, "Si")) {
                         $body_desktop_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_desktop_service .= 'Visite Guidate';
                         $body_desktop_service .= '[/fusion_li_item]';
@@ -660,7 +660,7 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-                    if ($ALTRI_SERVIZI != null) { // TODO: Da controllare
+                    if ($ALTRI_SERVIZI != null) {
                         $body_desktop_service .= get_other_service($ALTRI_SERVIZI);
                     }
 
@@ -853,7 +853,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if ($PACCHETTI_OFFERTI != null) { // TODO: Spostare nelle checkbox
+                    if ($PACCHETTI_OFFERTI != null) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-shuttle-van fas"]';
                         $body_mobile_service .= 'Proposte vacanze in Molise: ' . $PACCHETTI_OFFERTI;
                         $body_mobile_service .= '[/fusion_li_item]';
@@ -865,7 +865,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_service .= '[/fusion_li_item]';
                     }
 
-                    if (strstr($VISITE_GUIDATE, "Si")) { // TODO: Spostare nelle checkbox
+                    if (strstr($VISITE_GUIDATE, "Si")) {
                         $body_mobile_service .= '[fusion_li_item icon="fa-university fas"]';
                         $body_mobile_service .= 'Visite Guidate';
                         $body_mobile_service .= '[/fusion_li_item]';
@@ -899,7 +899,7 @@ if (!defined('ABSPATH')) {
                         }
                     }
 
-                    if ($ALTRI_SERVIZI != null) { // TODO: Da controllare
+                    if ($ALTRI_SERVIZI != null) {
                         $body_mobile_service .= get_other_service($ALTRI_SERVIZI);
                     }
 
@@ -1201,11 +1201,11 @@ function get_other_service($list)
 {
     $body = "";
 
-    $array = explode(" | ", $list);
+    $array = explode("|", $list);
 
     foreach ($array as $element) {
         $body .= '[fusion_li_item icon=""]';
-        $body .= $element;
+        $body .= trim($element);
         $body .= '[/fusion_li_item]';
     }
 
