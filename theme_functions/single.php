@@ -62,7 +62,7 @@ if (!defined('ABSPATH')) {
                     /*** VARIABILI CAMPI TEMPLATE GENERALE - html_special_chars()   **/
                     $NOME_COMMERCIALE = htmlspecialchars(get_field('NOME_COMMERCIALE')); // Text
                     $TIPOLOGIA = get_field('TIPOLOGIA'); // Checkbox
-                    $CATEGORIA = get_field('CATEGORIA'); // Tassonomie // TODO: Da controllare come modificare
+                    $CATEGORIA = get_field('CATEGORIA'); // Tassonomie
                     $SOCIETA_ASSOCIAZIONE = htmlspecialchars(get_field('SOCIETA_ASSOCIAZIONE')); // Text
                     $SITO_WEB = htmlspecialchars(get_field('SITO_WEB')); // Text
                     $TELEFONO = htmlspecialchars(get_field('TELEFONO')); // Text
@@ -211,37 +211,43 @@ if (!defined('ABSPATH')) {
                     $header_typology_category .= '[fusion_images picture_size="auto" hover_type="liftup" autoplay="no" columns="6" column_spacing="0" scroll_items="" show_nav="no" mouse_scroll="no" border="no" lightbox="no" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="icone-categorie" id=""] ';
 
                     if ($CATEGORIA != null) {
-                        foreach ($CATEGORIA as $field_desktop_categoty) {
+                        $array_of_name = [];
+
+                        foreach ($CATEGORIA as $field_to_add){
+                            array_push($array_of_name, $field_to_add->name);
+                        }
+
+                        foreach (array_unique($array_of_name) as $field_desktop_categoty) {
                             switch ($field_desktop_categoty) {
-                                case "archeologia-arte-e-storia":
+                                case "Archeologia arte e storia":
                                     $icon_category = $archeologia_arte_e_storia;
                                     break;
 
-                                case "benessere":
+                                case "Benessere":
                                     $icon_category = $benessere;
                                     break;
 
-                                case "i-sapori":
+                                case "I sapori":
                                     $icon_category = $i_sapori;
                                     break;
 
-                                case "il-mare":
+                                case "Il mare":
                                     $icon_category = $il_mare;
                                     break;
 
-                                case "la-montagna":
+                                case "La montagna":
                                     $icon_category = $la_montagna;
                                     break;
 
-                                case "le-tradizioni":
+                                case "Le tradizioni":
                                     $icon_category = $le_tradizioni;
                                     break;
 
-                                case "paesi-e-culture":
+                                case "Paesi e culture":
                                     $icon_category = $paese_e_culture;
                                     break;
 
-                                case "vacanze-nella-natura":
+                                case "Vacanze nella natura":
                                     $icon_category = $vacanze_nella_natura;
                                     break;
 
@@ -275,7 +281,6 @@ if (!defined('ABSPATH')) {
                     if ($SOCIETA_ASSOCIAZIONE != null) {
                         $body_desktop_info .= '[fusion_li_item icon="fa-globe fas"]';
                         $body_desktop_info .= 'Società/Associazione: ' . $SOCIETA_ASSOCIAZIONE;
-
                         $body_desktop_info .= '[/fusion_li_item]';
                     }
 
