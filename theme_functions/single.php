@@ -291,7 +291,7 @@ if (!defined('ABSPATH')) {
                         $body_desktop_useful_links .= '[/fusion_text]';
                         $body_desktop_useful_links .= '[fusion_checklist icon="fa-hotel fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
-                        $body_desktop_useful_links .= get_useful_links();
+                        $body_desktop_useful_links .= get_useful_links_body();
 
                         $body_desktop_useful_links .= '[/fusion_checklist]';
                         $body_desktop_useful_links .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
@@ -398,7 +398,7 @@ if (!defined('ABSPATH')) {
                         $body_mobile_useful_links .= '[/fusion_text]';
                         $body_mobile_useful_links .= '[fusion_checklist icon="fa-hotel fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
-                        $body_mobile_useful_links .= get_useful_links();
+                        $body_mobile_useful_links .= get_useful_links_body();
 
                         $body_mobile_useful_links .= '[/fusion_checklist]';
                         $body_mobile_useful_links .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
@@ -855,7 +855,7 @@ function get_other_service($list)
     return $body;
 }
 
-function get_useful_links() {
+function get_useful_links_body() {
     $body = "";
 
     if ($GLOBALS["GOOGLE_MAPS"] != null) {
