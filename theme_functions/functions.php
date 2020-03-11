@@ -77,4 +77,21 @@ add_action('edit_user_profile', 'mysite_show_extra_profile_fields');
 add_action('personal_options_update', 'mysite_save_extra_profile_fields');
 add_action('edit_user_profile_update', 'mysite_save_extra_profile_fields');
 add_action('manage_users_custom_column', 'mysite_custom_columns', 15, 3);
-add_filter('manage_users_columns', 'mysite_columns', 15, 1);    
+add_filter('manage_users_columns', 'mysite_columns', 15, 1);
+
+function update_custom_field_post($post_id) {
+    $post_type = get_post_type( $post_id );
+
+    if ($post_type == 'post' || $post_type == 'risorsa') {
+
+        $new_post = array(
+            'ID' => $post_id,
+            'post_title'   => get_field("NOME_COMMERCIALE"),
+            'post_excerpt' => get_field("DESCRIZIONE"),
+        );
+        wp_update_post( $new_post );
+
+        add_post_meta($post_id, '_thumbnail_id', get_field('IMG_COVER'));
+    }
+}
+add_action('acf/save_post', 'update_custom_field_post', 20);
