@@ -866,7 +866,7 @@ function get_useful_links_body() {
 
     if ($GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] != null) {
         $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
-        $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] . '">GOOGLE MAPS (PUNTO VENDkITA)</a>';
+        $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] . '">GOOGLE MAPS (PUNTO VENDITA)</a>';
         $body .= '[/fusion_li_item]';
     }
 

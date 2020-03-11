@@ -355,10 +355,6 @@ if (!defined('ABSPATH')) {
                     $body_desktop_central .= '[/fusion_builder_column]';
 
                     $body_desktop_service = '[fusion_builder_column type="1_5" layout="1_3" spacing="" center_content="no" link="" target="_self" min_height="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" background_color="" background_image="" background_image_id="" background_position="left top" background_repeat="no-repeat" hover_type="none" border_size="0" border_color="" border_style="solid" border_position="all" border_radius="" box_shadow="no" dimension_box_shadow="" box_shadow_blur="0" box_shadow_spread="0" box_shadow_color="" box_shadow_style="" padding_top="" padding_right="" padding_bottom="" padding_left="" margin_top="" margin_bottom="" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset="" last="no"]';
-                    $body_desktop_service .= '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="infotype"]';
-                    $body_desktop_service .= 'Servizi';
-                    $body_desktop_service .= '[/fusion_text]';
-                    $body_desktop_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
                     $body_desktop_service .= get_services_body();
 
@@ -391,11 +387,6 @@ if (!defined('ABSPATH')) {
 
                     $body_mobile_info .= '[/fusion_checklist]';
                     $body_mobile_info .= '[fusion_separator style_type="single solid" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" sep_color="" top_margin="" bottom_margin="2%" border_size="" icon="" icon_circle="" icon_circle_color="" width="" alignment="center" /]';
-
-                    $body_mobile_service = '[fusion_text columns="" column_min_width="" column_spacing="" rule_style="default" rule_size="" rule_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="infotype"]';
-                    $body_mobile_service .= 'Servizi';
-                    $body_mobile_service .= '[/fusion_text]';
-                    $body_mobile_service .= '[fusion_checklist icon="fa-check fas" iconcolor="" circle="" circlecolor="#03a9f4" size="" divider="yes" divider_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
 
                     $body_mobile_info .= get_services_body();
 
@@ -795,19 +786,13 @@ function get_useful_links_body()
 
     if ($GLOBALS["GOOGLE_MAPS"] != null) {
         $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
-        $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS"] . '">GOOGLE MAPS</a>';
-        $body .= '[/fusion_li_item]';
-    }
-
-    if ($GLOBALS["LAT"] != null && $GLOBALS["LONG"] != null) {
-        $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
-        $body .= '<a href="http://maps.google.com/maps?q=' . $GLOBALS["LAT"] . ',' . $GLOBALS["LONG"] . '">GOOGLE MAPS(ACCESSO)</a>';
+        $body .= '<a href="http://maps.google.com/maps?q=' . $GLOBALS["LAT"] . ',' . $GLOBALS["LONG"] . '">GOOGLE MAPS</a>';
         $body .= '[/fusion_li_item]';
     }
 
     if ($GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] != null) {
         $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
-        $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] . '">GOOGLE MAPS (PUNTO VENDkITA)</a>';
+        $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] . '">GOOGLE MAPS (PUNTO VENDITA)</a>';
         $body .= '[/fusion_li_item]';
     }
 
