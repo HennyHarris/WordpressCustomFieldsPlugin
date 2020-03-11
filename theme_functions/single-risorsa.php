@@ -799,6 +799,12 @@ function get_useful_links_body()
         $body .= '[/fusion_li_item]';
     }
 
+    if ($GLOBALS["LAT"] != null && $GLOBALS["LONG"] != null) {
+        $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
+        $body .= '<a href="http://maps.google.com/maps?q=' . $GLOBALS["LAT"] . ',' . $GLOBALS["LONG"] . '">GOOGLE MAPS(ACCESSO)</a>';
+        $body .= '[/fusion_li_item]';
+    }
+
     if ($GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] != null) {
         $body .= '[fusion_li_item icon="fa-location-arrow fas"]';
         $body .= '<a href="' . $GLOBALS["GOOGLE_MAPS_PUNTO_VENDITA"] . '">GOOGLE MAPS (PUNTO VENDkITA)</a>';
