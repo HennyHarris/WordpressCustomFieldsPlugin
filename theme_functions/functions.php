@@ -109,3 +109,6 @@ function update_custom_field_post($post_id) {
     }
 }
 add_action('acf/save_post', 'update_custom_field_post', 20);
+
+add_action('acf/export_post', 'export_custom_field_post', 20);
+add_action('acf/import_post', 'import_custom_field_post', 20);
